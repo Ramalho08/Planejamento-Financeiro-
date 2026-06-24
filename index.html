@@ -4,110 +4,105 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta name="theme-color" content="#050816">
-  <title>R💰 Ramalho Finance Pro V5</title>
+  <title>R💰 Ramalho Finance Pro V6</title>
   <link rel="manifest" href="manifest.json">
   <link rel="stylesheet" href="style.css">
   <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
-  <script src="firebase-config.js"></script>
 </head>
 <body>
-  <canvas id="matrix"></canvas>
+  <canvas id="techBg"></canvas>
 
-  <div id="loginScreen" class="login-screen">
-    <div class="login-card">
-      <div class="logo-big">R💰</div>
-      <h1>Ramalho Finance</h1>
-      <p>Seu painel financeiro pessoal com visual futurista.</p>
-      <button class="primary" id="localLoginBtn">Entrar modo local</button>
-      <button class="google" id="googleBtn">Entrar com Google</button>
-      <small>O login Google exige configurar o Firebase no arquivo <b>firebase-config.js</b>.</small>
-    </div>
-  </div>
-
-  <main id="app" class="app hidden">
+  <main class="layout">
     <aside class="sidebar">
       <div class="brand">
         <div class="logo">R💰</div>
         <div>
-          <h2>Ramalho Finance</h2>
-          <span>Professional V5</span>
+          <h1>Ramalho Finance</h1>
+          <span>Pro V6 • Local/PWA</span>
         </div>
       </div>
 
       <nav>
         <button class="nav active" data-page="dashboard">Dashboard</button>
-        <button class="nav" data-page="transactions">Movimentações</button>
-        <button class="nav" data-page="recurringPage">Recorrências</button>
+        <button class="nav" data-page="movements">Movimentações</button>
+        <button class="nav" data-page="budget">Orçamentos</button>
         <button class="nav" data-page="goals">Metas</button>
+        <button class="nav" data-page="calendar">Calendário</button>
         <button class="nav" data-page="reports">Relatórios</button>
         <button class="nav" data-page="settings">Configurações</button>
       </nav>
 
       <div class="profile">
-        <div class="avatar" id="avatar">R</div>
+        <div class="avatar">R</div>
         <div>
-          <strong id="profileName">Usuário local</strong>
-          <small id="profileEmail">dados neste dispositivo</small>
+          <strong>Modo local</strong>
+          <small>Sem Firebase por enquanto</small>
         </div>
       </div>
     </aside>
 
-    <section class="content">
+    <section class="main">
       <header class="topbar">
         <div>
-          <h1 id="pageTitle">Dashboard</h1>
+          <h2 id="pageTitle">Dashboard</h2>
           <p id="dateLabel"></p>
         </div>
         <div class="actions">
-          <button class="ghost" id="installBtn">Instalar</button>
-          <button class="ghost" id="themeBtn">Tema</button>
-          <button class="ghost" id="logoutBtn">Sair</button>
+          <button id="quickIncome" class="ghost">+ Receita</button>
+          <button id="quickExpense" class="ghost">+ Despesa</button>
+          <button id="installBtn" class="ghost">Instalar</button>
+          <button id="themeBtn" class="ghost">Tema</button>
         </div>
       </header>
 
       <section id="dashboard" class="page active">
-        <div class="hero hologram">
+        <article class="hero">
           <div>
-            <span class="eyebrow">saldo atual</span>
-            <h2 id="balanceHero">R$ 0,00</h2>
-            <p id="mainInsight">Adicione suas movimentações para gerar análises inteligentes.</p>
+            <span class="eyebrow">patrimônio mensal</span>
+            <h1 id="balanceHero">R$ 0,00</h1>
+            <p id="heroText">Cadastre suas movimentações para gerar análises inteligentes.</p>
           </div>
-          <div class="score-ring">
+          <div class="ai-card">
             <span id="score">0</span>
-            <small>score</small>
+            <small>score financeiro</small>
           </div>
-        </div>
-
-        <div class="metrics">
-          <article class="metric income"><span>Receitas</span><strong id="incomeTotal">R$ 0,00</strong></article>
-          <article class="metric expense"><span>Despesas</span><strong id="expenseTotal">R$ 0,00</strong></article>
-          <article class="metric"><span>Taxa de economia</span><strong id="savingRate">0%</strong></article>
-          <article class="metric"><span>Reserva ideal</span><strong id="emergencyFund">R$ 0,00</strong></article>
-          <article class="metric"><span>Previsão 3 meses</span><strong id="futureProjection">R$ 0,00</strong></article>
-          <article class="metric"><span>Maior categoria</span><strong id="topCategory">---</strong></article>
-        </div>
-
-        <div class="grid two">
-          <article class="panel">
-            <h3>Distribuição por categoria</h3>
-            <canvas id="categoryChart"></canvas>
-            <div id="categoryFallback" class="chart-fallback"></div>
-          </article>
-          <article class="panel">
-            <h3>Comparação mensal</h3>
-            <canvas id="monthChart"></canvas>
-            <div id="monthFallback" class="chart-fallback"></div>
-          </article>
-        </div>
-
-        <article class="panel">
-          <h3>Assistente inteligente</h3>
-          <div id="insights" class="insights"></div>
         </article>
+
+        <section class="metrics">
+          <article class="metric positive"><span>Receitas</span><strong id="incomeTotal">R$ 0,00</strong></article>
+          <article class="metric negative"><span>Despesas</span><strong id="expenseTotal">R$ 0,00</strong></article>
+          <article class="metric"><span>Economia</span><strong id="savingRate">0%</strong></article>
+          <article class="metric"><span>Reserva ideal</span><strong id="emergencyFund">R$ 0,00</strong></article>
+          <article class="metric"><span>Previsão 6 meses</span><strong id="projection6">R$ 0,00</strong></article>
+          <article class="metric"><span>Status</span><strong id="statusLabel">Neutro</strong></article>
+        </section>
+
+        <section class="grid two">
+          <article class="panel">
+            <h3>Gastos por categoria</h3>
+            <canvas id="categoryChart"></canvas>
+            <div id="categoryBars" class="bars"></div>
+          </article>
+          <article class="panel">
+            <h3>Evolução mensal</h3>
+            <canvas id="monthlyChart"></canvas>
+          </article>
+        </section>
+
+        <section class="grid two">
+          <article class="panel">
+            <h3>Assistente financeiro</h3>
+            <div id="smartInsights" class="insights"></div>
+          </article>
+          <article class="panel">
+            <h3>Radar de risco</h3>
+            <div id="riskRadar" class="risk-box"></div>
+          </article>
+        </section>
       </section>
 
-      <section id="transactions" class="page">
-        <div class="grid two">
+      <section id="movements" class="page">
+        <section class="grid two">
           <article class="panel">
             <h3>Nova movimentação</h3>
             <form id="transactionForm">
@@ -118,88 +113,110 @@
                 <option value="expense">Despesa</option>
               </select>
               <select id="category"></select>
+              <input id="dueDate" type="date">
               <label class="check"><input id="recurring" type="checkbox"> Repetir todo mês</label>
               <button class="primary" type="submit">Adicionar</button>
             </form>
           </article>
+
           <article class="panel">
-            <h3>Busca rápida</h3>
+            <h3>Filtros inteligentes</h3>
             <input id="search" placeholder="Pesquisar">
             <select id="filterType">
               <option value="all">Tudo</option>
               <option value="income">Receitas</option>
               <option value="expense">Despesas</option>
             </select>
-            <button class="ghost" id="closeMonthBtn">Fechar mês</button>
+            <select id="filterCategory">
+              <option value="all">Todas categorias</option>
+            </select>
           </article>
-        </div>
+        </section>
+
         <article class="panel">
           <h3>Histórico do mês</h3>
           <div id="transactionList" class="list"></div>
         </article>
       </section>
 
-      <section id="recurringPage" class="page">
-        <article class="panel">
-          <h3>Despesas/receitas recorrentes</h3>
-          <p>Itens marcados como recorrentes serão copiados automaticamente quando um novo mês começar.</p>
-          <div id="recurringList" class="list"></div>
-        </article>
+      <section id="budget" class="page">
+        <section class="grid two">
+          <article class="panel">
+            <h3>Criar orçamento por categoria</h3>
+            <form id="budgetForm">
+              <select id="budgetCategory"></select>
+              <input id="budgetLimit" type="number" step="0.01" placeholder="Limite mensal">
+              <button class="primary" type="submit">Salvar orçamento</button>
+            </form>
+          </article>
+          <article class="panel">
+            <h3>Orçamentos ativos</h3>
+            <div id="budgetList" class="list"></div>
+          </article>
+        </section>
       </section>
 
       <section id="goals" class="page">
-        <div class="grid two">
+        <section class="grid two">
           <article class="panel">
             <h3>Nova meta</h3>
             <form id="goalForm">
               <input id="goalName" placeholder="Nome da meta" required>
               <input id="goalTarget" type="number" step="0.01" placeholder="Valor alvo" required>
-              <input id="goalSaved" type="number" step="0.01" placeholder="Já guardado">
+              <input id="goalSaved" type="number" step="0.01" placeholder="Valor já guardado">
+              <input id="goalDeadline" type="date">
               <button class="primary" type="submit">Criar meta</button>
             </form>
           </article>
           <article class="panel">
-            <h3>Previsão de metas</h3>
-            <p id="goalProjection">Cadastre metas para acompanhar sua evolução.</p>
+            <h3>Simulador de meta</h3>
+            <input id="simAmount" type="number" step="0.01" placeholder="Quanto você pode guardar por mês?">
+            <button class="ghost" id="simulateBtn">Simular</button>
+            <p id="simulationResult"></p>
           </article>
-        </div>
-        <div id="goalList" class="goals"></div>
+        </section>
+        <div id="goalList" class="goal-list"></div>
+      </section>
+
+      <section id="calendar" class="page">
+        <article class="panel">
+          <h3>Calendário financeiro</h3>
+          <p class="muted">Mostra vencimentos cadastrados para receitas/despesas.</p>
+          <div id="calendarList" class="list"></div>
+        </article>
       </section>
 
       <section id="reports" class="page">
         <article class="panel tools">
-          <h3>Exportação</h3>
+          <h3>Relatórios e segurança</h3>
           <button class="primary" id="exportCsvBtn">Exportar CSV</button>
           <button class="primary" id="exportJsonBtn">Backup JSON</button>
-          <label class="file">Restaurar backup<input id="importJson" type="file" accept="application/json"></label>
-          <button class="ghost" id="printBtn">PDF / imprimir</button>
-          <button class="ghost" id="clearBtn">Limpar dados</button>
+          <label class="file-btn">Restaurar backup<input id="importJson" type="file" accept="application/json"></label>
+          <button class="ghost" id="printBtn">PDF / Imprimir</button>
+          <button class="danger" id="clearBtn">Limpar tudo</button>
         </article>
         <article class="panel">
-          <h3>Resumo por mês</h3>
+          <h3>Resumo mensal</h3>
           <div id="monthlySummary" class="list"></div>
         </article>
       </section>
 
       <section id="settings" class="page">
-        <article class="panel">
-          <h3>Firebase / Login Google</h3>
-          <p>Para ativar, abra <b>firebase-config.js</b> e cole as chaves do seu projeto Firebase.</p>
-          <ol>
-            <li>Crie um projeto no Firebase.</li>
-            <li>Ative Authentication → Google.</li>
-            <li>Copie as credenciais do app Web.</li>
-            <li>Cole no arquivo firebase-config.js.</li>
-          </ol>
-        </article>
-        <article class="panel">
-          <h3>Categorias personalizadas</h3>
-          <form id="categoryForm">
-            <input id="newCategory" placeholder="Nova categoria">
-            <button class="primary" type="submit">Adicionar categoria</button>
-          </form>
-          <div id="categoryTags" class="tags"></div>
-        </article>
+        <section class="grid two">
+          <article class="panel">
+            <h3>Categorias personalizadas</h3>
+            <form id="categoryForm">
+              <input id="newCategory" placeholder="Nova categoria">
+              <button class="primary" type="submit">Adicionar</button>
+            </form>
+            <div id="categoryTags" class="tags"></div>
+          </article>
+          <article class="panel">
+            <h3>Configurações do app</h3>
+            <label class="check"><input id="privacyMode" type="checkbox"> Modo privacidade: esconder valores</label>
+            <button class="ghost" id="sampleDataBtn">Inserir dados de exemplo</button>
+          </article>
+        </section>
       </section>
     </section>
   </main>
