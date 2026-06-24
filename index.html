@@ -1,1 +1,126 @@
-<html><head><link rel='stylesheet' href='style.css'><script src='https://cdn.jsdelivr.net/npm/chart.js'></script></head><body><h1>R💰 Ramalho Finance Ultimate</h1><input id='desc'><input id='valor' type='number'><select id='tipo'><option>receita</option><option>despesa</option></select><button onclick='add()'>Adicionar</button><h2 id='saldo'></h2><ul id='lista'></ul><canvas id='grafico'></canvas><script src='app.js'></script></body></html>
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="theme-color" content="#0f172a" />
+  <meta name="description" content="Ramalho Finance Pro V3 - aplicativo financeiro pessoal futurista." />
+  <link rel="manifest" href="manifest.json" />
+  <link rel="stylesheet" href="style.css" />
+  <title>R💰 Ramalho Finance Pro V3</title>
+</head>
+<body>
+  <div class="animated-bg"></div>
+
+  <main class="app-shell">
+    <header class="hero glass">
+      <div>
+        <p class="eyebrow">R💰 Finance App</p>
+        <h1>Ramalho Finance Pro V3</h1>
+        <p>Controle financeiro pessoal com histórico mensal, metas, recorrências, backup e visual futurista.</p>
+      </div>
+      <div class="hero-actions">
+        <button class="ghost" id="themeToggle">🌙 Tema</button>
+        <button class="primary" id="newMonthBtn">Fechar mês</button>
+      </div>
+    </header>
+
+    <section class="dashboard">
+      <article class="metric glass">
+        <span>Receitas</span>
+        <strong id="incomeTotal">R$ 0,00</strong>
+      </article>
+      <article class="metric glass">
+        <span>Despesas</span>
+        <strong id="expenseTotal">R$ 0,00</strong>
+      </article>
+      <article class="metric glass">
+        <span>Saldo atual</span>
+        <strong id="balanceTotal">R$ 0,00</strong>
+      </article>
+      <article class="metric glass">
+        <span>Economia</span>
+        <strong id="savingRate">0%</strong>
+      </article>
+    </section>
+
+    <section class="grid-2">
+      <form class="panel glass" id="transactionForm">
+        <h2>Nova movimentação</h2>
+        <label>Descrição<input id="description" required placeholder="Ex: Salário, mercado, ônibus" /></label>
+        <label>Valor<input id="amount" required type="number" min="0" step="0.01" placeholder="R$ 0,00" /></label>
+        <label>Tipo
+          <select id="type">
+            <option value="income">Receita</option>
+            <option value="expense">Despesa</option>
+          </select>
+        </label>
+        <label>Categoria
+          <select id="category">
+            <option>Salário</option>
+            <option>Freelance</option>
+            <option>Alimentação</option>
+            <option>Transporte</option>
+            <option>Moradia</option>
+            <option>Educação</option>
+            <option>Saúde</option>
+            <option>Lazer</option>
+            <option>Assinaturas</option>
+            <option>Outros</option>
+          </select>
+        </label>
+        <label class="check"><input type="checkbox" id="recurring" /> Repetir automaticamente todo mês</label>
+        <button class="primary" type="submit">Adicionar</button>
+      </form>
+
+      <section class="panel glass">
+        <h2>Meta financeira</h2>
+        <label>Nome da meta<input id="goalName" placeholder="Ex: Notebook" /></label>
+        <label>Valor da meta<input id="goalAmount" type="number" min="0" step="0.01" placeholder="R$ 0,00" /></label>
+        <button class="primary" id="saveGoal">Salvar meta</button>
+        <div class="progress-box">
+          <div class="progress-label"><span id="goalLabel">Sem meta definida</span><span id="goalPercent">0%</span></div>
+          <div class="progress"><div id="goalBar"></div></div>
+        </div>
+        <p class="insight" id="smartInsight">Cadastre receitas e despesas para receber insights.</p>
+      </section>
+    </section>
+
+    <section class="grid-2">
+      <section class="panel glass">
+        <h2>Resumo por categoria</h2>
+        <canvas id="categoryChart" height="220"></canvas>
+      </section>
+      <section class="panel glass">
+        <h2>Evolução mensal</h2>
+        <canvas id="monthChart" height="220"></canvas>
+      </section>
+    </section>
+
+    <section class="panel glass">
+      <div class="section-head">
+        <h2>Movimentações do mês</h2>
+        <div class="actions-row">
+          <button class="ghost" id="exportCsv">Exportar CSV</button>
+          <button class="ghost" id="backupJson">Backup JSON</button>
+          <label class="file-button">Restaurar JSON<input type="file" id="restoreJson" accept="application/json" /></label>
+        </div>
+      </div>
+      <div class="table-wrap">
+        <table>
+          <thead><tr><th>Data</th><th>Descrição</th><th>Categoria</th><th>Tipo</th><th>Valor</th><th></th></tr></thead>
+          <tbody id="transactionTable"></tbody>
+        </table>
+      </div>
+    </section>
+
+    <section class="panel glass">
+      <h2>Histórico de meses</h2>
+      <div id="historyList" class="history-list"></div>
+    </section>
+  </main>
+
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+  <script src="app.js"></script>
+</body>
+</html>

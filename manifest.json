@@ -1,1 +1,10 @@
-{"name":"Ramalho Finance"}
+{
+  "name": "Ramalho Finance Pro V3",
+  "short_name": "R💰 Finance",
+  "start_url": "./",
+  "display": "standalone",
+  "background_color": "#0f172a",
+  "theme_color": "#0f172a",
+  "description": "Aplicativo financeiro pessoal futurista.",
+  "icons": []
+}
