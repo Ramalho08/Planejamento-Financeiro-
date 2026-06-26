@@ -1,49 +1,34 @@
 <!doctype html><html lang="pt-BR"><head>
 <meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
-<meta name="theme-color" content="#050816">
-<title>R💰 Ramalho Finance Ultimate V7</title>
+<title>R💰 Ramalho Finance Ultimate V8</title>
 <link rel="manifest" href="manifest.json"><link rel="stylesheet" href="style.css">
 <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
-</head><body>
-<canvas id="bg"></canvas>
-<main class="shell">
-<aside class="side">
-<div class="brand"><div class="logo">R💰</div><div><h1>Ramalho Finance</h1><span>Ultimate V7</span></div></div>
+</head><body><canvas id="bg"></canvas>
+<main class="shell"><aside class="side">
+<div class="brand"><div class="logo">R💰</div><div><h1>Ramalho Finance</h1><span>Ultimate V8</span></div></div>
 <nav>
-<button class="nav on" data-p="dash">Dashboard</button>
-<button class="nav" data-p="wallets">Carteiras</button>
-<button class="nav" data-p="txs">Movimentações</button>
-<button class="nav" data-p="cards">Cartões</button>
-<button class="nav" data-p="invest">Investimentos</button>
-<button class="nav" data-p="goals">Metas</button>
-<button class="nav" data-p="ai">Assistente</button>
+<button class="nav on" data-p="dash">Dashboard</button><button class="nav" data-p="wallets">Carteiras</button>
+<button class="nav" data-p="txs">Movimentações</button><button class="nav" data-p="cards">Cartões</button>
+<button class="nav" data-p="budgets">Orçamentos</button><button class="nav" data-p="invest">Investimentos</button>
+<button class="nav" data-p="goals">Metas</button><button class="nav" data-p="ai">Assistente</button>
 <button class="nav" data-p="reports">Relatórios</button>
-</nav>
-<div class="profile"><b>Modo local</b><small>Firebase depois</small></div>
-</aside>
-
-<section class="main">
-<header class="top"><div><h2 id="title">Dashboard</h2><p id="date"></p></div><div><button id="install" class="ghost">Instalar</button><button id="theme" class="ghost">Tema</button></div></header>
+</nav><div class="profile"><b>Modo local</b><small>Firebase depois</small></div></aside>
+<section class="main"><header class="top"><div><h2 id="title">Dashboard</h2><p id="date"></p></div><div><button id="install" class="ghost">Instalar</button><button id="theme" class="ghost">Tema</button><button id="privacy" class="ghost">Privacidade</button></div></header>
 
 <section id="dash" class="page on">
 <div class="hero"><div><span>Patrimônio total</span><h1 id="net">R$ 0,00</h1><p id="insight">Cadastre dados para ativar análises.</p></div><div class="score"><b id="score">0</b><small>score</small></div></div>
-<div class="metrics">
-<div class="metric good"><span>Receitas</span><b id="income">R$ 0,00</b></div>
-<div class="metric bad"><span>Despesas</span><b id="expense">R$ 0,00</b></div>
-<div class="metric"><span>Cartões</span><b id="debt">R$ 0,00</b></div>
-<div class="metric"><span>Investimentos</span><b id="invTotal">R$ 0,00</b></div>
-<div class="metric"><span>Economia</span><b id="saveRate">0%</b></div>
-<div class="metric"><span>Projeção 12m</span><b id="proj">R$ 0,00</b></div>
-</div>
-<div class="grid"><div class="panel"><h3>Fluxo</h3><canvas id="flow"></canvas></div><div class="panel"><h3>Categorias</h3><canvas id="catChart"></canvas></div></div>
-<div class="grid"><div class="panel"><h3>Alertas</h3><div id="alerts"></div></div><div class="panel"><h3>Carteiras</h3><div id="walletMini"></div></div></div>
+<div class="metrics"><div class="metric good"><span>Receitas</span><b id="income">R$0</b></div><div class="metric bad"><span>Despesas</span><b id="expense">R$0</b></div><div class="metric"><span>Cartões</span><b id="cardDebt">R$0</b></div><div class="metric"><span>Investimentos</span><b id="invTotal">R$0</b></div><div class="metric"><span>Economia</span><b id="saveRate">0%</b></div><div class="metric"><span>Projeção 12m</span><b id="proj">R$0</b></div></div>
+<div class="grid"><div class="panel"><h3>Fluxo financeiro</h3><canvas id="flow"></canvas></div><div class="panel"><h3>Categorias</h3><canvas id="catChart"></canvas><div id="bars"></div></div></div>
+<div class="grid"><div class="panel"><h3>Alertas</h3><div id="alerts"></div></div><div class="panel"><h3>Próximos vencimentos</h3><div id="dueSoon"></div></div></div>
 </section>
 
-<section id="wallets" class="page"><div class="grid"><div class="panel"><h3>Nova carteira</h3><form id="walletForm"><input id="walletName" placeholder="Nome"><select id="walletType"><option>Banco</option><option>Pix</option><option>Dinheiro</option><option>Poupança</option></select><input id="walletBalance" type="number" step="0.01" placeholder="Saldo"><button class="primary">Adicionar</button></form></div><div class="panel"><h3>Carteiras</h3><div id="walletList"></div></div></div></section>
+<section id="wallets" class="page"><div class="grid"><div class="panel"><h3>Nova carteira</h3><form id="walletForm"><input id="walletName" placeholder="Nome" required><select id="walletType"><option>Banco</option><option>Pix</option><option>Dinheiro</option><option>Poupança</option></select><input id="walletBalance" type="number" step="0.01" placeholder="Saldo"><button class="primary">Adicionar</button></form></div><div class="panel"><h3>Transferência</h3><form id="transferForm"><select id="fromWallet"></select><select id="toWallet"></select><input id="transferAmount" type="number" step="0.01" placeholder="Valor"><button class="primary">Transferir</button></form></div></div><div class="panel"><h3>Carteiras</h3><div id="walletList"></div></div></section>
 
-<section id="txs" class="page"><div class="grid"><div class="panel"><h3>Nova movimentação</h3><form id="txForm"><input id="desc" placeholder="Descrição"><input id="amount" type="number" step="0.01" placeholder="Valor"><select id="type"><option value="income">Receita</option><option value="expense">Despesa</option></select><select id="category"></select><select id="walletSel"></select><label><input id="recurring" type="checkbox"> Recorrente</label><button class="primary">Adicionar</button></form></div><div class="panel"><h3>Filtros</h3><input id="search" placeholder="Pesquisar"><select id="filter"><option value="all">Tudo</option><option value="income">Receitas</option><option value="expense">Despesas</option></select></div></div><div class="panel"><h3>Histórico</h3><div id="txList"></div></div></section>
+<section id="txs" class="page"><div class="grid"><div class="panel"><h3>Nova movimentação</h3><form id="txForm"><input id="desc" placeholder="Descrição"><input id="amount" type="number" step="0.01" placeholder="Valor"><select id="type"><option value="income">Receita</option><option value="expense">Despesa</option></select><select id="category"></select><select id="walletSel"></select><input id="dueDate" type="date"><label><input id="recurring" type="checkbox"> Recorrente</label><button class="primary">Adicionar</button></form></div><div class="panel"><h3>Filtros</h3><input id="search" placeholder="Pesquisar"><select id="filter"><option value="all">Tudo</option><option value="income">Receitas</option><option value="expense">Despesas</option></select><select id="filterCat"><option value="all">Todas categorias</option></select></div></div><div class="panel"><h3>Histórico</h3><div id="txList"></div></div></section>
 
-<section id="cards" class="page"><div class="grid"><div class="panel"><h3>Novo cartão</h3><form id="cardForm"><input id="cardName" placeholder="Nome"><input id="cardLimit" type="number" step="0.01" placeholder="Limite"><input id="cardDue" type="number" placeholder="Vencimento"><button class="primary">Adicionar</button></form></div><div class="panel"><h3>Compra parcelada</h3><form id="parcelForm"><input id="parcelDesc" placeholder="Descrição"><input id="parcelAmount" type="number" step="0.01" placeholder="Total"><input id="parcelCount" type="number" placeholder="Parcelas"><select id="parcelCard"></select><button class="primary">Lançar</button></form></div></div><div class="panel"><h3>Cartões</h3><div id="cardList"></div></div></section>
+<section id="cards" class="page"><div class="grid"><div class="panel"><h3>Novo cartão</h3><form id="cardForm"><input id="cardName" placeholder="Nome"><input id="cardLimit" type="number" step="0.01" placeholder="Limite"><input id="cardDue" type="number" placeholder="Vencimento"><button class="primary">Adicionar</button></form></div><div class="panel"><h3>Compra parcelada</h3><form id="parcelForm"><input id="parcelDesc" placeholder="Descrição"><input id="parcelAmount" type="number" step="0.01" placeholder="Total"><input id="parcelCount" type="number" placeholder="Parcelas"><select id="parcelCard"></select><button class="primary">Lançar</button></form></div></div><div class="panel"><h3>Faturas</h3><div id="cardList"></div></div></section>
+
+<section id="budgets" class="page"><div class="grid"><div class="panel"><h3>Novo orçamento</h3><form id="budgetForm"><select id="budgetCat"></select><input id="budgetLimit" type="number" step="0.01" placeholder="Limite"><button class="primary">Salvar</button></form></div><div class="panel"><h3>Orçamentos</h3><div id="budgetList"></div></div></div></section>
 
 <section id="invest" class="page"><div class="grid"><div class="panel"><h3>Novo investimento</h3><form id="invForm"><input id="invName" placeholder="Nome"><select id="invType"><option>Renda fixa</option><option>Ações</option><option>FIIs</option><option>Cripto</option></select><input id="invAmount" type="number" step="0.01" placeholder="Valor"><input id="invRate" type="number" step="0.01" placeholder="% ao mês"><button class="primary">Adicionar</button></form></div><div class="panel"><h3>Projeção</h3><p id="invProjection"></p></div></div><div class="panel"><h3>Investimentos</h3><div id="invList"></div></div></section>
 
@@ -51,6 +36,5 @@
 
 <section id="ai" class="page"><div class="panel"><h3>Assistente financeiro local</h3><button id="plan" class="primary">Gerar plano do mês</button><div id="planText"></div></div></section>
 
-<section id="reports" class="page"><div class="panel tools"><button id="csv" class="primary">Exportar CSV</button><button id="backup" class="primary">Backup JSON</button><label class="file">Restaurar<input id="restore" type="file" accept="application/json"></label><button id="print" class="ghost">PDF / Imprimir</button><button id="sample" class="ghost">Dados exemplo</button><button id="clear" class="danger">Limpar</button></div><div class="panel"><h3>Resumo mensal</h3><div id="summary"></div></div></section>
-</section></main>
-<script src="app.js"></script></body></html>
+<section id="reports" class="page"><div class="panel tools"><button id="csv" class="primary">Exportar CSV</button><button id="backup" class="primary">Backup JSON</button><label class="file">Restaurar<input id="restore" type="file" accept="application/json"></label><button id="printBtn" class="ghost">PDF / Imprimir</button><button id="sample" class="ghost">Dados exemplo</button><button id="clear" class="danger">Limpar</button></div><div class="panel"><h3>Resumo mensal</h3><div id="summary"></div></div></section>
+</section></main><script src="app.js"></script></body></html>

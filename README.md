@@ -1,6 +1,3 @@
-# R💰 Ramalho Finance Ultimate V7
+# R💰 Ramalho Finance Ultimate V8
 
-Versão com carteiras, cartões, parcelamento, investimentos, metas, assistente local, PWA, relatórios e dashboard futurista.
-
-## GitHub Pages
-Suba os arquivos e ative Settings > Pages.
+Inclui carteiras, transferências, cartões, parcelamento, orçamentos, investimentos, metas, assistente local, relatórios, backup, PWA e dashboard futurista.
