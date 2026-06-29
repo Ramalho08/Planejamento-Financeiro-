@@ -1,20 +1,24 @@
-# R💰 Ramalho Finance V14.2 Ultimate Force Update
+# R💰 Ramalho Finance V14.3 NO CACHE ROOT
 
-Nova versão para forçar atualização no GitHub Pages.
+Esta versão foi feita especificamente para resolver o problema de o GitHub Pages continuar mostrando a V13.
 
-## Como saber se atualizou
-Na tela inicial deve aparecer: **V14.2 Ultimate Force Update**
+## Diferença desta versão
+- Arquivos ficam direto na raiz do ZIP.
+- Não tem service-worker.
+- Remove cache antigo automaticamente.
+- Mostra na tela: V14.3 NO CACHE ROOT.
 
-## Arquivos importantes
-- index.html
-- style.css
-- app-v142_force_2026.js
-- service-worker-v142_force_2026.js
-- manifest.json
-- assets/icon.svg
+## Como subir pelo celular
+1. No GitHub, apague os arquivos antigos do repositório.
+2. Envie estes arquivos direto na raiz:
+   - index.html
+   - style.css
+   - app-v14-3-no-cache.js
+   - manifest.json
+   - assets/icon.svg
+   - .nojekyll
+3. Em Settings > Pages, use main / root.
+4. Abra o site com ?v=143nocache no final.
 
-## Se ainda aparecer versão antiga
-1. Apague todos os arquivos antigos do repositório.
-2. Envie estes novos arquivos na raiz.
-3. Abra o site com `?v142_force_2026` no final do link.
-4. Dentro do app, vá em Mais > Forçar atualização local.
+Exemplo:
+https://SEU-USUARIO.github.io/SEU-REPOSITORIO/?v=143nocache

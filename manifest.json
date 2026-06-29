@@ -1,7 +1,7 @@
 {
-  "name": "Ramalho Finance V14.2 Ultimate Force Update",
+  "name": "Ramalho Finance V14.3 NO CACHE ROOT",
   "short_name": "R💰 Finance",
-  "start_url": "./index.html?v142_force_2026",
+  "start_url": "./index.html?v=143nocache",
   "display": "standalone",
   "background_color": "#050816",
   "theme_color": "#050816",
