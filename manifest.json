@@ -1,7 +1,7 @@
 {
-  "name": "Ramalho Finance V17.6.1 FIX",
+  "name": "Ramalho Finance V17.5 Deluxe Local",
   "short_name": "R💰 Finance",
-  "start_url": "./index.html?v=1761fix",
+  "start_url": "./index.html?v=175deluxe",
   "display": "standalone",
   "background_color": "#050816",
   "theme_color": "#050816",
