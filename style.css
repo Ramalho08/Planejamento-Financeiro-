@@ -1,0 +1,47 @@
+*{box-sizing:border-box}
+body{margin:0;font-family:Inter,Segoe UI,Arial,sans-serif;background:#050816;color:#eaf6ff;min-height:100vh;overflow-x:hidden}
+#bg{position:fixed;inset:0;width:100%;height:100%;z-index:0;background:radial-gradient(circle at 20% 10%,#312e81,transparent 30%),radial-gradient(circle at 80% 0%,#164e63,transparent 30%),#050816}
+.hidden{display:none!important}
+button,input,select{font:inherit}
+button{border:1px solid rgba(148,163,184,.25);border-radius:14px;padding:12px 14px;background:linear-gradient(135deg,#0891b2,#7c3aed);color:white;cursor:pointer}
+input,select{width:100%;padding:12px;margin:8px 0;border-radius:14px;border:1px solid rgba(148,163,184,.25);background:rgba(15,23,42,.7);color:#eaf6ff}
+.login-screen{position:relative;z-index:2;min-height:100vh;display:grid;place-items:center;padding:20px}
+.login-card{width:min(440px,100%);padding:32px;border:1px solid rgba(148,163,184,.25);border-radius:28px;background:rgba(15,23,42,.82);backdrop-filter:blur(22px);text-align:center;box-shadow:0 0 80px rgba(34,211,238,.25)}
+.logo{width:58px;height:58px;border-radius:20px;display:grid;place-items:center;background:linear-gradient(135deg,#22d3ee,#8b5cf6);font-size:22px;box-shadow:0 0 45px rgba(34,211,238,.4)}
+.logo.big{width:100px;height:100px;margin:auto;font-size:44px;border-radius:30px}
+.app{position:relative;z-index:1;display:grid;grid-template-columns:290px 1fr;min-height:100vh}
+.sidebar{padding:24px;background:rgba(2,6,23,.78);border-right:1px solid rgba(148,163,184,.25);backdrop-filter:blur(20px);display:flex;flex-direction:column;gap:24px}
+.brand{display:flex;align-items:center;gap:12px}
+.brand h1{font-size:18px;margin:0}.brand span,.topbar p{color:#94a3b8;font-size:12px}
+nav{display:grid;gap:10px}
+nav button{background:rgba(15,23,42,.62);text-align:left}
+nav button.active{background:linear-gradient(135deg,#0891b2,#7c3aed)}
+.danger{background:rgba(251,113,133,.18);color:#fb7185}
+#logoutBtn{margin-top:auto}
+.workspace{padding:24px;max-width:1500px;width:100%;margin:auto}
+.topbar{display:flex;justify-content:space-between;align-items:center;margin-bottom:22px;gap:16px}
+.actions,.tools{display:flex;gap:10px;flex-wrap:wrap}
+.ghost{background:rgba(15,23,42,.62)}
+.page{display:none}
+.page.active{display:block}
+.hero,.panel,.metrics article{background:rgba(15,23,42,.78);border:1px solid rgba(148,163,184,.25);border-radius:26px;backdrop-filter:blur(22px);box-shadow:0 20px 70px rgba(0,0,0,.28)}
+.hero{padding:30px;display:flex;justify-content:space-between;align-items:center;background:linear-gradient(135deg,rgba(34,211,238,.2),rgba(139,92,246,.18),rgba(15,23,42,.85))}
+.hero h1{font-size:46px;margin:8px 0}
+.score{width:130px;height:130px;border-radius:50%;border:8px solid rgba(34,211,238,.35);display:grid;place-items:center;text-align:center}
+.score strong{font-size:36px;color:#22d3ee}
+.metrics{display:grid;grid-template-columns:repeat(4,1fr);gap:14px;margin:18px 0}
+.metrics article{padding:18px}
+.metrics span{color:#94a3b8;font-size:12px}
+.metrics strong{display:block;font-size:22px;margin-top:8px}
+.grid{display:grid;grid-template-columns:1fr 1fr;gap:18px}
+.panel{padding:20px;margin-bottom:18px}
+.row{display:flex;justify-content:space-between;gap:12px;align-items:center;background:rgba(15,23,42,.55);border:1px solid rgba(148,163,184,.22);border-radius:16px;padding:12px;margin:8px 0}
+.progress{height:10px;background:rgba(148,163,184,.2);border-radius:30px;overflow:hidden;margin-top:8px}
+.progress span{display:block;height:100%;background:linear-gradient(90deg,#22d3ee,#22c55e)}
+.alert{padding:12px;border:1px solid rgba(148,163,184,.22);border-radius:14px;background:rgba(15,23,42,.55);margin:8px 0}
+.file input{display:none}
+body.light{background:#f8fafc;color:#0f172a}
+body.light #bg{background:linear-gradient(135deg,#e0f2fe,#f5f3ff)}
+body.light .hero,body.light .panel,body.light .metrics article,body.light .sidebar,body.light .login-card{background:rgba(255,255,255,.86);color:#0f172a}
+@media(max-width:900px){.app{grid-template-columns:1fr}.grid{grid-template-columns:1fr}.metrics{grid-template-columns:repeat(2,1fr)}nav{grid-template-columns:repeat(2,1fr)}.hero{flex-direction:column;align-items:flex-start}.hero h1{font-size:34px}}
+@media(max-width:560px){.workspace,.sidebar{padding:14px}.metrics{grid-template-columns:1fr}.row{flex-direction:column;align-items:flex-start}}

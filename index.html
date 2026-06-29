@@ -1,13 +1,200 @@
 <!doctype html>
 <html lang="pt-BR">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <meta name="theme-color" content="#050816" />
-    <title>R💰 Ramalho Finance Enterprise</title>
-  </head>
-  <body>
-    <div id="root"></div>
-    <script type="module" src="/src/main.tsx"></script>
-  </body>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="theme-color" content="#050816">
+<title>R💰 Ramalho Finance V11.1</title>
+<link rel="manifest" href="manifest.json">
+<link rel="stylesheet" href="style.css">
+<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+</head>
+<body>
+<canvas id="bg"></canvas>
+
+<section id="login" class="login-screen">
+  <div class="login-card">
+    <div class="logo big">R💰</div>
+    <h1>Ramalho Finance</h1>
+    <p>Enterprise V11.1 — pronto para GitHub Pages</p>
+    <button id="enterBtn" class="primary">Entrar no app</button>
+  </div>
+</section>
+
+<main id="app" class="app hidden">
+  <aside class="sidebar">
+    <div class="brand">
+      <div class="logo">R💰</div>
+      <div>
+        <h1>Ramalho Finance</h1>
+        <span>Enterprise V11.1</span>
+      </div>
+    </div>
+
+    <nav>
+      <button class="nav active" data-page="dashboard">Dashboard</button>
+      <button class="nav" data-page="finance">Financeiro</button>
+      <button class="nav" data-page="cards">Cartões</button>
+      <button class="nav" data-page="investments">Investimentos</button>
+      <button class="nav" data-page="goals">Metas</button>
+      <button class="nav" data-page="assistant">Assistente</button>
+      <button class="nav" data-page="reports">Relatórios</button>
+    </nav>
+
+    <button id="logoutBtn" class="danger">Sair</button>
+  </aside>
+
+  <section class="workspace">
+    <header class="topbar">
+      <div>
+        <h2 id="pageTitle">Dashboard</h2>
+        <p id="today"></p>
+      </div>
+      <div class="actions">
+        <button id="sampleBtn" class="ghost">Dados exemplo</button>
+        <button id="themeBtn" class="ghost">Tema</button>
+      </div>
+    </header>
+
+    <section id="dashboard" class="page active">
+      <article class="hero">
+        <div>
+          <span>Patrimônio total</span>
+          <h1 id="netWorth">R$ 0,00</h1>
+          <p id="mainInsight">Cadastre seus dados para receber análises.</p>
+        </div>
+        <div class="score">
+          <strong id="score">0</strong>
+          <small>score</small>
+        </div>
+      </article>
+
+      <section class="metrics">
+        <article><span>Receitas</span><strong id="incomeTotal">R$ 0,00</strong></article>
+        <article><span>Despesas</span><strong id="expenseTotal">R$ 0,00</strong></article>
+        <article><span>Saldo</span><strong id="balanceTotal">R$ 0,00</strong></article>
+        <article><span>Investimentos</span><strong id="investmentTotal">R$ 0,00</strong></article>
+      </section>
+
+      <section class="grid">
+        <article class="panel">
+          <h3>Fluxo financeiro</h3>
+          <canvas id="flowChart"></canvas>
+        </article>
+        <article class="panel">
+          <h3>Gastos por categoria</h3>
+          <canvas id="categoryChart"></canvas>
+        </article>
+      </section>
+
+      <article class="panel">
+        <h3>Alertas inteligentes</h3>
+        <div id="alerts"></div>
+      </article>
+    </section>
+
+    <section id="finance" class="page">
+      <section class="grid">
+        <article class="panel">
+          <h3>Nova carteira</h3>
+          <input id="walletName" placeholder="Nome da carteira">
+          <input id="walletBalance" type="number" placeholder="Saldo inicial">
+          <button id="addWalletBtn" class="primary">Adicionar carteira</button>
+
+          <h3>Nova movimentação</h3>
+          <input id="txDescription" placeholder="Descrição">
+          <input id="txAmount" type="number" placeholder="Valor">
+          <select id="txType">
+            <option value="income">Receita</option>
+            <option value="expense">Despesa</option>
+          </select>
+          <input id="txCategory" placeholder="Categoria" value="Outros">
+          <button id="addTransactionBtn" class="primary">Adicionar movimentação</button>
+        </article>
+
+        <article class="panel">
+          <h3>Carteiras</h3>
+          <div id="walletList"></div>
+
+          <h3>Histórico</h3>
+          <div id="transactionList"></div>
+        </article>
+      </section>
+    </section>
+
+    <section id="cards" class="page">
+      <section class="grid">
+        <article class="panel">
+          <h3>Novo cartão</h3>
+          <input id="cardName" placeholder="Nome do cartão">
+          <input id="cardLimit" type="number" placeholder="Limite">
+          <input id="cardDue" type="number" placeholder="Dia de vencimento">
+          <button id="addCardBtn" class="primary">Adicionar cartão</button>
+        </article>
+        <article class="panel">
+          <h3>Cartões</h3>
+          <div id="cardList"></div>
+        </article>
+      </section>
+    </section>
+
+    <section id="investments" class="page">
+      <section class="grid">
+        <article class="panel">
+          <h3>Novo investimento</h3>
+          <input id="investmentName" placeholder="Nome do investimento">
+          <input id="investmentAmount" type="number" placeholder="Valor atual">
+          <input id="investmentRate" type="number" placeholder="% ao mês">
+          <button id="addInvestmentBtn" class="primary">Adicionar investimento</button>
+        </article>
+        <article class="panel">
+          <h3>Investimentos</h3>
+          <p id="investmentProjection"></p>
+          <div id="investmentList"></div>
+        </article>
+      </section>
+    </section>
+
+    <section id="goals" class="page">
+      <section class="grid">
+        <article class="panel">
+          <h3>Nova meta</h3>
+          <input id="goalName" placeholder="Nome da meta">
+          <input id="goalTarget" type="number" placeholder="Valor alvo">
+          <input id="goalSaved" type="number" placeholder="Valor guardado">
+          <button id="addGoalBtn" class="primary">Criar meta</button>
+        </article>
+        <article class="panel">
+          <h3>Metas</h3>
+          <div id="goalList"></div>
+        </article>
+      </section>
+    </section>
+
+    <section id="assistant" class="page">
+      <article class="panel">
+        <h3>Assistente financeiro local</h3>
+        <div id="assistantTips"></div>
+      </article>
+    </section>
+
+    <section id="reports" class="page">
+      <article class="panel tools">
+        <button id="exportCsvBtn" class="primary">Exportar CSV</button>
+        <button id="backupBtn" class="primary">Backup JSON</button>
+        <label class="file">Restaurar backup<input id="restoreInput" type="file" accept="application/json"></label>
+        <button id="printBtn" class="ghost">PDF / Imprimir</button>
+        <button id="clearBtn" class="danger">Limpar tudo</button>
+      </article>
+
+      <article class="panel">
+        <h3>Resumo mensal</h3>
+        <div id="monthlySummary"></div>
+      </article>
+    </section>
+  </section>
+</main>
+
+<script src="app.js"></script>
+</body>
 </html>
