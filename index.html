@@ -1,26 +1,28 @@
 <!doctype html><html lang="pt-BR"><head>
 <meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
 <title>R💰 Ramalho Finance V15 Professional</title>
-<link rel="manifest" href="./manifest.json?v=15pro">
-<link rel="stylesheet" href="./style.css?v=15pro">
+<link rel="manifest" href="./manifest.json?v=16ai">
+<link rel="stylesheet" href="./style.css?v=16ai">
 </head><body>
 <div class="bg"></div>
 <main>
-<header class="top"><div><strong>R💰 Ramalho Finance</strong><small>V15 Ultimate Professional — NO CACHE ROOT</small></div><button id="theme">Tema</button></header>
+<header class="top"><div><strong>R💰 Ramalho Finance</strong><small>V16 Ultimate AI Edition — NO CACHE ROOT</small></div><button id="theme">Tema</button></header>
 <section id="errorBox" class="error hidden"></section>
 
 <section id="dashboard" class="page active">
-<article class="hero"><div class="badge">V15 Ultimate Professional</div><span id="greeting">Olá, Guilherme</span><h1 id="net">R$ 0,00</h1><p id="insight">Painel Executivo carregado com segurança.</p><div class="scoregrid"><div><b id="score">0</b><small>score</small></div><div><b id="saving">0%</b><small>economia</small></div><div><b id="risk">Baixo</b><small>risco</small></div></div></article>
+<article class="hero"><div class="badge">V16 Ultimate AI Edition</div><span id="greeting">Olá, Guilherme</span><h1 id="net">R$ 0,00</h1><p id="insight">Finance AI 3.0 carregado com segurança.</p><div class="scoregrid"><div><b id="score">0</b><small>score</small></div><div><b id="saving">0%</b><small>economia</small></div><div><b id="risk">Baixo</b><small>risco</small></div></div></article>
 <section class="exec"><article><span>Disponível</span><b id="available">R$0</b></article><article><span>Previsão 12m</span><b id="growth">R$0</b></article><article><span>Cartão</span><b id="cardPct">0%</b></article><article><span>Reserva</span><b id="reserveMonths">0 meses</b></article></section>
 <section class="cards"><article><span>Receitas</span><b id="income">R$0</b></article><article><span>Despesas</span><b id="expense">R$0</b></article><article><span>Saldo</span><b id="balance">R$0</b></article><article><span>Reserva ideal</span><b id="reserve">R$0</b></article><article><span>Carteiras</span><b id="walletTotal">R$0</b></article><article><span>Investimentos</span><b id="investTotal">R$0</b></article><article><span>Cartões</span><b id="cardUsed">R$0</b></article><article><span>Recorrências</span><b id="recurring">R$0</b></article></section>
-<section class="panel premium"><h3>Finance AI — recomendações</h3><div id="smart"></div></section>
+<section class="panel premium"><h3>Finance AI 3.0 — diagnóstico</h3><div id="smart"></div></section>
+<section class="panel"><h3>Previsão inteligente</h3><div id="prediction"></div></section>
+<section class="panel"><h3>Maiores gastos</h3><div id="topExpenses"></div></section>
 <section class="panel"><h3>Fluxo financeiro</h3><div id="bars"></div></section>
 <section class="panel"><h3>Gastos por categoria</h3><div id="catBars"></div></section>
 <section class="panel"><h3>Evolução mensal</h3><div id="monthCompare"></div></section>
 <section class="panel"><h3>Central de notificações</h3><div id="alerts"></div></section>
 </section>
 
-<section id="launch" class="page"><section class="panel"><h3>Novo lançamento</h3><input id="desc" placeholder="Descrição"><input id="amount" type="number" placeholder="Valor"><select id="type"><option value="income">Receita</option><option value="expense">Despesa</option></select><select id="cat"><option>Alimentação</option><option>Transporte</option><option>Moradia</option><option>Educação</option><option>Saúde</option><option>Lazer</option><option>Cartão</option><option>Investimentos</option><option>Pix</option><option>Assinaturas</option><option>Salário</option><option>Outros</option></select><input id="due" type="date"><label><input id="recur" type="checkbox"> Recorrente / assinatura</label><button id="addTx" class="primary">Adicionar lançamento</button></section><section class="panel"><h3>Histórico do mês</h3><input id="search" placeholder="Pesquisar lançamento"><button id="sortTx">Ordenar por valor</button><div id="txList"></div></section></section>
+<section id="launch" class="page"><section class="panel"><h3>Novo lançamento</h3><input id="desc" placeholder="Descrição"><input id="amount" type="number" placeholder="Valor"><select id="type"><option value="income">Receita</option><option value="expense">Despesa</option></select><select id="cat"><option>Alimentação</option><option>Transporte</option><option>Moradia</option><option>Educação</option><option>Saúde</option><option>Lazer</option><option>Cartão</option><option>Investimentos</option><option>Pix</option><option>Assinaturas</option><option>Salário</option><option>Outros</option></select><input id="due" type="date"><label><input id="recur" type="checkbox"> Recorrente / assinatura</label><button id="addTx" class="primary">Adicionar lançamento</button></section><section class="panel"><h3>Histórico do mês</h3><input id="search" placeholder="Pesquisar lançamento"><select id="filterType"><option value="all">Tudo</option><option value="income">Receitas</option><option value="expense">Despesas</option></select><select id="filterCat"><option value="all">Todas categorias</option></select><button id="sortTx">Ordenar por valor</button><div id="txList"></div></section></section>
 
 <section id="wallets" class="page"><section class="panel"><h3>Carteira / Conta</h3><input id="walletName" placeholder="Ex: Nubank, Pix, Dinheiro"><input id="walletBalance" type="number" placeholder="Saldo"><button id="addWallet" class="primary">Adicionar carteira</button></section><section class="panel"><h3>Transferência</h3><select id="fromWallet"></select><select id="toWallet"></select><input id="transferAmount" type="number" placeholder="Valor"><button id="transfer" class="primary">Transferir</button></section><section class="panel"><h3>Minhas carteiras</h3><div id="walletList"></div></section></section>
 
@@ -29,11 +31,11 @@
 <section id="calendar" class="page"><section class="panel"><h3>Calendário financeiro</h3><div id="calendarList"></div></section></section>
 <section id="goals" class="page"><section class="panel"><h3>Meta financeira</h3><input id="goalName" placeholder="Nome"><input id="goalTarget" type="number" placeholder="Valor alvo"><input id="goalSaved" type="number" placeholder="Guardado"><button id="addGoal" class="primary">Criar meta</button></section><section class="panel"><h3>Simulador de meta</h3><input id="monthlySave" type="number" placeholder="Guardar por mês"><button id="simulateGoal">Simular</button><p id="goalSim"></p></section><section class="panel"><h3>Metas</h3><div id="goalList"></div></section></section>
 <section id="investments" class="page"><section class="panel"><h3>Investimento</h3><input id="investName" placeholder="Ex: CDB, Tesouro, Bitcoin"><input id="investAmount" type="number" placeholder="Valor atual"><input id="investRate" type="number" placeholder="% ao mês"><button id="addInvest" class="primary">Adicionar investimento</button></section><section class="panel"><h3>Simulador de patrimônio</h3><input id="wealthYears" type="number" placeholder="Anos"><input id="wealthMonthly" type="number" placeholder="Aporte mensal"><button id="simulateWealth">Simular patrimônio</button><p id="wealthSim"></p></section><section class="panel"><h3>Investimentos</h3><div id="investList"></div></section></section>
-<section id="assistant" class="page"><section class="panel"><h3>Finance AI 2.0</h3><button id="generatePlan" class="primary">Gerar relatório inteligente</button><div id="plan"></div></section><section class="panel"><h3>Checklist de saúde financeira</h3><div id="checklist"></div></section></section>
+<section id="assistant" class="page"><section class="panel"><h3>Finance AI 3.0</h3><button id="generatePlan" class="primary">Gerar relatório inteligente AI</button><div id="plan"></div></section><section class="panel"><h3>Checklist de saúde financeira</h3><div id="checklist"></div></section></section>
 <section id="reports" class="page"><section class="panel actions"><button id="sample" class="primary">Inserir dados exemplo</button><button id="exportCsv">Exportar CSV</button><button id="backup">Backup JSON</button><label class="file">Restaurar JSON<input id="restore" type="file" accept="application/json"></label><button id="printBtn">PDF / Imprimir</button><button id="resetCache">Forçar atualização local</button><button id="clear" class="danger">Limpar tudo</button></section><section class="panel"><h3>Resumo mensal</h3><div id="summary"></div></section></section>
 
 <nav class="bottom"><button class="tab active" data-page="dashboard">🏠<span>Início</span></button><button class="tab" data-page="launch">➕<span>Lançar</span></button><button class="tab" data-page="wallets">💼<span>Contas</span></button><button class="tab" data-page="cardsPage">💳<span>Cartões</span></button><button class="tab" data-page="assistant">🤖<span>IA</span></button><button class="tab" data-page="reports">📄<span>Mais</span></button></nav>
 <button id="menuBtn" class="fab">☰</button><section id="sheet" class="sheet hidden"><button class="sheet-link" data-page="calendar">📅 Calendário</button><button class="sheet-link" data-page="goals">🎯 Metas</button><button class="sheet-link" data-page="investments">📈 Investimentos</button><button class="sheet-link" data-page="reports">📄 Relatórios</button></section>
 </main>
-<script src="./app-v15-professional.js?v=15pro"></script>
+<script src="./app-v16-ai.js?v=16ai"></script>
 </body></html>
