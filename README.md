@@ -1,26 +1,33 @@
-# R💰 Ramalho Finance V13 Ultimate SAFE
+# R💰 Ramalho Finance V14 Ultimate Modular SAFE
 
-Versão avançada, mas feita para não dar tela branca no GitHub Pages/celular.
+Versão modular, avançada e compatível com GitHub Pages pelo celular.
 
-## O que tem
+## Segurança contra tela branca
+- Sem React
+- Sem npm
+- Sem dependências externas
+- JavaScript em módulos simples
+- Tratamento de erro visível na tela
+- Compatível com GitHub Pages
+
+## Recursos
 - Dashboard futurista
+- Carteiras/contas
+- Transferências entre carteiras
 - Lançamentos
-- Carteiras
-- Transferências
 - Cartões
-- Parcelamentos
+- Compras parceladas
 - Calendário financeiro
 - Metas
 - Investimentos
+- Simulador de patrimônio
 - Assistente financeiro local
 - Checklist financeiro
+- Comparação mensal
 - Relatórios
-- CSV
+- Exportação CSV
 - Backup JSON
-- PWA
+- PWA instalável
 
-## Como usar pelo celular
-1. Baixe e extraia o ZIP.
-2. Envie os arquivos da pasta `ramalho-finance` para o GitHub.
-3. Ative GitHub Pages em Settings > Pages.
-4. Se o site antigo aparecer, limpe o cache do navegador ou aguarde alguns minutos.
+## Como publicar pelo celular
+Envie a pasta `ramalho-finance` para o GitHub Pages.

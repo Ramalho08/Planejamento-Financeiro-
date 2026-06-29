@@ -4,18 +4,17 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1">
 <meta name="theme-color" content="#050816">
-<title>R💰 Ramalho Finance V13 Ultimate</title>
+<title>R💰 Ramalho Finance V14 Ultimate</title>
 <link rel="manifest" href="./manifest.json">
 <link rel="stylesheet" href="./style.css">
 </head>
 <body>
 <div class="bg"></div>
-
 <main id="app">
   <header class="top">
     <div>
       <strong>R💰 Ramalho Finance</strong>
-      <small>V13 Ultimate SAFE — GitHub Pages</small>
+      <small>V14 Ultimate Modular SAFE</small>
     </div>
     <button id="themeBtn">Tema</button>
   </header>
@@ -26,7 +25,7 @@
     <article class="hero">
       <span>Patrimônio total</span>
       <h1 id="netWorth">R$ 0,00</h1>
-      <p id="mainInsight">Painel financeiro carregado com segurança.</p>
+      <p id="mainInsight">Painel carregado com segurança.</p>
       <div class="score-grid">
         <div><b id="score">0</b><small>score</small></div>
         <div><b id="savingRate">0%</b><small>economia</small></div>
@@ -41,6 +40,8 @@
       <article><span>Reserva ideal</span><b id="reserveTotal">R$ 0,00</b></article>
       <article><span>Carteiras</span><b id="walletTotal">R$ 0,00</b></article>
       <article><span>Investimentos</span><b id="investmentTotal">R$ 0,00</b></article>
+      <article><span>Cartões</span><b id="cardUsedTotal">R$ 0,00</b></article>
+      <article><span>Recorrências</span><b id="recurringTotal">R$ 0,00</b></article>
     </section>
 
     <section class="panel">
@@ -51,6 +52,11 @@
     <section class="panel">
       <h3>Gastos por categoria</h3>
       <div id="categoryBars"></div>
+    </section>
+
+    <section class="panel">
+      <h3>Comparação mensal</h3>
+      <div id="monthCompare"></div>
     </section>
 
     <section class="panel">
@@ -69,16 +75,9 @@
         <option value="expense">Despesa</option>
       </select>
       <select id="txCategory">
-        <option>Alimentação</option>
-        <option>Transporte</option>
-        <option>Moradia</option>
-        <option>Educação</option>
-        <option>Saúde</option>
-        <option>Lazer</option>
-        <option>Cartão</option>
-        <option>Investimentos</option>
-        <option>Pix</option>
-        <option>Outros</option>
+        <option>Alimentação</option><option>Transporte</option><option>Moradia</option>
+        <option>Educação</option><option>Saúde</option><option>Lazer</option>
+        <option>Cartão</option><option>Investimentos</option><option>Pix</option><option>Assinaturas</option><option>Outros</option>
       </select>
       <input id="txDue" type="date">
       <label><input id="txRecurring" type="checkbox"> Recorrente</label>
@@ -88,6 +87,7 @@
     <section class="panel">
       <h3>Histórico do mês</h3>
       <input id="searchTx" placeholder="Pesquisar">
+      <button id="sortTxBtn">Ordenar por valor</button>
       <div id="transactionList"></div>
     </section>
   </section>
@@ -108,10 +108,7 @@
       <button id="transferBtn" class="primary">Transferir</button>
     </section>
 
-    <section class="panel">
-      <h3>Minhas carteiras</h3>
-      <div id="walletList"></div>
-    </section>
+    <section class="panel"><h3>Minhas carteiras</h3><div id="walletList"></div></section>
   </section>
 
   <section id="cardsPage" class="page">
@@ -132,17 +129,11 @@
       <button id="addParcelBtn" class="primary">Lançar parcelas</button>
     </section>
 
-    <section class="panel">
-      <h3>Cartões e faturas</h3>
-      <div id="cardList"></div>
-    </section>
+    <section class="panel"><h3>Cartões e faturas</h3><div id="cardList"></div></section>
   </section>
 
   <section id="calendar" class="page">
-    <section class="panel">
-      <h3>Calendário financeiro</h3>
-      <div id="calendarList"></div>
-    </section>
+    <section class="panel"><h3>Calendário financeiro</h3><div id="calendarList"></div></section>
   </section>
 
   <section id="goals" class="page">
@@ -161,10 +152,7 @@
       <p id="goalSimulation"></p>
     </section>
 
-    <section class="panel">
-      <h3>Metas</h3>
-      <div id="goalList"></div>
-    </section>
+    <section class="panel"><h3>Metas</h3><div id="goalList"></div></section>
   </section>
 
   <section id="investments" class="page">
@@ -184,10 +172,7 @@
       <p id="wealthSimulation"></p>
     </section>
 
-    <section class="panel">
-      <h3>Investimentos</h3>
-      <div id="investmentList"></div>
-    </section>
+    <section class="panel"><h3>Investimentos</h3><div id="investmentList"></div></section>
   </section>
 
   <section id="assistant" class="page">
@@ -212,11 +197,7 @@
       <button id="printBtn">PDF / Imprimir</button>
       <button id="clearBtn" class="danger">Limpar tudo</button>
     </section>
-
-    <section class="panel">
-      <h3>Resumo mensal</h3>
-      <div id="monthlySummary"></div>
-    </section>
+    <section class="panel"><h3>Resumo mensal</h3><div id="monthlySummary"></div></section>
   </section>
 
   <nav class="bottom">
@@ -237,6 +218,9 @@
   </section>
 </main>
 
-<script src="./app.js"></script>
+<script src="./js/store.js"></script>
+<script src="./js/ui.js"></script>
+<script src="./js/actions.js"></script>
+<script src="./js/app.js"></script>
 </body>
 </html>

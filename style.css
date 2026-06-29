@@ -7,10 +7,13 @@ button{border:1px solid var(--border);border-radius:14px;padding:12px 14px;backg
 input,select{width:100%;padding:13px;margin:7px 0;border-radius:14px;border:1px solid var(--border);background:rgba(15,23,42,.74);color:var(--text)}
 .top{position:sticky;top:0;z-index:5;display:flex;justify-content:space-between;align-items:center;padding:14px 16px;background:rgba(2,6,23,.86);backdrop-filter:blur(18px);border-bottom:1px solid var(--border)}
 .top small{display:block;color:var(--muted);font-size:11px}
-.page{display:none;padding:16px;max-width:960px;margin:auto}
+.page{display:none;padding:16px;max-width:980px;margin:auto}
 .page.active{display:block}
 .hero,.panel,.cards article{background:var(--panel);border:1px solid var(--border);border-radius:24px;backdrop-filter:blur(18px);box-shadow:0 20px 60px rgba(0,0,0,.25)}
-.hero{padding:22px;background:linear-gradient(135deg,rgba(34,211,238,.18),rgba(139,92,246,.16),rgba(15,23,42,.88))}
+.hero{position:relative;overflow:hidden;padding:22px;background:linear-gradient(135deg,rgba(34,211,238,.18),rgba(139,92,246,.16),rgba(15,23,42,.88))}
+.hero:before{content:"";position:absolute;inset:-80%;background:conic-gradient(transparent,var(--cyan),transparent,var(--purple),transparent);opacity:.1;animation:spin 12s linear infinite}
+.hero>*{position:relative}
+@keyframes spin{to{transform:rotate(360deg)}}
 .hero span,.cards span{color:var(--muted);font-size:12px}
 .hero h1{font-size:34px;margin:8px 0}
 .score-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:10px;margin-top:15px}
@@ -45,5 +48,5 @@ input,select{width:100%;padding:13px;margin:7px 0;border-radius:14px;border:1px 
 body.light{--bg:#f8fafc;--panel:rgba(255,255,255,.9);--text:#0f172a;--muted:#475569;--border:rgba(15,23,42,.14)}
 body.light .bg{background:linear-gradient(135deg,#e0f2fe,#f5f3ff)}
 body.light .top,body.light .bottom{background:rgba(255,255,255,.9)}
-@media(min-width:900px){.cards{grid-template-columns:repeat(3,1fr)}}
+@media(min-width:900px){.cards{grid-template-columns:repeat(4,1fr)}}
 @media(max-width:420px){.bottom{grid-template-columns:repeat(3,1fr)}body{padding-bottom:132px}}
