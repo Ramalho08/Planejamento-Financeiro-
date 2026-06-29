@@ -1,19 +1,26 @@
-# R💰 Ramalho Finance V12.1 FIX
+# R💰 Ramalho Finance V13 Ultimate SAFE
 
-Correção para tela branca no GitHub Pages/celular.
+Versão avançada, mas feita para não dar tela branca no GitHub Pages/celular.
 
-## Importante
-Antes de testar esta versão, no celular:
-1. Abra o site publicado.
-2. Toque nos três pontinhos do navegador.
-3. Atualize a página.
-4. Se continuar antigo, limpe cache/dados do site ou mude o nome do repositório/URL.
+## O que tem
+- Dashboard futurista
+- Lançamentos
+- Carteiras
+- Transferências
+- Cartões
+- Parcelamentos
+- Calendário financeiro
+- Metas
+- Investimentos
+- Assistente financeiro local
+- Checklist financeiro
+- Relatórios
+- CSV
+- Backup JSON
+- PWA
 
-## Publicar pelo celular
-Envie estes arquivos para o GitHub Pages:
-- index.html
-- style.css
-- app.js
-- manifest.json
-- service-worker.js
-- assets/icon.svg
+## Como usar pelo celular
+1. Baixe e extraia o ZIP.
+2. Envie os arquivos da pasta `ramalho-finance` para o GitHub.
+3. Ative GitHub Pages em Settings > Pages.
+4. Se o site antigo aparecer, limpe o cache do navegador ou aguarde alguns minutos.

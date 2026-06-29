@@ -4,7 +4,7 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1">
 <meta name="theme-color" content="#050816">
-<title>R💰 Ramalho Finance V12.1 FIX</title>
+<title>R💰 Ramalho Finance V13 Ultimate</title>
 <link rel="manifest" href="./manifest.json">
 <link rel="stylesheet" href="./style.css">
 </head>
@@ -15,7 +15,7 @@
   <header class="top">
     <div>
       <strong>R💰 Ramalho Finance</strong>
-      <small>V12.1 FIX — GitHub Pages</small>
+      <small>V13 Ultimate SAFE — GitHub Pages</small>
     </div>
     <button id="themeBtn">Tema</button>
   </header>
@@ -26,7 +26,7 @@
     <article class="hero">
       <span>Patrimônio total</span>
       <h1 id="netWorth">R$ 0,00</h1>
-      <p id="mainInsight">Aplicativo carregado com segurança.</p>
+      <p id="mainInsight">Painel financeiro carregado com segurança.</p>
       <div class="score-grid">
         <div><b id="score">0</b><small>score</small></div>
         <div><b id="savingRate">0%</b><small>economia</small></div>
@@ -39,11 +39,18 @@
       <article><span>Despesas</span><b id="expenseTotal">R$ 0,00</b></article>
       <article><span>Saldo</span><b id="balanceTotal">R$ 0,00</b></article>
       <article><span>Reserva ideal</span><b id="reserveTotal">R$ 0,00</b></article>
+      <article><span>Carteiras</span><b id="walletTotal">R$ 0,00</b></article>
+      <article><span>Investimentos</span><b id="investmentTotal">R$ 0,00</b></article>
     </section>
 
     <section class="panel">
-      <h3>Gráfico financeiro</h3>
+      <h3>Fluxo financeiro</h3>
       <div id="bars"></div>
+    </section>
+
+    <section class="panel">
+      <h3>Gastos por categoria</h3>
+      <div id="categoryBars"></div>
     </section>
 
     <section class="panel">
@@ -70,14 +77,17 @@
         <option>Lazer</option>
         <option>Cartão</option>
         <option>Investimentos</option>
+        <option>Pix</option>
         <option>Outros</option>
       </select>
+      <input id="txDue" type="date">
       <label><input id="txRecurring" type="checkbox"> Recorrente</label>
       <button id="addTxBtn" class="primary">Adicionar lançamento</button>
     </section>
 
     <section class="panel">
-      <h3>Histórico</h3>
+      <h3>Histórico do mês</h3>
+      <input id="searchTx" placeholder="Pesquisar">
       <div id="transactionList"></div>
     </section>
   </section>
@@ -85,10 +95,19 @@
   <section id="wallets" class="page">
     <section class="panel">
       <h3>Carteira / Conta</h3>
-      <input id="walletName" placeholder="Nome da carteira">
+      <input id="walletName" placeholder="Ex: Nubank, Pix, Dinheiro">
       <input id="walletBalance" type="number" placeholder="Saldo">
       <button id="addWalletBtn" class="primary">Adicionar carteira</button>
     </section>
+
+    <section class="panel">
+      <h3>Transferência entre carteiras</h3>
+      <select id="fromWallet"></select>
+      <select id="toWallet"></select>
+      <input id="transferAmount" type="number" placeholder="Valor">
+      <button id="transferBtn" class="primary">Transferir</button>
+    </section>
+
     <section class="panel">
       <h3>Minhas carteiras</h3>
       <div id="walletList"></div>
@@ -103,9 +122,26 @@
       <input id="cardDue" type="number" placeholder="Dia de vencimento">
       <button id="addCardBtn" class="primary">Adicionar cartão</button>
     </section>
+
     <section class="panel">
-      <h3>Cartões</h3>
+      <h3>Compra parcelada</h3>
+      <input id="parcelDesc" placeholder="Descrição da compra">
+      <input id="parcelTotal" type="number" placeholder="Valor total">
+      <input id="parcelCount" type="number" placeholder="Quantidade de parcelas">
+      <select id="parcelCard"></select>
+      <button id="addParcelBtn" class="primary">Lançar parcelas</button>
+    </section>
+
+    <section class="panel">
+      <h3>Cartões e faturas</h3>
       <div id="cardList"></div>
+    </section>
+  </section>
+
+  <section id="calendar" class="page">
+    <section class="panel">
+      <h3>Calendário financeiro</h3>
+      <div id="calendarList"></div>
     </section>
   </section>
 
@@ -117,21 +153,66 @@
       <input id="goalSaved" type="number" placeholder="Valor guardado">
       <button id="addGoalBtn" class="primary">Criar meta</button>
     </section>
+
+    <section class="panel">
+      <h3>Simulador de meta</h3>
+      <input id="monthlySave" type="number" placeholder="Quanto consegue guardar por mês?">
+      <button id="simulateGoalBtn">Simular</button>
+      <p id="goalSimulation"></p>
+    </section>
+
     <section class="panel">
       <h3>Metas</h3>
       <div id="goalList"></div>
     </section>
   </section>
 
-  <section id="reports" class="page">
+  <section id="investments" class="page">
     <section class="panel">
-      <h3>Relatórios e backup</h3>
+      <h3>Investimento</h3>
+      <input id="investmentName" placeholder="Ex: CDB, Tesouro, Bitcoin">
+      <input id="investmentAmount" type="number" placeholder="Valor atual">
+      <input id="investmentRate" type="number" placeholder="% ao mês estimado">
+      <button id="addInvestmentBtn" class="primary">Adicionar investimento</button>
+    </section>
+
+    <section class="panel">
+      <h3>Simulador de patrimônio</h3>
+      <input id="wealthYears" type="number" placeholder="Anos">
+      <input id="wealthMonthly" type="number" placeholder="Aporte mensal">
+      <button id="simulateWealthBtn">Simular patrimônio</button>
+      <p id="wealthSimulation"></p>
+    </section>
+
+    <section class="panel">
+      <h3>Investimentos</h3>
+      <div id="investmentList"></div>
+    </section>
+  </section>
+
+  <section id="assistant" class="page">
+    <section class="panel">
+      <h3>Assistente financeiro</h3>
+      <button id="generatePlanBtn" class="primary">Gerar plano do mês</button>
+      <div id="assistantPlan"></div>
+    </section>
+
+    <section class="panel">
+      <h3>Checklist de saúde financeira</h3>
+      <div id="healthChecklist"></div>
+    </section>
+  </section>
+
+  <section id="reports" class="page">
+    <section class="panel action-panel">
       <button id="sampleBtn" class="primary">Inserir dados exemplo</button>
       <button id="exportCsvBtn">Exportar CSV</button>
       <button id="backupBtn">Backup JSON</button>
       <label class="file">Restaurar JSON<input id="restoreInput" type="file" accept="application/json"></label>
+      <button id="printBtn">PDF / Imprimir</button>
       <button id="clearBtn" class="danger">Limpar tudo</button>
     </section>
+
     <section class="panel">
       <h3>Resumo mensal</h3>
       <div id="monthlySummary"></div>
@@ -143,9 +224,17 @@
     <button class="tab" data-page="launch">➕<span>Lançar</span></button>
     <button class="tab" data-page="wallets">💼<span>Contas</span></button>
     <button class="tab" data-page="cardsPage">💳<span>Cartões</span></button>
-    <button class="tab" data-page="goals">🎯<span>Metas</span></button>
+    <button class="tab" data-page="assistant">🤖<span>IA</span></button>
     <button class="tab" data-page="reports">📄<span>Mais</span></button>
   </nav>
+
+  <button id="menuBtn" class="fab">☰</button>
+  <section id="menuSheet" class="sheet hidden">
+    <button class="sheet-link" data-page="calendar">📅 Calendário</button>
+    <button class="sheet-link" data-page="goals">🎯 Metas</button>
+    <button class="sheet-link" data-page="investments">📈 Investimentos</button>
+    <button class="sheet-link" data-page="reports">📄 Relatórios</button>
+  </section>
 </main>
 
 <script src="./app.js"></script>
