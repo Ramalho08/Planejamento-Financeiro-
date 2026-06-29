@@ -1,24 +1,23 @@
-# R💰 Ramalho Finance V17.6 Deluxe Plus
+# R💰 Ramalho Finance V17.6.1 FIX
 
-Versão local melhorada antes do Firebase.
+Correção da V17.6 onde os botões não funcionavam.
 
 ## Subir na raiz
 - index.html
 - style.css
-- app-v17-6-plus.js
+- app-v17-6-1-fix.js
 - firebase-config.js
 - manifest.json
 - .nojekyll
 - assets/icon.svg
 
 Abra com:
-?v=176plus
+?v=1761fix
 
-## Novidades
-- Planejamento mensal
-- Categorias personalizadas
-- PIN local simples
+Mantém:
 - Orçamentos
 - Assinaturas
-- Cloud Prep preservado
+- Cloud Prep
+- Planejamento mensal
+- Categorias personalizadas
 - Padrão NO CACHE ROOT

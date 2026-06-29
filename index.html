@@ -1,16 +1,16 @@
 <!doctype html><html lang="pt-BR"><head>
 <meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
 <title>R💰 Ramalho Finance V15 Professional</title>
-<link rel="manifest" href="./manifest.json?v=176plus">
-<link rel="stylesheet" href="./style.css?v=176plus">
+<link rel="manifest" href="./manifest.json?v=1761fix">
+<link rel="stylesheet" href="./style.css?v=1761fix">
 </head><body>
 <div class="bg"></div>
 <main>
-<header class="top"><div><strong>R💰 Ramalho Finance</strong><small>V17.6 Deluxe Plus — NO CACHE ROOT</small></div><button id="theme">Tema</button></header>
+<header class="top"><div><strong>R💰 Ramalho Finance</strong><small>V17.6.1 FIX — NO CACHE ROOT</small></div><button id="theme">Tema</button></header>
 <section id="errorBox" class="error hidden"></section>
 
 <section id="dashboard" class="page active">
-<article class="hero"><div class="badge">V17.6 Deluxe Plus</div><span id="greeting">Olá, Guilherme</span><h1 id="net">R$ 0,00</h1><p id="insight">Deluxe Plus carregado com segurança.</p><div class="scoregrid"><div><b id="score">0</b><small>score</small></div><div><b id="saving">0%</b><small>economia</small></div><div><b id="risk">Baixo</b><small>risco</small></div></div></article>
+<article class="hero"><div class="badge">V17.6.1 FIX</div><span id="greeting">Olá, Guilherme</span><h1 id="net">R$ 0,00</h1><p id="insight">V17.6.1 corrigida e carregada com segurança.</p><div class="scoregrid"><div><b id="score">0</b><small>score</small></div><div><b id="saving">0%</b><small>economia</small></div><div><b id="risk">Baixo</b><small>risco</small></div></div></article>
 <section class="exec"><article><span>Disponível</span><b id="available">R$0</b></article><article><span>Previsão 12m</span><b id="growth">R$0</b></article><article><span>Cartão</span><b id="cardPct">0%</b></article><article><span>Reserva</span><b id="reserveMonths">0 meses</b></article></section>
 <section class="cards"><article><span>Receitas</span><b id="income">R$0</b></article><article><span>Despesas</span><b id="expense">R$0</b></article><article><span>Saldo</span><b id="balance">R$0</b></article><article><span>Reserva ideal</span><b id="reserve">R$0</b></article><article><span>Carteiras</span><b id="walletTotal">R$0</b></article><article><span>Investimentos</span><b id="investTotal">R$0</b></article><article><span>Cartões</span><b id="cardUsed">R$0</b></article><article><span>Recorrências</span><b id="recurring">R$0</b></article></section>
 <section class="panel premium"><h3>Finance AI 3.0 — diagnóstico</h3><div id="smart"></div></section>
@@ -35,33 +35,14 @@
 
 
 <section id="planning" class="page">
-<section class="panel premium"><h3>Planejamento mensal</h3><div class="alert">Monte um plano simples para o mês e acompanhe prioridades.</div></section>
-<section class="panel">
-<h3>Novo item do plano</h3>
-<input id="planTitle" placeholder="Ex: Guardar dinheiro, pagar conta, evitar cartão">
-<select id="planPriority"><option>Alta</option><option>Média</option><option>Baixa</option></select>
-<button id="addPlanItem" class="primary">Adicionar ao plano</button>
-</section>
+<section class="panel premium"><h3>Planejamento mensal</h3><div class="alert">Lista simples de prioridades do mês.</div></section>
+<section class="panel"><input id="planTitle" placeholder="Ex: guardar dinheiro, pagar conta, evitar cartão"><select id="planPriority"><option>Alta</option><option>Média</option><option>Baixa</option></select><button id="addPlanItem" class="primary">Adicionar ao plano</button></section>
 <section class="panel"><h3>Meu plano</h3><div id="planList"></div></section>
 </section>
-
 <section id="categories" class="page">
-<section class="panel premium"><h3>Categorias personalizadas</h3><div class="alert">Crie suas próprias categorias para organizar melhor seus gastos.</div></section>
-<section class="panel">
-<input id="newCategory" placeholder="Nova categoria">
-<button id="addCategory" class="primary">Adicionar categoria</button>
-</section>
+<section class="panel premium"><h3>Categorias personalizadas</h3><div class="alert">Cadastre categorias extras para organizar seus lançamentos.</div></section>
+<section class="panel"><input id="newCategory" placeholder="Nova categoria"><button id="addCategory" class="primary">Adicionar categoria</button></section>
 <section class="panel"><h3>Categorias</h3><div id="categoryList"></div></section>
-</section>
-
-<section id="security" class="page">
-<section class="panel premium"><h3>Segurança local</h3><div class="alert">Crie um PIN local simples para proteger a abertura do app neste dispositivo. Antes do Firebase, isso é apenas proteção local.</div></section>
-<section class="panel">
-<input id="pinInput" type="password" inputmode="numeric" maxlength="6" placeholder="PIN de 4 a 6 dígitos">
-<button id="savePin" class="primary">Salvar PIN local</button>
-<button id="removePin" class="danger">Remover PIN</button>
-<div id="pinStatus"></div>
-</section>
 </section>
 
 <section id="cloud" class="page">
@@ -84,8 +65,8 @@
 <section id="reports" class="page"><section class="panel actions"><button id="sample" class="primary">Inserir dados exemplo</button><button id="exportCsv">Exportar CSV</button><button id="backup">Backup JSON</button><label class="file">Restaurar JSON<input id="restore" type="file" accept="application/json"></label><button id="printBtn">PDF / Imprimir</button><button id="resetCache">Forçar atualização local</button><button id="clear" class="danger">Limpar tudo</button></section><section class="panel"><h3>Resumo mensal</h3><div id="summary"></div></section></section>
 
 <nav class="bottom"><button class="tab active" data-page="dashboard">🏠<span>Início</span></button><button class="tab" data-page="launch">➕<span>Lançar</span></button><button class="tab" data-page="wallets">💼<span>Contas</span></button><button class="tab" data-page="cardsPage">💳<span>Cartões</span></button><button class="tab" data-page="assistant">🤖<span>IA</span></button><button class="tab" data-page="reports">📄<span>Mais</span></button></nav>
-<button id="menuBtn" class="fab">☰</button><section id="sheet" class="sheet hidden"><button class="sheet-link" data-page="cloud">☁️ Cloud Prep</button><button class="sheet-link" data-page="planning">🧭 Planejamento</button><button class="sheet-link" data-page="categories">🏷️ Categorias</button><button class="sheet-link" data-page="security">🔒 Segurança</button><button class="sheet-link" data-page="budgets">📊 Orçamentos</button><button class="sheet-link" data-page="subscriptions">🔁 Assinaturas</button><button class="sheet-link" data-page="calendar">📅 Calendário</button><button class="sheet-link" data-page="goals">🎯 Metas</button><button class="sheet-link" data-page="investments">📈 Investimentos</button><button class="sheet-link" data-page="reports">📄 Relatórios</button></section>
+<button id="menuBtn" class="fab">☰</button><section id="sheet" class="sheet hidden"><button class="sheet-link" data-page="cloud">☁️ Cloud Prep</button><button class="sheet-link" data-page="planning">🧭 Planejamento</button><button class="sheet-link" data-page="categories">🏷️ Categorias</button><button class="sheet-link" data-page="budgets">📊 Orçamentos</button><button class="sheet-link" data-page="subscriptions">🔁 Assinaturas</button><button class="sheet-link" data-page="calendar">📅 Calendário</button><button class="sheet-link" data-page="goals">🎯 Metas</button><button class="sheet-link" data-page="investments">📈 Investimentos</button><button class="sheet-link" data-page="reports">📄 Relatórios</button></section>
 </main>
 <script src="./firebase-config.js?v=17cloud"></script>
-<script src="./app-v17-6-plus.js?v=176plus"></script>
+<script src="./app-v17-6-1-fix.js?v=1761fix"></script>
 </body></html>
