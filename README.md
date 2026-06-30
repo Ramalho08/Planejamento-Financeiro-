@@ -1,32 +1,21 @@
-# R💰 Ramalho Finance V17 Ultimate Premium
+# R💰 Ramalho Finance V17.1 Ultimate Premium Plus
 
-Baseada na V16.5 Ultimate Stable, mantendo a estabilidade dos botões.
-
-## Padrão
-- NO CACHE ROOT
-- Sem React
-- Sem npm
-- Sem service worker
-- Um único JS estável
-- Compatível com GitHub Pages pelo celular
+Baseada na V17 Premium, mantendo a estabilidade da V16.5.
 
 ## Arquivos na raiz
 - index.html
 - style.css
-- app-v17-premium.js
+- app-v17-1-premium-plus.js
 - manifest.json
 - .nojekyll
 - assets/icon.svg
 
 Abra com:
-?v=17premium
+?v=171plus
 
 ## Novidades
-- Central Financeira Premium
-- Analytics Premium
-- Fluxo diário do mês
-- Ranking de categorias
-- Simulador futuro
-- Insights de metas
-- Finance AI melhorado
-- Mantém orçamentos, assinaturas, planejamento, categorias, metas e investimentos
+- Dívidas e compromissos
+- Bens e patrimônio
+- Planejamento anual
+- Premium Plus no dashboard
+- Patrimônio líquido considerando bens e dívidas

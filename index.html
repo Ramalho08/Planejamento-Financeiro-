@@ -4,9 +4,9 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1">
 <meta name="theme-color" content="#050816">
-<title>R💰 Ramalho Finance V17 Ultimate Premium</title>
-<link rel="manifest" href="./manifest.json?v=17premium">
-<link rel="stylesheet" href="./style.css?v=17premium">
+<title>R💰 Ramalho Finance V17.1 Ultimate Premium Plus</title>
+<link rel="manifest" href="./manifest.json?v=171plus">
+<link rel="stylesheet" href="./style.css?v=171plus">
 </head>
 <body>
 <div class="bg"></div>
@@ -15,7 +15,7 @@
 <header class="top">
   <div>
     <strong>R💰 Ramalho Finance</strong>
-    <small>V17 Ultimate Premium — NO CACHE ROOT</small>
+    <small>V17.1 Ultimate Premium Plus — NO CACHE ROOT</small>
   </div>
   <button id="themeBtn">Tema</button>
 </header>
@@ -24,10 +24,10 @@
 
 <section id="dashboard" class="page active">
   <article class="hero">
-    <div class="badge">V17 Ultimate Premium</div>
+    <div class="badge">V17.1 Ultimate Premium Plus</div>
     <span id="greeting">Olá</span>
     <h1 id="netWorth">R$ 0,00</h1>
-    <p id="mainInsight">Base Premium carregada com segurança.</p>
+    <p id="mainInsight">Premium Plus carregado com segurança.</p>
     <div class="scoregrid">
       <div><b id="score">0</b><small>score</small></div>
       <div><b id="savingRate">0%</b><small>economia</small></div>
@@ -59,7 +59,7 @@
   <section class="panel"><h3>Maiores gastos</h3><div id="topExpenses"></div></section>
   <section class="panel"><h3>Comparação mensal</h3><div id="monthlyCompare"></div></section>
   <section class="panel"><h3>Alertas</h3><div id="alerts"></div></section>
-  <section class="panel premium"><h3>Central Financeira Premium</h3><div id="premiumCenter"></div></section>
+  <section class="panel premium"><h3>Central Financeira Premium</h3><div id="premiumCenter"></div></section><section class="panel premium"><h3>Premium Plus</h3><div id="premiumPlus"></div></section>
   <section class="panel"><h3>Fluxo diário do mês</h3><div id="dailyFlow"></div></section>
   <section class="panel"><h3>Metas e progresso</h3><div id="goalInsights"></div></section>
 </section>
@@ -224,6 +224,22 @@
   <section class="panel"><h3>Ranking de categorias</h3><div id="categoryRanking"></div></section>
 </section>
 
+
+<section id="debts" class="page">
+<section class="panel premium"><h3>Dívidas e compromissos</h3><div class="alert">Controle dívidas, empréstimos e valores pendentes.</div></section>
+<section class="panel"><input id="debtName" placeholder="Nome da dívida"><input id="debtTotal" type="number" placeholder="Valor total"><input id="debtPaid" type="number" placeholder="Valor já pago"><input id="debtDue" type="date"><button id="addDebtBtn" class="primary">Adicionar dívida</button></section>
+<section class="panel"><h3>Minhas dívidas</h3><div id="debtList"></div></section>
+</section>
+<section id="assetsPage" class="page">
+<section class="panel premium"><h3>Bens e patrimônio</h3><div class="alert">Registre bens como celular, notebook, moto e outros valores.</div></section>
+<section class="panel"><input id="assetName" placeholder="Nome do bem"><input id="assetValue" type="number" placeholder="Valor estimado"><select id="assetType"><option>Eletrônico</option><option>Veículo</option><option>Reserva</option><option>Outro</option></select><button id="addAssetBtn" class="primary">Adicionar bem</button></section>
+<section class="panel"><h3>Meus bens</h3><div id="assetList"></div></section>
+</section>
+<section id="annual" class="page">
+<section class="panel premium"><h3>Planejamento anual</h3><div class="alert">Projeção simples do ano com base no saldo mensal atual.</div></section>
+<section class="panel"><h3>Projeção anual</h3><div id="annualProjection"></div></section>
+<section class="panel"><h3>Plano de crescimento</h3><div id="growthPlan"></div></section>
+</section>
 <section id="cloud" class="page">
   <section class="panel premium"><h3>Cloud Prep</h3><div class="alert">Preparado para Firebase futuramente. Nesta versão, tudo continua local e estável.</div></section>
   <section class="panel">
@@ -258,7 +274,7 @@
 
 <button id="menuBtn" class="fab">☰</button>
 <section id="sheet" class="sheet hidden">
-  <button class="sheet-link" data-page="analytics">📈 Analytics</button><button class="sheet-link" data-page="budgets">📊 Orçamentos</button>
+  <button class="sheet-link" data-page="analytics">📈 Analytics</button><button class="sheet-link" data-page="debts">📉 Dívidas</button><button class="sheet-link" data-page="assetsPage">💎 Bens</button><button class="sheet-link" data-page="annual">📆 Anual</button><button class="sheet-link" data-page="budgets">📊 Orçamentos</button>
   <button class="sheet-link" data-page="subscriptions">🔁 Assinaturas</button>
   <button class="sheet-link" data-page="planning">🧭 Planejamento</button>
   <button class="sheet-link" data-page="categories">🏷️ Categorias</button>
@@ -269,6 +285,6 @@
 </section>
 </main>
 
-<script src="./app-v17-premium.js?v=17premium"></script>
+<script src="./app-v17-1-premium-plus.js?v=171plus"></script>
 </body>
 </html>

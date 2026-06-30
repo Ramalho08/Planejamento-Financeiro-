@@ -69,3 +69,6 @@ body.light .top,body.light .bottom{background:rgba(255,255,255,.92)}
 .rank-number{display:inline-grid;place-items:center;width:28px;height:28px;border-radius:10px;background:rgba(34,211,238,.14);color:var(--cyan);font-weight:800;margin-right:8px}
 .ai-tag{display:inline-block;padding:4px 8px;border-radius:999px;background:rgba(139,92,246,.16);border:1px solid rgba(139,92,246,.35);color:var(--cyan);font-size:11px;margin-bottom:6px}
 @media(min-width:900px){.mini-grid{grid-template-columns:repeat(4,1fr)}}
+
+.status-pill{display:inline-block;padding:5px 9px;border-radius:999px;border:1px solid var(--border);font-size:12px;color:var(--cyan)}
+.soft-card{padding:12px;border:1px solid var(--border);border-radius:16px;background:rgba(15,23,42,.42);margin:8px 0}
