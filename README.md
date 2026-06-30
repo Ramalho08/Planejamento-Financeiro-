@@ -1,25 +1,24 @@
-# R💰 Ramalho Finance V18.2 Full Legacy Restore
+# R💰 Ramalho Finance V18.3 Professional AI Theme
 
-Restaura mais funcionalidades favoritas da V17 dentro da base limpa da V18.
+Melhoria profissional da V18.2 com visual refinado e IA melhorada.
 
 ## Arquivos na raiz
 - index.html
 - style.css
-- app-v18-2-restore.js
+- app-v18-3-professional-ai.js
 - manifest.json
 - .nojekyll
 - assets/icon.svg
 
 Abra com:
-?v=182restore
+?v=183proai
 
-## Restaurado
-- Fontes de renda
-- Taxas/impostos
-- Contas futuras
-- Cartões Elite
-- Metas Pro
-- SAFE Life: metas rápidas, desejos e hábitos
-- AI Coach
-- Central de Exportação
-- Legacy Restore Panel
+## Novidades
+- Tema claro mais bonito em roxo azulado
+- Tema escuro roxo azulado puxado para azul escuro
+- Finance AI Professional
+- Diagnóstico inteligente
+- Plano de ação automático
+- Previsões 30/90/365 dias
+- Oportunidades financeiras
+- Mantém base limpa e funcionalidades restauradas da V17
