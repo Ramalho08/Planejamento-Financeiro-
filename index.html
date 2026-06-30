@@ -4,9 +4,9 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1">
 <meta name="theme-color" content="#050816">
-<title>R💰 Ramalho Finance V17.1 Ultimate Premium Plus</title>
-<link rel="manifest" href="./manifest.json?v=171plus">
-<link rel="stylesheet" href="./style.css?v=171plus">
+<title>R💰 Ramalho Finance V17.2 Premium Ultra</title>
+<link rel="manifest" href="./manifest.json?v=172ultra">
+<link rel="stylesheet" href="./style.css?v=172ultra">
 </head>
 <body>
 <div class="bg"></div>
@@ -15,7 +15,7 @@
 <header class="top">
   <div>
     <strong>R💰 Ramalho Finance</strong>
-    <small>V17.1 Ultimate Premium Plus — NO CACHE ROOT</small>
+    <small>V17.2 Premium Ultra — NO CACHE ROOT</small>
   </div>
   <button id="themeBtn">Tema</button>
 </header>
@@ -24,10 +24,10 @@
 
 <section id="dashboard" class="page active">
   <article class="hero">
-    <div class="badge">V17.1 Ultimate Premium Plus</div>
+    <div class="badge">V17.2 Premium Ultra</div>
     <span id="greeting">Olá</span>
     <h1 id="netWorth">R$ 0,00</h1>
-    <p id="mainInsight">Premium Plus carregado com segurança.</p>
+    <p id="mainInsight">Premium Ultra carregado com segurança.</p>
     <div class="scoregrid">
       <div><b id="score">0</b><small>score</small></div>
       <div><b id="savingRate">0%</b><small>economia</small></div>
@@ -59,7 +59,7 @@
   <section class="panel"><h3>Maiores gastos</h3><div id="topExpenses"></div></section>
   <section class="panel"><h3>Comparação mensal</h3><div id="monthlyCompare"></div></section>
   <section class="panel"><h3>Alertas</h3><div id="alerts"></div></section>
-  <section class="panel premium"><h3>Central Financeira Premium</h3><div id="premiumCenter"></div></section><section class="panel premium"><h3>Premium Plus</h3><div id="premiumPlus"></div></section>
+  <section class="panel premium"><h3>Central Financeira Premium</h3><div id="premiumCenter"></div></section><section class="panel premium"><h3>Premium Plus</h3><div id="premiumPlus"></div></section><section class="panel premium"><h3>Ultra Health</h3><div id="ultraHealth"></div></section>
   <section class="panel"><h3>Fluxo diário do mês</h3><div id="dailyFlow"></div></section>
   <section class="panel"><h3>Metas e progresso</h3><div id="goalInsights"></div></section>
 </section>
@@ -240,6 +240,28 @@
 <section class="panel"><h3>Projeção anual</h3><div id="annualProjection"></div></section>
 <section class="panel"><h3>Plano de crescimento</h3><div id="growthPlan"></div></section>
 </section>
+
+<section id="notifications" class="page">
+<section class="panel premium"><h3>Central de notificações Ultra</h3><div class="alert">Veja alertas importantes, vencimentos, orçamentos estourados e ações recomendadas.</div></section>
+<section class="panel"><h3>Notificações</h3><div id="notificationCenter"></div></section>
+</section>
+
+<section id="timeline" class="page">
+<section class="panel premium"><h3>Linha do tempo financeira</h3><div class="alert">Acompanhe seus lançamentos em ordem cronológica.</div></section>
+<section class="panel"><h3>Histórico completo</h3><div id="timelineList"></div></section>
+</section>
+
+<section id="goalsPro" class="page">
+<section class="panel premium"><h3>Metas Pro</h3><div class="alert">Crie metas com prazo e acompanhe a previsão de conclusão.</div></section>
+<section class="panel">
+<input id="goalProName" placeholder="Nome da meta">
+<input id="goalProTarget" type="number" placeholder="Valor alvo">
+<input id="goalProSaved" type="number" placeholder="Valor guardado">
+<input id="goalProDeadline" type="date">
+<button id="addGoalProBtn" class="primary">Criar meta Pro</button>
+</section>
+<section class="panel"><h3>Minhas metas Pro</h3><div id="goalProList"></div></section>
+</section>
 <section id="cloud" class="page">
   <section class="panel premium"><h3>Cloud Prep</h3><div class="alert">Preparado para Firebase futuramente. Nesta versão, tudo continua local e estável.</div></section>
   <section class="panel">
@@ -274,7 +296,7 @@
 
 <button id="menuBtn" class="fab">☰</button>
 <section id="sheet" class="sheet hidden">
-  <button class="sheet-link" data-page="analytics">📈 Analytics</button><button class="sheet-link" data-page="debts">📉 Dívidas</button><button class="sheet-link" data-page="assetsPage">💎 Bens</button><button class="sheet-link" data-page="annual">📆 Anual</button><button class="sheet-link" data-page="budgets">📊 Orçamentos</button>
+  <button class="sheet-link" data-page="analytics">📈 Analytics</button><button class="sheet-link" data-page="notifications">🔔 Notificações</button><button class="sheet-link" data-page="timeline">🕒 Timeline</button><button class="sheet-link" data-page="goalsPro">🏁 Metas Pro</button><button class="sheet-link" data-page="debts">📉 Dívidas</button><button class="sheet-link" data-page="assetsPage">💎 Bens</button><button class="sheet-link" data-page="annual">📆 Anual</button><button class="sheet-link" data-page="budgets">📊 Orçamentos</button>
   <button class="sheet-link" data-page="subscriptions">🔁 Assinaturas</button>
   <button class="sheet-link" data-page="planning">🧭 Planejamento</button>
   <button class="sheet-link" data-page="categories">🏷️ Categorias</button>
@@ -285,6 +307,6 @@
 </section>
 </main>
 
-<script src="./app-v17-1-premium-plus.js?v=171plus"></script>
+<script src="./app-v17-2-ultra.js?v=172ultra"></script>
 </body>
 </html>

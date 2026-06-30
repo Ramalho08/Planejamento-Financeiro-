@@ -1,21 +1,22 @@
-# R💰 Ramalho Finance V17.1 Ultimate Premium Plus
+# R💰 Ramalho Finance V17.2 Premium Ultra
 
-Baseada na V17 Premium, mantendo a estabilidade da V16.5.
+Baseada na V17.1 Premium Plus.
 
 ## Arquivos na raiz
 - index.html
 - style.css
-- app-v17-1-premium-plus.js
+- app-v17-2-ultra.js
 - manifest.json
 - .nojekyll
 - assets/icon.svg
 
 Abra com:
-?v=171plus
+?v=172ultra
 
 ## Novidades
-- Dívidas e compromissos
-- Bens e patrimônio
-- Planejamento anual
-- Premium Plus no dashboard
-- Patrimônio líquido considerando bens e dívidas
+- Ultra Health
+- Central de notificações Ultra
+- Timeline financeira
+- Metas Pro com prazo
+- Alertas mais inteligentes
+- Relatório Finance AI Ultra
