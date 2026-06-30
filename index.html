@@ -4,16 +4,16 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1">
 <meta name="theme-color" content="#050816">
-<title>R💰 Ramalho Finance V19 Ultimate AI Import</title>
-<link rel="manifest" href="./manifest.json?v=19aiimport">
-<link rel="stylesheet" href="./style.css?v=19aiimport">
+<title>R💰 Ramalho Finance V19.1 AI Import Wizard</title>
+<link rel="manifest" href="./manifest.json?v=191wizard">
+<link rel="stylesheet" href="./style.css?v=191wizard">
 </head>
 <body>
 <div class="bg"></div>
 <header class="top">
   <div>
     <strong>R💰 Ramalho Finance</strong>
-    <small>V19 Ultimate AI Import — NO CACHE ROOT</small>
+    <small>V19.1 AI Import Wizard — NO CACHE ROOT</small>
   </div>
   <button id="themeBtn">Tema</button>
 </header>
@@ -24,7 +24,7 @@
       <span class="badge">V19 Ultimate AI Import</span>
       <p id="greeting">Olá</p>
       <h1 id="netWorth">R$ 0,00</h1>
-      <p id="mainInsight">Ultimate AI Import com PDF, conferência e aprendizado local.</p>
+      <p id="mainInsight">AI Import Wizard com revisão assistida e importação segura.</p>
       <div class="score-grid">
         <div><b id="score">0</b><small>Score</small></div>
         <div><b id="savingRate">0%</b><small>Economia</small></div>
@@ -323,44 +323,34 @@
 </section>
 
 
+
 <section id="extractReader" class="page">
   <section class="panel premium">
-    <h2>V19 Ultimate AI Import</h2>
-    <div class="alert">
-      Importe extratos em PDF, CSV ou TXT. A IA local V19 analisa o texto, identifica lançamentos, calcula totais,
-      procura duplicidades e permite revisar antes de salvar.
-    </div>
+    <h2>V19.1 AI Import Wizard</h2>
+    <div class="alert">Importação assistida: a IA sugere, mas valores altos/suspeitos ficam ignorados até você revisar. Isso evita que valores errados entrem no app.</div>
   </section>
-
   <section class="panel">
-    <h2>Importar extrato</h2>
+    <h2>1. Importar extrato</h2>
     <label class="file">Selecionar PDF/CSV/TXT<input id="extractFile" type="file" accept=".pdf,.csv,.txt,application/pdf,text/csv,text/plain"></label>
     <textarea id="extractPaste" placeholder="Ou cole aqui o texto do extrato..." style="min-height:150px"></textarea>
-    <button id="analyzeExtractBtn" class="primary">Analisar com IA V19</button>
-    <button id="clearExtractBtn">Limpar análise</button>
-    <div class="alert">
-      <b>PDF:</b> nesta versão para GitHub Pages, o app tenta extrair texto de PDFs simples. PDFs escaneados/imagens podem precisar ser copiados como texto ou futuramente usar OCR/IA online.
-    </div>
   </section>
-
   <section class="panel premium">
-    <h2>Conferência Inteligente</h2>
-    <div id="extractAiSummary"></div>
+    <h2>2. Configuração segura</h2>
+    <select id="extractValueMode"><option value="br">Formato brasileiro: 1.234,56</option><option value="us">Formato americano: 1,234.56</option><option value="auto">Detectar automaticamente</option></select>
+    <label class="check"><input id="extractRequireReview" type="checkbox" checked> Exigir revisão para valores acima de R$ 1.000</label>
+    <button id="analyzeExtractBtn" class="primary">Analisar com Wizard Seguro</button>
+    <button id="clearExtractBtn">Limpar análise</button>
   </section>
-
+  <section class="panel premium"><h2>3. Conferência</h2><div id="extractAiSummary"></div></section>
   <section class="panel">
-    <h2>Aprendizado de categorias</h2>
-    <div class="alert">Quando você alterar uma categoria antes de importar, a IA salva essa preferência localmente para reconhecer melhor da próxima vez.</div>
-    <div id="learningBox"></div>
-  </section>
-
-  <section class="panel">
-    <h2>Lançamentos detectados</h2>
+    <h2>4. Lançamentos detectados</h2>
+    <div class="alert"><b>Regra de segurança:</b> suspeitos e duplicados não são importados automaticamente.</div>
     <div id="extractPreview"></div>
-    <button id="importExtractBtn" class="primary">Importar lançamentos aprovados</button>
+    <button id="approveAllSafeBtn">Aprovar apenas seguros</button>
+    <button id="ignoreAllExtractBtn">Ignorar todos</button>
+    <button id="importExtractBtn" class="primary">Importar aprovados</button>
   </section>
 </section>
-
 <section id="cloud" class="page">
     <section class="panel premium">
       <h2>Cloud Prep</h2>
@@ -388,6 +378,6 @@
   <button class="sheet-link" data-page="cloud">☁️ Cloud Prep</button>
 </section>
 
-<script src="./app-v19-ai-import.js?v=19aiimport"></script>
+<script src="./app-v19-1-import-wizard.js?v=191wizard"></script>
 </body>
 </html>

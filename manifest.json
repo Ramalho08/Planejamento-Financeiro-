@@ -1,7 +1,7 @@
 {
-  "name": "Ramalho Finance V19 Ultimate AI Import",
+  "name": "Ramalho Finance V19.1 AI Import Wizard",
   "short_name": "R💰 Finance",
-  "start_url": "./index.html?v=19aiimport",
+  "start_url": "./index.html?v=191wizard",
   "display": "standalone",
   "background_color": "#050816",
   "theme_color": "#050816",

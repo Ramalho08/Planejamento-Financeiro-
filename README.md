@@ -1,24 +1,22 @@
-# R💰 Ramalho Finance V19 Ultimate AI Import
+# R💰 Ramalho Finance V19.1 AI Import Wizard
 
-Baseada na V18.4.1, mas com importação financeira reconstruída.
+Correção da importação automática: agora a importação é assistida e mais segura.
 
 ## Arquivos na raiz
 - index.html
 - style.css
-- app-v19-ai-import.js
+- app-v19-1-import-wizard.js
 - manifest.json
 - .nojekyll
 - assets/icon.svg
 
 Abra com:
-?v=19aiimport
+?v=191wizard
 
-## Novidades
-- Importação de PDF, CSV e TXT
-- Leitura de PDF com pdf.js quando disponível
-- IA local V19 para análise de extratos
-- Conferência inteligente de totais
-- Detecção de duplicados
-- Aprendizado local de categorias
-- Revisão antes da importação
+## Mudanças
+- Wizard de importação assistida
+- Formato de valor BR, US ou automático
+- Valores acima de R$ 1.000 ficam em revisão por padrão
+- Itens suspeitos não importam automaticamente
+- Duplicados são ignorados
 - Mantém base limpa e funcional
