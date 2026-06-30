@@ -4,9 +4,9 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1">
 <meta name="theme-color" content="#050816">
-<title>R💰 Ramalho Finance V16.5 Ultimate Stable</title>
-<link rel="manifest" href="./manifest.json?v=165stable">
-<link rel="stylesheet" href="./style.css?v=165stable">
+<title>R💰 Ramalho Finance V17 Ultimate Premium</title>
+<link rel="manifest" href="./manifest.json?v=17premium">
+<link rel="stylesheet" href="./style.css?v=17premium">
 </head>
 <body>
 <div class="bg"></div>
@@ -15,7 +15,7 @@
 <header class="top">
   <div>
     <strong>R💰 Ramalho Finance</strong>
-    <small>V16.5 Ultimate Stable — NO CACHE ROOT</small>
+    <small>V17 Ultimate Premium — NO CACHE ROOT</small>
   </div>
   <button id="themeBtn">Tema</button>
 </header>
@@ -24,10 +24,10 @@
 
 <section id="dashboard" class="page active">
   <article class="hero">
-    <div class="badge">V16.5 Ultimate Stable</div>
+    <div class="badge">V17 Ultimate Premium</div>
     <span id="greeting">Olá</span>
     <h1 id="netWorth">R$ 0,00</h1>
-    <p id="mainInsight">Base estável carregada com segurança.</p>
+    <p id="mainInsight">Base Premium carregada com segurança.</p>
     <div class="scoregrid">
       <div><b id="score">0</b><small>score</small></div>
       <div><b id="savingRate">0%</b><small>economia</small></div>
@@ -59,6 +59,9 @@
   <section class="panel"><h3>Maiores gastos</h3><div id="topExpenses"></div></section>
   <section class="panel"><h3>Comparação mensal</h3><div id="monthlyCompare"></div></section>
   <section class="panel"><h3>Alertas</h3><div id="alerts"></div></section>
+  <section class="panel premium"><h3>Central Financeira Premium</h3><div id="premiumCenter"></div></section>
+  <section class="panel"><h3>Fluxo diário do mês</h3><div id="dailyFlow"></div></section>
+  <section class="panel"><h3>Metas e progresso</h3><div id="goalInsights"></div></section>
 </section>
 
 <section id="launch" class="page">
@@ -206,6 +209,21 @@
   <section class="panel"><h3>Checklist de saúde financeira</h3><div id="checklist"></div></section>
 </section>
 
+
+<section id="analytics" class="page">
+  <section class="panel premium"><h3>Analytics Premium</h3><div class="alert">Análises avançadas locais para entender seu mês, seus gastos e sua projeção de patrimônio.</div></section>
+  <section class="panel"><h3>Resumo inteligente</h3><div id="analyticsSummary"></div></section>
+  <section class="panel">
+    <h3>Simulador futuro</h3>
+    <input id="futureMonthly" type="number" placeholder="Aporte mensal">
+    <input id="futureYears" type="number" placeholder="Anos">
+    <input id="futureRate" type="number" placeholder="% ao mês">
+    <button id="simulateFutureBtn" class="primary">Simular futuro</button>
+    <p id="futureResult"></p>
+  </section>
+  <section class="panel"><h3>Ranking de categorias</h3><div id="categoryRanking"></div></section>
+</section>
+
 <section id="cloud" class="page">
   <section class="panel premium"><h3>Cloud Prep</h3><div class="alert">Preparado para Firebase futuramente. Nesta versão, tudo continua local e estável.</div></section>
   <section class="panel">
@@ -240,7 +258,7 @@
 
 <button id="menuBtn" class="fab">☰</button>
 <section id="sheet" class="sheet hidden">
-  <button class="sheet-link" data-page="budgets">📊 Orçamentos</button>
+  <button class="sheet-link" data-page="analytics">📈 Analytics</button><button class="sheet-link" data-page="budgets">📊 Orçamentos</button>
   <button class="sheet-link" data-page="subscriptions">🔁 Assinaturas</button>
   <button class="sheet-link" data-page="planning">🧭 Planejamento</button>
   <button class="sheet-link" data-page="categories">🏷️ Categorias</button>
@@ -251,6 +269,6 @@
 </section>
 </main>
 
-<script src="./app-v16-5-stable.js?v=165stable"></script>
+<script src="./app-v17-premium.js?v=17premium"></script>
 </body>
 </html>
