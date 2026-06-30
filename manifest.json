@@ -1,7 +1,7 @@
 {
-  "name": "Ramalho Finance V17.5.1 SAFE",
+  "name": "Ramalho Finance V17.6 SAFE Plus",
   "short_name": "R💰 Finance",
-  "start_url": "./index.html?v=1751safe",
+  "start_url": "./index.html?v=176safeplus",
   "display": "standalone",
   "background_color": "#050816",
   "theme_color": "#050816",

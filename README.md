@@ -1,25 +1,21 @@
-# R💰 Ramalho Finance V17.5.1 SAFE
+# R💰 Ramalho Finance V17.6 SAFE Plus
 
-Correção para o problema de abas/botões da V17.5.
-
-## Base
-- Recriada a partir da base corrigida V17.4.1 FIX
-- Sem mexer no núcleo da navegação
-- JavaScript checado com node --check
-- NO CACHE ROOT
-- Sem Firebase
-- Sem service worker
+Baseada na V17.5.1 SAFE, mantendo o núcleo estável.
 
 ## Arquivos na raiz
 - index.html
 - style.css
-- app-v17-5-1-safe.js
+- app-v17-6-safe-plus.js
 - manifest.json
 - .nojekyll
 - assets/icon.svg
 
 Abra com:
-?v=1751safe
+?v=176safeplus
 
-## Objetivo
-Voltar a estabilidade das abas e botões antes de adicionar novas funções pesadas.
+## Novidades
+- SAFE Plus no dashboard
+- Metas rápidas SAFE
+- Notas financeiras
+- Exportação SAFE preservada
+- JavaScript checado com node --check

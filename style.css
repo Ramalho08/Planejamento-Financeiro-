@@ -92,3 +92,7 @@ body.light .top,body.light .bottom{background:rgba(255,255,255,.92)}
 /* V17.5.1 SAFE */
 .safe-ok{color:var(--green);font-weight:800}
 .safe-warn{color:var(--gold);font-weight:800}
+
+/* V17.6 SAFE Plus */
+.safe-plus-card{border-color:rgba(34,197,94,.40)!important;background:rgba(34,197,94,.08)!important}
+.note-card{border-left:3px solid var(--cyan);padding-left:12px}

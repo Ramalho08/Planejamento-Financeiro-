@@ -4,9 +4,9 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1">
 <meta name="theme-color" content="#050816">
-<title>R💰 Ramalho Finance V17.5.1 SAFE</title>
-<link rel="manifest" href="./manifest.json?v=1751safe">
-<link rel="stylesheet" href="./style.css?v=1751safe">
+<title>R💰 Ramalho Finance V17.6 SAFE Plus</title>
+<link rel="manifest" href="./manifest.json?v=176safeplus">
+<link rel="stylesheet" href="./style.css?v=176safeplus">
 </head>
 <body>
 <div class="bg"></div>
@@ -15,7 +15,7 @@
 <header class="top">
   <div>
     <strong>R💰 Ramalho Finance</strong>
-    <small>V17.5.1 SAFE — NO CACHE ROOT</small>
+    <small>V17.6 SAFE Plus — NO CACHE ROOT</small>
   </div>
   <button id="themeBtn">Tema</button>
 </header>
@@ -24,10 +24,10 @@
 
 <section id="dashboard" class="page active">
   <article class="hero">
-    <div class="badge">V17.5.1 SAFE</div>
+    <div class="badge">V17.6 SAFE Plus</div>
     <span id="greeting">Olá</span>
     <h1 id="netWorth">R$ 0,00</h1>
-    <p id="mainInsight">V17.5.1 SAFE carregada com segurança.</p>
+    <p id="mainInsight">V17.6 SAFE Plus carregada com segurança.</p>
     <div class="scoregrid">
       <div><b id="score">0</b><small>score</small></div>
       <div><b id="savingRate">0%</b><small>economia</small></div>
@@ -59,7 +59,7 @@
   <section class="panel"><h3>Maiores gastos</h3><div id="topExpenses"></div></section>
   <section class="panel"><h3>Comparação mensal</h3><div id="monthlyCompare"></div></section>
   <section class="panel"><h3>Alertas</h3><div id="alerts"></div></section>
-  <section class="panel premium"><h3>Central Financeira Premium</h3><div id="premiumCenter"></div></section><section class="panel premium"><h3>Premium Plus</h3><div id="premiumPlus"></div></section><section class="panel premium"><h3>Ultra Health</h3><div id="ultraHealth"></div></section><section class="panel premium"><h3>Infinity Stats</h3><div id="infinityStats"></div></section><section class="panel premium"><h3>Finance AI 4.0 FIX</h3><div id="eliteForecast"></div></section><section class="panel"><h3>Pesquisa Global</h3><input id="globalSearch" placeholder="Buscar lançamentos, metas, cartões, investimentos..."><div id="globalResults"></div></section>
+  <section class="panel premium"><h3>Central Financeira Premium</h3><div id="premiumCenter"></div></section><section class="panel premium"><h3>Premium Plus</h3><div id="premiumPlus"></div></section><section class="panel premium"><h3>Ultra Health</h3><div id="ultraHealth"></div></section><section class="panel premium"><h3>Infinity Stats</h3><div id="infinityStats"></div></section><section class="panel premium"><h3>Finance AI 4.0 FIX</h3><div id="eliteForecast"></div></section><section class="panel premium"><h3>SAFE Plus</h3><div id="safePlusPanel"></div></section><section class="panel"><h3>Pesquisa Global</h3><input id="globalSearch" placeholder="Buscar lançamentos, metas, cartões, investimentos..."><div id="globalResults"></div></section>
   <section class="panel"><h3>Fluxo diário do mês</h3><div id="dailyFlow"></div></section>
   <section class="panel"><h3>Metas e progresso</h3><div id="goalInsights"></div></section>
 </section>
@@ -328,6 +328,25 @@
 </section>
 <section class="panel"><h3>Resumo SAFE</h3><div id="safeSummary"></div></section>
 </section>
+
+<section id="safeGoals" class="page">
+<section class="panel premium"><h3>Metas SAFE Plus</h3><div class="alert">Uma área simples e estável para metas rápidas, sem interferir nas metas principais.</div></section>
+<section class="panel">
+<input id="safeGoalName" placeholder="Nome da meta rápida">
+<input id="safeGoalValue" type="number" placeholder="Valor alvo">
+<button id="addSafeGoalBtn" class="primary">Adicionar meta rápida</button>
+</section>
+<section class="panel"><h3>Lista de metas rápidas</h3><div id="safeGoalList"></div></section>
+</section>
+
+<section id="safeNotes" class="page">
+<section class="panel premium"><h3>Notas financeiras</h3><div class="alert">Anote lembretes, ideias e decisões financeiras importantes.</div></section>
+<section class="panel">
+<textarea id="safeNoteText" placeholder="Escreva uma nota..." style="width:100%;min-height:100px;border-radius:14px;padding:12px;background:rgba(15,23,42,.74);color:var(--text);border:1px solid var(--border)"></textarea>
+<button id="addSafeNoteBtn" class="primary">Salvar nota</button>
+</section>
+<section class="panel"><h3>Minhas notas</h3><div id="safeNoteList"></div></section>
+</section>
 <section id="cloud" class="page">
   <section class="panel premium"><h3>Cloud Prep</h3><div class="alert">Preparado para Firebase futuramente. Nesta versão, tudo continua local e estável.</div></section>
   <section class="panel">
@@ -362,7 +381,7 @@
 
 <button id="menuBtn" class="fab">☰</button>
 <section id="sheet" class="sheet hidden">
-  <button class="sheet-link" data-page="analytics">📈 Analytics</button><button class="sheet-link" data-page="safeTools">🛡️ SAFE</button><button class="sheet-link" data-page="wealthCenter">🏦 Patrimônio</button><button class="sheet-link" data-page="futureBills">📌 Futuras</button><button class="sheet-link" data-page="cardElite">💳 Cartões Elite</button><button class="sheet-link" data-page="aiCoach">🧠 AI Coach</button><button class="sheet-link" data-page="statistics">📊 Estatísticas</button><button class="sheet-link" data-page="quickActions">⚡ Atalhos</button><button class="sheet-link" data-page="favorites">⭐ Favoritos</button><button class="sheet-link" data-page="investPro">💹 Invest Pro</button><button class="sheet-link" data-page="notifications">🔔 Notificações</button><button class="sheet-link" data-page="timeline">🕒 Timeline</button><button class="sheet-link" data-page="goalsPro">🏁 Metas Pro</button><button class="sheet-link" data-page="debts">📉 Dívidas</button><button class="sheet-link" data-page="assetsPage">💎 Bens</button><button class="sheet-link" data-page="annual">📆 Anual</button><button class="sheet-link" data-page="budgets">📊 Orçamentos</button>
+  <button class="sheet-link" data-page="analytics">📈 Analytics</button><button class="sheet-link" data-page="safeTools">🛡️ SAFE</button><button class="sheet-link" data-page="safeGoals">🎯 SAFE Metas</button><button class="sheet-link" data-page="safeNotes">📝 Notas</button><button class="sheet-link" data-page="wealthCenter">🏦 Patrimônio</button><button class="sheet-link" data-page="futureBills">📌 Futuras</button><button class="sheet-link" data-page="cardElite">💳 Cartões Elite</button><button class="sheet-link" data-page="aiCoach">🧠 AI Coach</button><button class="sheet-link" data-page="statistics">📊 Estatísticas</button><button class="sheet-link" data-page="quickActions">⚡ Atalhos</button><button class="sheet-link" data-page="favorites">⭐ Favoritos</button><button class="sheet-link" data-page="investPro">💹 Invest Pro</button><button class="sheet-link" data-page="notifications">🔔 Notificações</button><button class="sheet-link" data-page="timeline">🕒 Timeline</button><button class="sheet-link" data-page="goalsPro">🏁 Metas Pro</button><button class="sheet-link" data-page="debts">📉 Dívidas</button><button class="sheet-link" data-page="assetsPage">💎 Bens</button><button class="sheet-link" data-page="annual">📆 Anual</button><button class="sheet-link" data-page="budgets">📊 Orçamentos</button>
   <button class="sheet-link" data-page="subscriptions">🔁 Assinaturas</button>
   <button class="sheet-link" data-page="planning">🧭 Planejamento</button>
   <button class="sheet-link" data-page="categories">🏷️ Categorias</button>
@@ -373,6 +392,6 @@
 </section>
 </main>
 
-<script src="./app-v17-5-1-safe.js?v=1751safe"></script>
+<script src="./app-v17-6-safe-plus.js?v=176safeplus"></script>
 </body>
 </html>
