@@ -4,16 +4,16 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1">
 <meta name="theme-color" content="#050816">
-<title>R💰 Ramalho Finance V18 Ultimate Rebuild</title>
-<link rel="manifest" href="./manifest.json?v=18ultimate">
-<link rel="stylesheet" href="./style.css?v=18ultimate">
+<title>R💰 Ramalho Finance V18.1 Ultimate Rebuild Full</title>
+<link rel="manifest" href="./manifest.json?v=181full">
+<link rel="stylesheet" href="./style.css?v=181full">
 </head>
 <body>
 <div class="bg"></div>
 <header class="top">
   <div>
     <strong>R💰 Ramalho Finance</strong>
-    <small>V18 Ultimate Rebuild — NO CACHE ROOT</small>
+    <small>V18.1 Ultimate Rebuild Full — NO CACHE ROOT</small>
   </div>
   <button id="themeBtn">Tema</button>
 </header>
@@ -21,10 +21,10 @@
 <main id="app">
   <section id="dashboard" class="page active">
     <article class="hero">
-      <span class="badge">V18 Ultimate Rebuild</span>
+      <span class="badge">V18.1 Ultimate Rebuild Full</span>
       <p id="greeting">Olá</p>
       <h1 id="netWorth">R$ 0,00</h1>
-      <p id="mainInsight">Base reconstruída do zero com navegação estável.</p>
+      <p id="mainInsight">Base reconstruída com funções premium restauradas.</p>
       <div class="score-grid">
         <div><b id="score">0</b><small>Score</small></div>
         <div><b id="savingRate">0%</b><small>Economia</small></div>
@@ -43,7 +43,7 @@
       <article><span>Patrimônio bruto</span><b id="grossWorth">R$ 0,00</b></article>
     </section>
 
-    <section class="panel premium"><h2>Finance AI</h2><div id="aiPanel"></div></section>
+    <section class="panel premium"><h2>Finance AI</h2><div id="aiPanel"></div></section><section class="panel premium"><h2>Infinity Stats</h2><div id="infinityStats"></div></section><section class="panel premium"><h2>Centro Premium</h2><div id="premiumCenter"></div></section><section class="panel"><h2>Pesquisa Global</h2><input id="globalSearch" placeholder="Buscar lançamentos, metas, cartões, investimentos..."><div id="globalResults"></div></section>
     <section class="panel"><h2>Fluxo financeiro</h2><div id="flowBars"></div></section>
     <section class="panel"><h2>Gastos por categoria</h2><div id="categoryBars"></div></section>
     <section class="panel"><h2>Alertas</h2><div id="alerts"></div></section>
@@ -178,7 +178,65 @@
     <section class="panel"><h2>Resumo mensal</h2><div id="monthlySummary"></div></section>
   </section>
 
-  <section id="cloud" class="page">
+  
+<section id="subscriptions" class="page">
+  <section class="panel">
+    <h2>Assinaturas</h2>
+    <input id="subName" placeholder="Nome da assinatura">
+    <input id="subValue" type="number" placeholder="Valor mensal">
+    <select id="subCategory"></select>
+    <input id="subDue" type="number" placeholder="Dia de vencimento">
+    <button id="addSubBtn" class="primary">Adicionar assinatura</button>
+  </section>
+  <section class="panel"><h2>Minhas assinaturas</h2><div id="subList"></div></section>
+</section>
+
+<section id="analytics" class="page">
+  <section class="panel premium"><h2>Analytics Premium</h2><div class="alert">Análises avançadas do mês, categorias, médias e projeções.</div></section>
+  <section class="panel"><h2>Resumo inteligente</h2><div id="analyticsSummary"></div></section>
+  <section class="panel"><h2>Ranking de categorias</h2><div id="categoryRanking"></div></section>
+  <section class="panel"><h2>Timeline financeira</h2><div id="timelineList"></div></section>
+</section>
+
+<section id="favorites" class="page">
+  <section class="panel">
+    <h2>Favoritos</h2>
+    <input id="favName" placeholder="Nome do favorito">
+    <input id="favAmount" type="number" placeholder="Valor">
+    <select id="favType"><option value="income">Receita</option><option value="expense">Despesa</option></select>
+    <select id="favCategory"></select>
+    <button id="addFavoriteBtn" class="primary">Criar favorito</button>
+  </section>
+  <section class="panel"><h2>Meus favoritos</h2><div id="favoriteList"></div></section>
+</section>
+
+<section id="quickActions" class="page">
+  <section class="panel premium"><h2>Atalhos rápidos</h2><div class="alert">Registre movimentações comuns com um toque.</div></section>
+  <section class="panel actions">
+    <button id="quickIncomeBtn" class="primary">+ Receita rápida R$100</button>
+    <button id="quickFoodBtn">+ Alimentação R$30</button>
+    <button id="quickTransportBtn">+ Transporte R$15</button>
+    <button id="quickSubBtn">+ Assinatura R$39,90</button>
+  </section>
+  <section class="panel"><h2>Ações recentes</h2><div id="recentActions"></div></section>
+</section>
+
+<section id="safeTools" class="page">
+  <section class="panel premium"><h2>SAFE Tools</h2><div class="alert">Ferramentas leves que não alteram o núcleo do app.</div></section>
+  <section class="panel">
+    <h2>Notas financeiras</h2>
+    <textarea id="safeNoteText" placeholder="Escreva uma nota..." style="min-height:90px"></textarea>
+    <button id="addSafeNoteBtn" class="primary">Salvar nota</button>
+    <div id="safeNoteList"></div>
+  </section>
+  <section class="panel">
+    <h2>Rotina financeira</h2>
+    <input id="routineText" placeholder="Ex: revisar cartão">
+    <button id="addRoutineBtn" class="primary">Adicionar rotina</button>
+    <div id="routineList"></div>
+  </section>
+</section>
+<section id="cloud" class="page">
     <section class="panel premium">
       <h2>Cloud Prep</h2>
       <p>Preparado para Firebase e Login Google na próxima fase, mas sem ativar ainda.</p>
@@ -198,13 +256,13 @@
 
 <button id="menuBtn" class="fab">☰</button>
 <section id="sheet" class="sheet hidden">
-  <button class="sheet-link" data-page="budgets">📊 Orçamentos</button>
+  <button class="sheet-link" data-page="budgets">📊 Orçamentos</button><button class="sheet-link" data-page="subscriptions">🔁 Assinaturas</button><button class="sheet-link" data-page="analytics">📈 Analytics</button><button class="sheet-link" data-page="quickActions">⚡ Atalhos</button><button class="sheet-link" data-page="favorites">⭐ Favoritos</button><button class="sheet-link" data-page="safeTools">🛡️ SAFE</button>
   <button class="sheet-link" data-page="investments">📈 Investimentos</button>
   <button class="sheet-link" data-page="planning">🧭 Planejamento</button>
   <button class="sheet-link" data-page="assets">💎 Patrimônio</button>
   <button class="sheet-link" data-page="cloud">☁️ Cloud Prep</button>
 </section>
 
-<script src="./app-v18-ultimate.js?v=18ultimate"></script>
+<script src="./app-v18-1-full.js?v=181full"></script>
 </body>
 </html>

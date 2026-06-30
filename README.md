@@ -1,35 +1,27 @@
-# R💰 Ramalho Finance V18 Ultimate Rebuild
+# R💰 Ramalho Finance V18.1 Ultimate Rebuild Full
 
-Reconstrução completa do projeto para evitar quebra de abas e botões.
-
-## Padrão
-- NO CACHE ROOT
-- Sem React
-- Sem npm
-- Sem service worker
-- JavaScript limpo e checado
-- Compatível com GitHub Pages
+Corrige a V18 que ficou simplificada demais, restaurando funções premium da V17 em uma base limpa.
 
 ## Arquivos na raiz
 - index.html
 - style.css
-- app-v18-ultimate.js
+- app-v18-1-full.js
 - manifest.json
 - .nojekyll
 - assets/icon.svg
 
 Abra com:
-?v=18ultimate
+?v=181full
 
-## Recursos
-- Dashboard executivo
-- Lançamentos
-- Carteiras e transferências
-- Cartões e parcelamentos
-- Orçamentos
-- Metas
-- Investimentos
-- Planejamento
-- Bens e dívidas
-- Relatórios
-- Cloud Prep
+## Restaurado da V17
+- Assinaturas
+- Analytics Premium
+- Timeline financeira
+- Ranking de categorias
+- Favoritos
+- Atalhos rápidos
+- Ações recentes
+- SAFE Tools
+- Pesquisa Global
+- Infinity Stats
+- Centro Premium

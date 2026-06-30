@@ -54,3 +54,12 @@ body.light .bg{background:linear-gradient(135deg,#e0f2fe,#f5f3ff)}
 body.light .top,body.light .bottom{background:rgba(255,255,255,.92)}
 @media(min-width:900px){.cards{grid-template-columns:repeat(4,1fr)}}
 @media(max-width:420px){.bottom{grid-template-columns:repeat(3,1fr)}body{padding-bottom:132px}}
+
+/* V18.1 Full */
+.mini-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:10px}
+.mini-grid .alert{margin:0}
+.infinity-glow{border-color:rgba(34,211,238,.45)!important;box-shadow:0 0 28px rgba(34,211,238,.10)!important}
+.search-result{border:1px solid var(--border);border-radius:14px;padding:10px;margin:7px 0;background:rgba(15,23,42,.45)}
+.note-card{border-left:3px solid var(--cyan);padding-left:12px}
+.favorite-btn{width:100%;margin:6px 0;text-align:left}
+@media(min-width:900px){.mini-grid{grid-template-columns:repeat(4,1fr)}}
