@@ -1,22 +1,27 @@
-# R💰 Ramalho Finance V19.1 AI Import Wizard
+# R💰 Ramalho Finance V20 Professional AI Engine
 
-Correção da importação automática: agora a importação é assistida e mais segura.
+Refatoração completa da IA de importação, mantendo a base limpa do app.
 
 ## Arquivos na raiz
 - index.html
 - style.css
-- app-v19-1-import-wizard.js
+- app-v20-professional-ai-engine.js
 - manifest.json
 - .nojekyll
 - assets/icon.svg
 
 Abra com:
-?v=191wizard
+?v=20proai
 
-## Mudanças
-- Wizard de importação assistida
-- Formato de valor BR, US ou automático
-- Valores acima de R$ 1.000 ficam em revisão por padrão
-- Itens suspeitos não importam automaticamente
-- Duplicados são ignorados
-- Mantém base limpa e funcional
+## IA refeita
+- Motor separado AI20
+- Detecção automática de banco
+- Perfis Nubank, Inter, Itaú, Santander, Bradesco, Banco do Brasil, Caixa e genérico
+- Normalização profissional de valores
+- Classificação receita/despesa
+- Categorização automática
+- Aprendizado local por correção
+- Detecção de duplicidade
+- Níveis: Seguro, Revisar, Duplicado/Crítico
+- Só importa itens aprovados
+- Mantém estrutura limpa e funcional
