@@ -4,9 +4,9 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1">
 <meta name="theme-color" content="#050816">
-<title>R💰 Ramalho Finance V17.4.1 FIX Elite</title>
-<link rel="manifest" href="./manifest.json?v=1741fix">
-<link rel="stylesheet" href="./style.css?v=1741fix">
+<title>R💰 Ramalho Finance V17.5 Elite Max</title>
+<link rel="manifest" href="./manifest.json?v=175max">
+<link rel="stylesheet" href="./style.css?v=175max">
 </head>
 <body>
 <div class="bg"></div>
@@ -15,7 +15,7 @@
 <header class="top">
   <div>
     <strong>R💰 Ramalho Finance</strong>
-    <small>V17.4.1 FIX Elite — NO CACHE ROOT</small>
+    <small>V17.5 Elite Max — NO CACHE ROOT</small>
   </div>
   <button id="themeBtn">Tema</button>
 </header>
@@ -24,10 +24,10 @@
 
 <section id="dashboard" class="page active">
   <article class="hero">
-    <div class="badge">V17.4.1 FIX Elite</div>
+    <div class="badge">V17.5 Elite Max</div>
     <span id="greeting">Olá</span>
     <h1 id="netWorth">R$ 0,00</h1>
-    <p id="mainInsight">V17.4.1 corrigida e carregada com segurança.</p>
+    <p id="mainInsight">Elite Max carregado com segurança.</p>
     <div class="scoregrid">
       <div><b id="score">0</b><small>score</small></div>
       <div><b id="savingRate">0%</b><small>economia</small></div>
@@ -59,7 +59,7 @@
   <section class="panel"><h3>Maiores gastos</h3><div id="topExpenses"></div></section>
   <section class="panel"><h3>Comparação mensal</h3><div id="monthlyCompare"></div></section>
   <section class="panel"><h3>Alertas</h3><div id="alerts"></div></section>
-  <section class="panel premium"><h3>Central Financeira Premium</h3><div id="premiumCenter"></div></section><section class="panel premium"><h3>Premium Plus</h3><div id="premiumPlus"></div></section><section class="panel premium"><h3>Ultra Health</h3><div id="ultraHealth"></div></section><section class="panel premium"><h3>Infinity Stats</h3><div id="infinityStats"></div></section><section class="panel premium"><h3>Finance AI 4.0 FIX</h3><div id="eliteForecast"></div></section><section class="panel"><h3>Pesquisa Global</h3><input id="globalSearch" placeholder="Buscar lançamentos, metas, cartões, investimentos..."><div id="globalResults"></div></section>
+  <section class="panel premium"><h3>Central Financeira Premium</h3><div id="premiumCenter"></div></section><section class="panel premium"><h3>Premium Plus</h3><div id="premiumPlus"></div></section><section class="panel premium"><h3>Ultra Health</h3><div id="ultraHealth"></div></section><section class="panel premium"><h3>Infinity Stats</h3><div id="infinityStats"></div></section><section class="panel premium"><h3>Finance AI 4.0 FIX</h3><div id="eliteForecast"></div></section><section class="panel premium"><h3>Max Control</h3><div id="maxControl"></div></section><section class="panel"><h3>Pesquisa Global</h3><input id="globalSearch" placeholder="Buscar lançamentos, metas, cartões, investimentos..."><div id="globalResults"></div></section>
   <section class="panel"><h3>Fluxo diário do mês</h3><div id="dailyFlow"></div></section>
   <section class="panel"><h3>Metas e progresso</h3><div id="goalInsights"></div></section>
 </section>
@@ -315,6 +315,37 @@
 <section class="panel premium"><h3>AI Coach</h3><div class="alert">Recomendações práticas para melhorar sua vida financeira.</div></section>
 <section class="panel"><h3>Plano de ação</h3><div id="coachPlan"></div></section>
 </section>
+
+<section id="taxes" class="page">
+<section class="panel premium"><h3>Impostos e taxas</h3><div class="alert">Controle taxas, impostos, tarifas bancárias e custos extras.</div></section>
+<section class="panel">
+<input id="taxName" placeholder="Nome da taxa/imposto">
+<input id="taxValue" type="number" placeholder="Valor">
+<input id="taxDue" type="date">
+<button id="addTaxBtn" class="primary">Adicionar taxa</button>
+</section>
+<section class="panel"><h3>Taxas cadastradas</h3><div id="taxList"></div></section>
+</section>
+
+<section id="incomeSources" class="page">
+<section class="panel premium"><h3>Fontes de renda</h3><div class="alert">Organize salário, freelance, renda extra e outras entradas.</div></section>
+<section class="panel">
+<input id="incomeSourceName" placeholder="Fonte de renda">
+<input id="incomeSourceValue" type="number" placeholder="Valor mensal estimado">
+<select id="incomeSourceType"><option>Fixa</option><option>Variável</option><option>Extra</option></select>
+<button id="addIncomeSourceBtn" class="primary">Adicionar fonte</button>
+</section>
+<section class="panel"><h3>Minhas fontes</h3><div id="incomeSourceList"></div></section>
+</section>
+
+<section id="exportCenter" class="page">
+<section class="panel premium"><h3>Central de Exportação</h3><div class="alert">Área para backup, CSV e resumo pronto para imprimir.</div></section>
+<section class="panel actions">
+<button id="exportFullReportBtn" class="primary">Gerar relatório HTML</button>
+<button id="copySummaryBtn">Copiar resumo financeiro</button>
+</section>
+<section class="panel"><h3>Resumo exportável</h3><div id="exportSummary"></div></section>
+</section>
 <section id="cloud" class="page">
   <section class="panel premium"><h3>Cloud Prep</h3><div class="alert">Preparado para Firebase futuramente. Nesta versão, tudo continua local e estável.</div></section>
   <section class="panel">
@@ -349,7 +380,7 @@
 
 <button id="menuBtn" class="fab">☰</button>
 <section id="sheet" class="sheet hidden">
-  <button class="sheet-link" data-page="analytics">📈 Analytics</button><button class="sheet-link" data-page="wealthCenter">🏦 Patrimônio</button><button class="sheet-link" data-page="futureBills">📌 Futuras</button><button class="sheet-link" data-page="cardElite">💳 Cartões Elite</button><button class="sheet-link" data-page="aiCoach">🧠 AI Coach</button><button class="sheet-link" data-page="statistics">📊 Estatísticas</button><button class="sheet-link" data-page="quickActions">⚡ Atalhos</button><button class="sheet-link" data-page="favorites">⭐ Favoritos</button><button class="sheet-link" data-page="investPro">💹 Invest Pro</button><button class="sheet-link" data-page="notifications">🔔 Notificações</button><button class="sheet-link" data-page="timeline">🕒 Timeline</button><button class="sheet-link" data-page="goalsPro">🏁 Metas Pro</button><button class="sheet-link" data-page="debts">📉 Dívidas</button><button class="sheet-link" data-page="assetsPage">💎 Bens</button><button class="sheet-link" data-page="annual">📆 Anual</button><button class="sheet-link" data-page="budgets">📊 Orçamentos</button>
+  <button class="sheet-link" data-page="analytics">📈 Analytics</button><button class="sheet-link" data-page="taxes">🧾 Taxas</button><button class="sheet-link" data-page="incomeSources">💵 Rendas</button><button class="sheet-link" data-page="exportCenter">📤 Exportar</button><button class="sheet-link" data-page="wealthCenter">🏦 Patrimônio</button><button class="sheet-link" data-page="futureBills">📌 Futuras</button><button class="sheet-link" data-page="cardElite">💳 Cartões Elite</button><button class="sheet-link" data-page="aiCoach">🧠 AI Coach</button><button class="sheet-link" data-page="statistics">📊 Estatísticas</button><button class="sheet-link" data-page="quickActions">⚡ Atalhos</button><button class="sheet-link" data-page="favorites">⭐ Favoritos</button><button class="sheet-link" data-page="investPro">💹 Invest Pro</button><button class="sheet-link" data-page="notifications">🔔 Notificações</button><button class="sheet-link" data-page="timeline">🕒 Timeline</button><button class="sheet-link" data-page="goalsPro">🏁 Metas Pro</button><button class="sheet-link" data-page="debts">📉 Dívidas</button><button class="sheet-link" data-page="assetsPage">💎 Bens</button><button class="sheet-link" data-page="annual">📆 Anual</button><button class="sheet-link" data-page="budgets">📊 Orçamentos</button>
   <button class="sheet-link" data-page="subscriptions">🔁 Assinaturas</button>
   <button class="sheet-link" data-page="planning">🧭 Planejamento</button>
   <button class="sheet-link" data-page="categories">🏷️ Categorias</button>
@@ -360,6 +391,6 @@
 </section>
 </main>
 
-<script src="./app-v17-4-1-fix.js?v=1741fix"></script>
+<script src="./app-v17-5-elite-max.js?v=175max"></script>
 </body>
 </html>

@@ -88,3 +88,7 @@ body.light .top,body.light .bottom{background:rgba(255,255,255,.92)}
 .elite-card{border-color:rgba(250,204,21,.45)!important;background:linear-gradient(135deg,rgba(250,204,21,.10),rgba(34,211,238,.08),rgba(15,23,42,.55))!important}
 .search-result{border:1px solid var(--border);border-radius:14px;padding:10px;margin:7px 0;background:rgba(15,23,42,.45)}
 .elite-score{font-size:30px;font-weight:900;color:var(--gold)}
+
+/* V17.5 Elite Max */
+.max-ring{display:grid;place-items:center;width:92px;height:92px;border-radius:50%;border:8px solid rgba(34,211,238,.28);margin:auto;color:var(--cyan);font-weight:900;font-size:24px}
+.copy-ok{color:var(--green);font-weight:700}
