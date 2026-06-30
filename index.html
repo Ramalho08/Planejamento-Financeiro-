@@ -4,16 +4,16 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1">
 <meta name="theme-color" content="#050816">
-<title>R💰 Ramalho Finance V18.4.1 Fix Extract</title>
-<link rel="manifest" href="./manifest.json?v=1841fix">
-<link rel="stylesheet" href="./style.css?v=1841fix">
+<title>R💰 Ramalho Finance V19 Ultimate AI Import</title>
+<link rel="manifest" href="./manifest.json?v=19aiimport">
+<link rel="stylesheet" href="./style.css?v=19aiimport">
 </head>
 <body>
 <div class="bg"></div>
 <header class="top">
   <div>
     <strong>R💰 Ramalho Finance</strong>
-    <small>V18.4.1 Fix Extract — NO CACHE ROOT</small>
+    <small>V19 Ultimate AI Import — NO CACHE ROOT</small>
   </div>
   <button id="themeBtn">Tema</button>
 </header>
@@ -21,10 +21,10 @@
 <main id="app">
   <section id="dashboard" class="page active">
     <article class="hero">
-      <span class="badge">V18.4.1 Fix Extract</span>
+      <span class="badge">V19 Ultimate AI Import</span>
       <p id="greeting">Olá</p>
       <h1 id="netWorth">R$ 0,00</h1>
-      <p id="mainInsight">Fix Extract com leitura de valores corrigida.</p>
+      <p id="mainInsight">Ultimate AI Import com PDF, conferência e aprendizado local.</p>
       <div class="score-grid">
         <div><b id="score">0</b><small>Score</small></div>
         <div><b id="savingRate">0%</b><small>Economia</small></div>
@@ -322,28 +322,45 @@
   <section class="panel"><h2>Oportunidades</h2><div id="aiOpportunities"></div></section>
 </section>
 
+
 <section id="extractReader" class="page">
   <section class="panel premium">
-    <h2>Leitor de Extratos com IA</h2>
+    <h2>V19 Ultimate AI Import</h2>
     <div class="alert">
-      Importe extratos em CSV ou TXT. A IA local tenta identificar data, descrição, valor, tipo e categoria automaticamente.
-      Antes de salvar, você pode revisar os lançamentos detectados.
+      Importe extratos em PDF, CSV ou TXT. A IA local V19 analisa o texto, identifica lançamentos, calcula totais,
+      procura duplicidades e permite revisar antes de salvar.
     </div>
   </section>
+
   <section class="panel">
     <h2>Importar extrato</h2>
-    <label class="file">Selecionar CSV/TXT<input id="extractFile" type="file" accept=".csv,.txt,text/csv,text/plain"></label>
-    <textarea id="extractPaste" placeholder="Ou cole aqui o texto do extrato..." style="min-height:130px"></textarea>
-    <button id="analyzeExtractBtn" class="primary">Analisar extrato com IA</button>
+    <label class="file">Selecionar PDF/CSV/TXT<input id="extractFile" type="file" accept=".pdf,.csv,.txt,application/pdf,text/csv,text/plain"></label>
+    <textarea id="extractPaste" placeholder="Ou cole aqui o texto do extrato..." style="min-height:150px"></textarea>
+    <button id="analyzeExtractBtn" class="primary">Analisar com IA V19</button>
     <button id="clearExtractBtn">Limpar análise</button>
+    <div class="alert">
+      <b>PDF:</b> nesta versão para GitHub Pages, o app tenta extrair texto de PDFs simples. PDFs escaneados/imagens podem precisar ser copiados como texto ou futuramente usar OCR/IA online.
+    </div>
   </section>
-  <section class="panel premium"><h2>Resumo da IA</h2><div id="extractAiSummary"></div></section>
+
+  <section class="panel premium">
+    <h2>Conferência Inteligente</h2>
+    <div id="extractAiSummary"></div>
+  </section>
+
+  <section class="panel">
+    <h2>Aprendizado de categorias</h2>
+    <div class="alert">Quando você alterar uma categoria antes de importar, a IA salva essa preferência localmente para reconhecer melhor da próxima vez.</div>
+    <div id="learningBox"></div>
+  </section>
+
   <section class="panel">
     <h2>Lançamentos detectados</h2>
     <div id="extractPreview"></div>
     <button id="importExtractBtn" class="primary">Importar lançamentos aprovados</button>
   </section>
 </section>
+
 <section id="cloud" class="page">
     <section class="panel premium">
       <h2>Cloud Prep</h2>
@@ -371,6 +388,6 @@
   <button class="sheet-link" data-page="cloud">☁️ Cloud Prep</button>
 </section>
 
-<script src="./app-v18-4-1-fix-extract.js?v=1841fix"></script>
+<script src="./app-v19-ai-import.js?v=19aiimport"></script>
 </body>
 </html>

@@ -1,21 +1,24 @@
-# R💰 Ramalho Finance V18.4.1 Fix Extract
+# R💰 Ramalho Finance V19 Ultimate AI Import
 
-Correção do leitor de extratos da V18.4.
+Baseada na V18.4.1, mas com importação financeira reconstruída.
 
 ## Arquivos na raiz
 - index.html
 - style.css
-- app-v18-4-1-fix-extract.js
+- app-v19-ai-import.js
 - manifest.json
 - .nojekyll
 - assets/icon.svg
 
 Abra com:
-?v=1841fix
+?v=19aiimport
 
-## Correções
-- Leitura de valores brasileiros: 1.234,56
-- Detecção de débito/crédito, D/C, entrada/saída
-- Menos risco de valores absurdos por erro de separador
-- Indicador de confiança por lançamento
-- Tela de revisão preservada antes de importar
+## Novidades
+- Importação de PDF, CSV e TXT
+- Leitura de PDF com pdf.js quando disponível
+- IA local V19 para análise de extratos
+- Conferência inteligente de totais
+- Detecção de duplicados
+- Aprendizado local de categorias
+- Revisão antes da importação
+- Mantém base limpa e funcional
