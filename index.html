@@ -4,9 +4,9 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1">
 <meta name="theme-color" content="#050816">
-<title>R💰 Ramalho Finance V17.2 Premium Ultra</title>
-<link rel="manifest" href="./manifest.json?v=172ultra">
-<link rel="stylesheet" href="./style.css?v=172ultra">
+<title>R💰 Ramalho Finance V17.3 Infinity Edition</title>
+<link rel="manifest" href="./manifest.json?v=173infinity">
+<link rel="stylesheet" href="./style.css?v=173infinity">
 </head>
 <body>
 <div class="bg"></div>
@@ -15,7 +15,7 @@
 <header class="top">
   <div>
     <strong>R💰 Ramalho Finance</strong>
-    <small>V17.2 Premium Ultra — NO CACHE ROOT</small>
+    <small>V17.3 Infinity Edition — NO CACHE ROOT</small>
   </div>
   <button id="themeBtn">Tema</button>
 </header>
@@ -24,10 +24,10 @@
 
 <section id="dashboard" class="page active">
   <article class="hero">
-    <div class="badge">V17.2 Premium Ultra</div>
+    <div class="badge">V17.3 Infinity Edition</div>
     <span id="greeting">Olá</span>
     <h1 id="netWorth">R$ 0,00</h1>
-    <p id="mainInsight">Premium Ultra carregado com segurança.</p>
+    <p id="mainInsight">Infinity Edition carregado com segurança.</p>
     <div class="scoregrid">
       <div><b id="score">0</b><small>score</small></div>
       <div><b id="savingRate">0%</b><small>economia</small></div>
@@ -59,7 +59,7 @@
   <section class="panel"><h3>Maiores gastos</h3><div id="topExpenses"></div></section>
   <section class="panel"><h3>Comparação mensal</h3><div id="monthlyCompare"></div></section>
   <section class="panel"><h3>Alertas</h3><div id="alerts"></div></section>
-  <section class="panel premium"><h3>Central Financeira Premium</h3><div id="premiumCenter"></div></section><section class="panel premium"><h3>Premium Plus</h3><div id="premiumPlus"></div></section><section class="panel premium"><h3>Ultra Health</h3><div id="ultraHealth"></div></section>
+  <section class="panel premium"><h3>Central Financeira Premium</h3><div id="premiumCenter"></div></section><section class="panel premium"><h3>Premium Plus</h3><div id="premiumPlus"></div></section><section class="panel premium"><h3>Ultra Health</h3><div id="ultraHealth"></div></section><section class="panel premium"><h3>Infinity Stats</h3><div id="infinityStats"></div></section>
   <section class="panel"><h3>Fluxo diário do mês</h3><div id="dailyFlow"></div></section>
   <section class="panel"><h3>Metas e progresso</h3><div id="goalInsights"></div></section>
 </section>
@@ -262,6 +262,41 @@
 </section>
 <section class="panel"><h3>Minhas metas Pro</h3><div id="goalProList"></div></section>
 </section>
+
+<section id="statistics" class="page">
+<section class="panel premium"><h3>Centro de Estatísticas</h3><div class="alert">Métricas automáticas de desempenho financeiro, médias e padrões de gasto.</div></section>
+<section class="panel"><h3>Estatísticas do mês</h3><div id="statisticsBox"></div></section>
+<section class="panel"><h3>Desempenho financeiro</h3><div id="performanceBox"></div></section>
+</section>
+
+<section id="quickActions" class="page">
+<section class="panel premium"><h3>Atalhos rápidos</h3><div class="alert">Ações rápidas para registrar movimentações comuns.</div></section>
+<section class="panel actions">
+<button id="quickIncomeBtn" class="primary">+ Receita rápida R$100</button>
+<button id="quickFoodBtn">+ Alimentação R$30</button>
+<button id="quickTransportBtn">+ Transporte R$15</button>
+<button id="quickSubBtn">+ Assinatura R$39,90</button>
+</section>
+<section class="panel"><h3>Ações recentes</h3><div id="recentActions"></div></section>
+</section>
+
+<section id="favorites" class="page">
+<section class="panel premium"><h3>Favoritos</h3><div class="alert">Salve modelos de lançamentos para repetir rapidamente.</div></section>
+<section class="panel">
+<input id="favName" placeholder="Nome do favorito">
+<input id="favAmount" type="number" placeholder="Valor">
+<select id="favType"><option value="income">Receita</option><option value="expense">Despesa</option></select>
+<select id="favCategory"></select>
+<button id="addFavoriteBtn" class="primary">Criar favorito</button>
+</section>
+<section class="panel"><h3>Meus favoritos</h3><div id="favoriteList"></div></section>
+</section>
+
+<section id="investPro" class="page">
+<section class="panel premium"><h3>Investimentos Pro</h3><div class="alert">Projeções de longo prazo e distribuição dos investimentos.</div></section>
+<section class="panel"><h3>Projeções</h3><div id="investProjections"></div></section>
+<section class="panel"><h3>Distribuição</h3><div id="investDistribution"></div></section>
+</section>
 <section id="cloud" class="page">
   <section class="panel premium"><h3>Cloud Prep</h3><div class="alert">Preparado para Firebase futuramente. Nesta versão, tudo continua local e estável.</div></section>
   <section class="panel">
@@ -296,7 +331,7 @@
 
 <button id="menuBtn" class="fab">☰</button>
 <section id="sheet" class="sheet hidden">
-  <button class="sheet-link" data-page="analytics">📈 Analytics</button><button class="sheet-link" data-page="notifications">🔔 Notificações</button><button class="sheet-link" data-page="timeline">🕒 Timeline</button><button class="sheet-link" data-page="goalsPro">🏁 Metas Pro</button><button class="sheet-link" data-page="debts">📉 Dívidas</button><button class="sheet-link" data-page="assetsPage">💎 Bens</button><button class="sheet-link" data-page="annual">📆 Anual</button><button class="sheet-link" data-page="budgets">📊 Orçamentos</button>
+  <button class="sheet-link" data-page="analytics">📈 Analytics</button><button class="sheet-link" data-page="statistics">📊 Estatísticas</button><button class="sheet-link" data-page="quickActions">⚡ Atalhos</button><button class="sheet-link" data-page="favorites">⭐ Favoritos</button><button class="sheet-link" data-page="investPro">💹 Invest Pro</button><button class="sheet-link" data-page="notifications">🔔 Notificações</button><button class="sheet-link" data-page="timeline">🕒 Timeline</button><button class="sheet-link" data-page="goalsPro">🏁 Metas Pro</button><button class="sheet-link" data-page="debts">📉 Dívidas</button><button class="sheet-link" data-page="assetsPage">💎 Bens</button><button class="sheet-link" data-page="annual">📆 Anual</button><button class="sheet-link" data-page="budgets">📊 Orçamentos</button>
   <button class="sheet-link" data-page="subscriptions">🔁 Assinaturas</button>
   <button class="sheet-link" data-page="planning">🧭 Planejamento</button>
   <button class="sheet-link" data-page="categories">🏷️ Categorias</button>
@@ -307,6 +342,6 @@
 </section>
 </main>
 
-<script src="./app-v17-2-ultra.js?v=172ultra"></script>
+<script src="./app-v17-3-infinity.js?v=173infinity"></script>
 </body>
 </html>
