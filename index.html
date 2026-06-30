@@ -4,16 +4,16 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1">
 <meta name="theme-color" content="#050816">
-<title>R💰 Ramalho Finance V18.3 Professional AI Theme</title>
-<link rel="manifest" href="./manifest.json?v=183proai">
-<link rel="stylesheet" href="./style.css?v=183proai">
+<title>R💰 Ramalho Finance V18.4 AI Extract Reader</title>
+<link rel="manifest" href="./manifest.json?v=184extract">
+<link rel="stylesheet" href="./style.css?v=184extract">
 </head>
 <body>
 <div class="bg"></div>
 <header class="top">
   <div>
     <strong>R💰 Ramalho Finance</strong>
-    <small>V18.3 Professional AI Theme — NO CACHE ROOT</small>
+    <small>V18.4 AI Extract Reader — NO CACHE ROOT</small>
   </div>
   <button id="themeBtn">Tema</button>
 </header>
@@ -21,10 +21,10 @@
 <main id="app">
   <section id="dashboard" class="page active">
     <article class="hero">
-      <span class="badge">V18.3 Professional AI Theme</span>
+      <span class="badge">V18.4 AI Extract Reader</span>
       <p id="greeting">Olá</p>
       <h1 id="netWorth">R$ 0,00</h1>
-      <p id="mainInsight">Professional AI com base limpa, visual refinado e IA melhorada.</p>
+      <p id="mainInsight">AI Extract Reader com importação inteligente de extratos.</p>
       <div class="score-grid">
         <div><b id="score">0</b><small>Score</small></div>
         <div><b id="savingRate">0%</b><small>Economia</small></div>
@@ -321,6 +321,29 @@
   <section class="panel"><h2>Plano de ação inteligente</h2><div id="aiActionPlan"></div></section>
   <section class="panel"><h2>Oportunidades</h2><div id="aiOpportunities"></div></section>
 </section>
+
+<section id="extractReader" class="page">
+  <section class="panel premium">
+    <h2>Leitor de Extratos com IA</h2>
+    <div class="alert">
+      Importe extratos em CSV ou TXT. A IA local tenta identificar data, descrição, valor, tipo e categoria automaticamente.
+      Antes de salvar, você pode revisar os lançamentos detectados.
+    </div>
+  </section>
+  <section class="panel">
+    <h2>Importar extrato</h2>
+    <label class="file">Selecionar CSV/TXT<input id="extractFile" type="file" accept=".csv,.txt,text/csv,text/plain"></label>
+    <textarea id="extractPaste" placeholder="Ou cole aqui o texto do extrato..." style="min-height:130px"></textarea>
+    <button id="analyzeExtractBtn" class="primary">Analisar extrato com IA</button>
+    <button id="clearExtractBtn">Limpar análise</button>
+  </section>
+  <section class="panel premium"><h2>Resumo da IA</h2><div id="extractAiSummary"></div></section>
+  <section class="panel">
+    <h2>Lançamentos detectados</h2>
+    <div id="extractPreview"></div>
+    <button id="importExtractBtn" class="primary">Importar lançamentos aprovados</button>
+  </section>
+</section>
 <section id="cloud" class="page">
     <section class="panel premium">
       <h2>Cloud Prep</h2>
@@ -341,13 +364,13 @@
 
 <button id="menuBtn" class="fab">☰</button>
 <section id="sheet" class="sheet hidden">
-  <button class="sheet-link" data-page="budgets">📊 Orçamentos</button><button class="sheet-link" data-page="subscriptions">🔁 Assinaturas</button><button class="sheet-link" data-page="analytics">📈 Analytics</button><button class="sheet-link" data-page="aiProfessional">🧠 AI Pro</button><button class="sheet-link" data-page="quickActions">⚡ Atalhos</button><button class="sheet-link" data-page="favorites">⭐ Favoritos</button><button class="sheet-link" data-page="safeTools">🛡️ SAFE</button><button class="sheet-link" data-page="incomeSources">💵 Rendas</button><button class="sheet-link" data-page="taxes">🧾 Taxas</button><button class="sheet-link" data-page="futureBills">📌 Futuras</button><button class="sheet-link" data-page="cardElite">💳 Cartões Elite</button><button class="sheet-link" data-page="goalsPro">🏁 Metas Pro</button><button class="sheet-link" data-page="safeLife">🌱 SAFE Life</button><button class="sheet-link" data-page="exportCenter">📤 Exportar</button>
+  <button class="sheet-link" data-page="budgets">📊 Orçamentos</button><button class="sheet-link" data-page="subscriptions">🔁 Assinaturas</button><button class="sheet-link" data-page="analytics">📈 Analytics</button><button class="sheet-link" data-page="aiProfessional">🧠 AI Pro</button><button class="sheet-link" data-page="extractReader">🏦 Extratos IA</button><button class="sheet-link" data-page="quickActions">⚡ Atalhos</button><button class="sheet-link" data-page="favorites">⭐ Favoritos</button><button class="sheet-link" data-page="safeTools">🛡️ SAFE</button><button class="sheet-link" data-page="incomeSources">💵 Rendas</button><button class="sheet-link" data-page="taxes">🧾 Taxas</button><button class="sheet-link" data-page="futureBills">📌 Futuras</button><button class="sheet-link" data-page="cardElite">💳 Cartões Elite</button><button class="sheet-link" data-page="goalsPro">🏁 Metas Pro</button><button class="sheet-link" data-page="safeLife">🌱 SAFE Life</button><button class="sheet-link" data-page="exportCenter">📤 Exportar</button>
   <button class="sheet-link" data-page="investments">📈 Investimentos</button>
   <button class="sheet-link" data-page="planning">🧭 Planejamento</button>
   <button class="sheet-link" data-page="assets">💎 Patrimônio</button>
   <button class="sheet-link" data-page="cloud">☁️ Cloud Prep</button>
 </section>
 
-<script src="./app-v18-3-professional-ai.js?v=183proai"></script>
+<script src="./app-v18-4-ai-extract.js?v=184extract"></script>
 </body>
 </html>

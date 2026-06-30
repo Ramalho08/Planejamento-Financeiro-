@@ -1,24 +1,22 @@
-# R💰 Ramalho Finance V18.3 Professional AI Theme
+# R💰 Ramalho Finance V18.4 AI Extract Reader
 
-Melhoria profissional da V18.2 com visual refinado e IA melhorada.
+Baseada na V18.3 Professional AI Theme.
 
 ## Arquivos na raiz
 - index.html
 - style.css
-- app-v18-3-professional-ai.js
+- app-v18-4-ai-extract.js
 - manifest.json
 - .nojekyll
 - assets/icon.svg
 
 Abra com:
-?v=183proai
+?v=184extract
 
 ## Novidades
-- Tema claro mais bonito em roxo azulado
-- Tema escuro roxo azulado puxado para azul escuro
-- Finance AI Professional
-- Diagnóstico inteligente
-- Plano de ação automático
-- Previsões 30/90/365 dias
-- Oportunidades financeiras
-- Mantém base limpa e funcionalidades restauradas da V17
+- Leitor de extratos com IA local
+- Importação de CSV/TXT
+- Colar texto de extrato manualmente
+- Detecção automática de data, descrição, valor, tipo e categoria
+- Tela de revisão antes de importar
+- Mantém base limpa e funcional
