@@ -1,7 +1,7 @@
 {
-  "name": "Ramalho Finance V18.4 AI Extract Reader",
+  "name": "Ramalho Finance V18.4.1 Fix Extract",
   "short_name": "R💰 Finance",
-  "start_url": "./index.html?v=184extract",
+  "start_url": "./index.html?v=1841fix",
   "display": "standalone",
   "background_color": "#050816",
   "theme_color": "#050816",
