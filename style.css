@@ -83,3 +83,8 @@ body.light .top,body.light .bottom{background:rgba(255,255,255,.92)}
 .infinity-glow{border-color:rgba(34,211,238,.45)!important;box-shadow:0 0 28px rgba(34,211,238,.10)!important}
 .metric-big{font-size:24px;font-weight:900;color:var(--cyan)}
 .favorite-btn{width:100%;margin:6px 0;text-align:left}
+
+/* V17.4 Infinity Elite */
+.elite-card{border-color:rgba(250,204,21,.45)!important;background:linear-gradient(135deg,rgba(250,204,21,.10),rgba(34,211,238,.08),rgba(15,23,42,.55))!important}
+.search-result{border:1px solid var(--border);border-radius:14px;padding:10px;margin:7px 0;background:rgba(15,23,42,.45)}
+.elite-score{font-size:30px;font-weight:900;color:var(--gold)}

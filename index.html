@@ -4,9 +4,9 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1">
 <meta name="theme-color" content="#050816">
-<title>R💰 Ramalho Finance V17.3 Infinity Edition</title>
-<link rel="manifest" href="./manifest.json?v=173infinity">
-<link rel="stylesheet" href="./style.css?v=173infinity">
+<title>R💰 Ramalho Finance V17.4 Infinity Elite</title>
+<link rel="manifest" href="./manifest.json?v=174elite">
+<link rel="stylesheet" href="./style.css?v=174elite">
 </head>
 <body>
 <div class="bg"></div>
@@ -15,7 +15,7 @@
 <header class="top">
   <div>
     <strong>R💰 Ramalho Finance</strong>
-    <small>V17.3 Infinity Edition — NO CACHE ROOT</small>
+    <small>V17.4 Infinity Elite — NO CACHE ROOT</small>
   </div>
   <button id="themeBtn">Tema</button>
 </header>
@@ -24,10 +24,10 @@
 
 <section id="dashboard" class="page active">
   <article class="hero">
-    <div class="badge">V17.3 Infinity Edition</div>
+    <div class="badge">V17.4 Infinity Elite</div>
     <span id="greeting">Olá</span>
     <h1 id="netWorth">R$ 0,00</h1>
-    <p id="mainInsight">Infinity Edition carregado com segurança.</p>
+    <p id="mainInsight">Infinity Elite carregado com segurança.</p>
     <div class="scoregrid">
       <div><b id="score">0</b><small>score</small></div>
       <div><b id="savingRate">0%</b><small>economia</small></div>
@@ -59,7 +59,7 @@
   <section class="panel"><h3>Maiores gastos</h3><div id="topExpenses"></div></section>
   <section class="panel"><h3>Comparação mensal</h3><div id="monthlyCompare"></div></section>
   <section class="panel"><h3>Alertas</h3><div id="alerts"></div></section>
-  <section class="panel premium"><h3>Central Financeira Premium</h3><div id="premiumCenter"></div></section><section class="panel premium"><h3>Premium Plus</h3><div id="premiumPlus"></div></section><section class="panel premium"><h3>Ultra Health</h3><div id="ultraHealth"></div></section><section class="panel premium"><h3>Infinity Stats</h3><div id="infinityStats"></div></section>
+  <section class="panel premium"><h3>Central Financeira Premium</h3><div id="premiumCenter"></div></section><section class="panel premium"><h3>Premium Plus</h3><div id="premiumPlus"></div></section><section class="panel premium"><h3>Ultra Health</h3><div id="ultraHealth"></div></section><section class="panel premium"><h3>Infinity Stats</h3><div id="infinityStats"></div></section><section class="panel premium"><h3>Finance AI 4.0</h3><div id="eliteForecast"></div></section><section class="panel"><h3>Pesquisa Global</h3><input id="globalSearch" placeholder="Buscar lançamentos, metas, cartões, investimentos..."><div id="globalResults"></div></section>
   <section class="panel"><h3>Fluxo diário do mês</h3><div id="dailyFlow"></div></section>
   <section class="panel"><h3>Metas e progresso</h3><div id="goalInsights"></div></section>
 </section>
@@ -297,6 +297,27 @@
 <section class="panel"><h3>Projeções</h3><div id="investProjections"></div></section>
 <section class="panel"><h3>Distribuição</h3><div id="investDistribution"></div></section>
 </section>
+
+<section id="wealthCenter" class="page">
+<section class="panel premium"><h3>Centro de Patrimônio</h3><div class="alert">Visão completa de patrimônio bruto, líquido, bens, investimentos e dívidas.</div></section>
+<section class="panel"><h3>Resumo patrimonial</h3><div id="wealthCenterBox"></div></section>
+<section class="panel"><h3>Distribuição patrimonial</h3><div id="wealthDistribution"></div></section>
+</section>
+
+<section id="futureBills" class="page">
+<section class="panel premium"><h3>Contas futuras</h3><div class="alert">Planejamento dos próximos vencimentos, parcelas e compromissos financeiros.</div></section>
+<section class="panel"><h3>Próximos compromissos</h3><div id="futureBillsList"></div></section>
+</section>
+
+<section id="cardElite" class="page">
+<section class="panel premium"><h3>Cartões Elite</h3><div class="alert">Resumo avançado dos cartões, limite disponível e risco de utilização.</div></section>
+<section class="panel"><h3>Resumo por cartão</h3><div id="cardEliteList"></div></section>
+</section>
+
+<section id="aiCoach" class="page">
+<section class="panel premium"><h3>AI Coach</h3><div class="alert">Recomendações práticas e automáticas para melhorar sua vida financeira.</div></section>
+<section class="panel"><h3>Plano de ação</h3><div id="coachPlan"></div></section>
+</section>
 <section id="cloud" class="page">
   <section class="panel premium"><h3>Cloud Prep</h3><div class="alert">Preparado para Firebase futuramente. Nesta versão, tudo continua local e estável.</div></section>
   <section class="panel">
@@ -331,7 +352,7 @@
 
 <button id="menuBtn" class="fab">☰</button>
 <section id="sheet" class="sheet hidden">
-  <button class="sheet-link" data-page="analytics">📈 Analytics</button><button class="sheet-link" data-page="statistics">📊 Estatísticas</button><button class="sheet-link" data-page="quickActions">⚡ Atalhos</button><button class="sheet-link" data-page="favorites">⭐ Favoritos</button><button class="sheet-link" data-page="investPro">💹 Invest Pro</button><button class="sheet-link" data-page="notifications">🔔 Notificações</button><button class="sheet-link" data-page="timeline">🕒 Timeline</button><button class="sheet-link" data-page="goalsPro">🏁 Metas Pro</button><button class="sheet-link" data-page="debts">📉 Dívidas</button><button class="sheet-link" data-page="assetsPage">💎 Bens</button><button class="sheet-link" data-page="annual">📆 Anual</button><button class="sheet-link" data-page="budgets">📊 Orçamentos</button>
+  <button class="sheet-link" data-page="analytics">📈 Analytics</button><button class="sheet-link" data-page="wealthCenter">🏦 Patrimônio</button><button class="sheet-link" data-page="futureBills">📌 Futuras</button><button class="sheet-link" data-page="cardElite">💳 Cartões Elite</button><button class="sheet-link" data-page="aiCoach">🧠 AI Coach</button><button class="sheet-link" data-page="statistics">📊 Estatísticas</button><button class="sheet-link" data-page="quickActions">⚡ Atalhos</button><button class="sheet-link" data-page="favorites">⭐ Favoritos</button><button class="sheet-link" data-page="investPro">💹 Invest Pro</button><button class="sheet-link" data-page="notifications">🔔 Notificações</button><button class="sheet-link" data-page="timeline">🕒 Timeline</button><button class="sheet-link" data-page="goalsPro">🏁 Metas Pro</button><button class="sheet-link" data-page="debts">📉 Dívidas</button><button class="sheet-link" data-page="assetsPage">💎 Bens</button><button class="sheet-link" data-page="annual">📆 Anual</button><button class="sheet-link" data-page="budgets">📊 Orçamentos</button>
   <button class="sheet-link" data-page="subscriptions">🔁 Assinaturas</button>
   <button class="sheet-link" data-page="planning">🧭 Planejamento</button>
   <button class="sheet-link" data-page="categories">🏷️ Categorias</button>
@@ -342,6 +363,6 @@
 </section>
 </main>
 
-<script src="./app-v17-3-infinity.js?v=173infinity"></script>
+<script src="./app-v17-4-elite.js?v=174elite"></script>
 </body>
 </html>
