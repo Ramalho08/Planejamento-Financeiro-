@@ -1,7 +1,7 @@
 {
-  "name": "Ramalho Finance V21.1.2 Buttons Update FIX",
+  "name": "Ramalho Finance V21.1.3 Menu Real Scroll FIX",
   "short_name": "R💰 Finance",
-  "start_url": "./index.html?v=2112buttonsfix",
+  "start_url": "./index.html?v=2113scrollfix",
   "display": "standalone",
   "background_color": "#050816",
   "theme_color": "#050816",

@@ -1,18 +1,12 @@
-# R💰 Ramalho Finance V21.1.2 Buttons Update FIX
+# R💰 Ramalho Finance V21.1.3 Menu Real Scroll FIX
 
-Correção para botões/abas não atualizando.
+Correção específica da rolagem da aba dos 3 pontos/barras.
 
 ## Correções
-- Novo nome do arquivo JavaScript para evitar cache antigo.
-- Versão nova em todos os links: ?v=2112buttonsfix
-- Botão "Forçar atualização" no topo.
-- Reforço de eventos dos botões e abas.
-- Mantém correção de rolagem no menu das três barras.
+- Menu dos 3 pontos agora tem rolagem real.
+- Usa max-height com 100dvh para celular.
+- Mantém correção dos botões da V21.1.2.
+- Não mexe no núcleo das páginas.
 
 ## Abra com
-?v=2112buttonsfix
-
-Se ainda aparecer versão antiga:
-1. Abra o site com `?v=2112buttonsfix`
-2. Clique em "Forçar atualização"
-3. No GitHub Pages, aguarde alguns minutos após subir os arquivos
+?v=2113scrollfix
