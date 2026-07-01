@@ -1,7 +1,7 @@
 {
-  "name": "Ramalho Finance 2.0 Foundation",
+  "name": "Ramalho Finance Legacy Pro Alpha",
   "short_name": "Ramalho Finance",
-  "start_url": "./index.html?v=20foundation",
+  "start_url": "./index.html?v=legacyproalpha",
   "display": "standalone",
   "background_color": "#030817",
   "theme_color": "#07152f",

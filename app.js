@@ -1,21 +1,20 @@
-import { $, categories } from "./utils.js";
-import { store } from "./core.js";
-import { initNavigation } from "./navigation.js";
-import { renderDashboard } from "./dashboard.js";
-import { initTransactions, renderTransactions } from "./transactions.js";
-import { initWallets, renderWallets } from "./wallets.js";
-import { initGoals, renderGoals } from "./goals.js";
-import { initReports, renderReports } from "./reports.js";
-import { renderAI } from "./ai.js";
-import { renderCloud } from "./cloud.js";
-import { renderArchitecture } from "./architecture.js";
-import { initSettings, renderSettings } from "./settings.js";
+import{$}from"./utils.js";
+import{store}from"./store.js";
+import{initNavigation}from"./navigation.js";
+import{renderDashboard}from"./dashboard.js";
+import{initTransactions,renderTransactions}from"./transactions.js";
+import{initWallets,renderWallets}from"./wallets.js";
+import{initGoals,renderGoals}from"./goals.js";
+import{initReports,renderReports}from"./reports.js";
+import{renderAI}from"./ai.js";
+import{renderCloud}from"./cloud.js";
+import{renderArchitecture}from"./architecture.js";
+import{initSettings,renderSettings}from"./settings.js";
 
-function applyTheme() {
-  document.body.classList.toggle("light", store.state.theme === "light");
+function applyTheme(){
+  document.body.classList.toggle("light",store.state.theme==="light");
 }
-
-function renderAll() {
+function renderAll(){
   applyTheme();
   renderDashboard();
   renderTransactions();
@@ -27,14 +26,13 @@ function renderAll() {
   renderArchitecture();
   renderSettings();
 }
-
-function initTheme() {
-  $("themeBtn").addEventListener("click", () => {
-    store.setTheme(store.state.theme === "light" ? "dark" : "light");
+function initTheme(){
+  $("themeBtn").addEventListener("click",()=>{
+    store.state.theme=store.state.theme==="light"?"dark":"light";
+    store.emit();
   });
 }
-
-function init() {
+function init(){
   initNavigation();
   initTheme();
   initTransactions();
@@ -42,11 +40,8 @@ function init() {
   initGoals();
   initReports();
   initSettings();
-
   store.subscribe(renderAll);
   renderAll();
-
-  console.log("Ramalho Finance 2.0 Foundation READY");
+  console.log("Ramalho Finance Legacy Pro Alpha iniciado.");
 }
-
 init();

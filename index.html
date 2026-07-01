@@ -1,180 +1,22 @@
-<!doctype html>
-<html lang="pt-BR">
-<head>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
-  <meta name="theme-color" content="#07152f">
-  <title>Ramalho Finance 2.0 Foundation</title>
-  <link rel="manifest" href="./manifest.json?v=20foundation">
-  <link rel="stylesheet" href="./style.css?v=20foundation">
-</head>
-<body>
-  <div class="bg"></div>
-
-  <header class="top">
-    <button id="menuBtn" class="icon-btn" aria-label="Abrir menu">☰</button>
-    <div>
-      <strong>R💰 Ramalho Finance</strong>
-      <small>2.0 Foundation READY</small>
-    </div>
-    <button id="themeBtn" class="icon-btn" aria-label="Alternar tema">◐</button>
-  </header>
-
-  <div id="drawerBackdrop" class="drawer-backdrop hidden"></div>
-  <aside id="drawer" class="drawer hidden">
-    <div class="drawer-head">
-      <div>
-        <strong>Menu Pro</strong>
-        <small>Arquitetura 2.0</small>
-      </div>
-      <button id="closeDrawerBtn" class="small-btn">Fechar</button>
-    </div>
-    <nav id="drawerNav" class="drawer-nav">
-      <button data-page="dashboard">🏠 Dashboard</button>
-      <button data-page="transactions">💸 Lançamentos</button>
-      <button data-page="wallets">👛 Carteiras</button>
-      <button data-page="goals">🎯 Metas</button>
-      <button data-page="reports">📑 Relatórios</button>
-      <button data-page="aiCenter">🧠 IA Center</button>
-      <button data-page="cloudReady">☁️ Cloud Ready</button>
-      <button data-page="architecture">🏗️ Arquitetura</button>
-      <button data-page="settings">⚙️ Configurações</button>
-    </nav>
-  </aside>
-
-  <main class="app">
-    <section id="dashboard" class="page active">
-      <section class="hero">
-        <div>
-          <span class="chip">Foundation estável</span>
-          <h1>Ramalho Finance 2.0</h1>
-          <p>Base profissional pronta para receber IA, Firebase, PDF/OCR e novos recursos sem quebrar a navegação.</p>
-        </div>
-      </section>
-
-      <section class="cards">
-        <article><small>Receitas</small><strong id="kIncome">R$ 0,00</strong></article>
-        <article><small>Despesas</small><strong id="kExpense">R$ 0,00</strong></article>
-        <article><small>Saldo</small><strong id="kBalance">R$ 0,00</strong></article>
-        <article><small>Score</small><strong id="kScore">0</strong></article>
-      </section>
-
-      <section class="panel">
-        <h2>Resumo inteligente</h2>
-        <div id="dashboardSummary"></div>
-      </section>
-
-      <section class="panel">
-        <h2>Últimos lançamentos</h2>
-        <div id="recentTransactions"></div>
-      </section>
-    </section>
-
-    <section id="transactions" class="page">
-      <section class="panel premium">
-        <h2>Lançamentos</h2>
-        <div class="form-grid">
-          <input id="txDescription" placeholder="Descrição">
-          <input id="txAmount" type="number" inputmode="decimal" placeholder="Valor">
-          <select id="txType">
-            <option value="income">Receita</option>
-            <option value="expense">Despesa</option>
-          </select>
-          <select id="txCategory"></select>
-          <input id="txDate" type="date">
-          <button id="addTxBtn" class="primary">Adicionar</button>
-        </div>
-      </section>
-      <section class="panel">
-        <h2>Todos os lançamentos</h2>
-        <div id="txList"></div>
-      </section>
-    </section>
-
-    <section id="wallets" class="page">
-      <section class="panel premium">
-        <h2>Carteiras</h2>
-        <div class="form-grid">
-          <input id="walletName" placeholder="Nome da carteira">
-          <input id="walletBalance" type="number" inputmode="decimal" placeholder="Saldo">
-          <button id="addWalletBtn" class="primary">Adicionar carteira</button>
-        </div>
-      </section>
-      <section class="panel"><h2>Minhas carteiras</h2><div id="walletList"></div></section>
-    </section>
-
-    <section id="goals" class="page">
-      <section class="panel premium">
-        <h2>Metas</h2>
-        <div class="form-grid">
-          <input id="goalName" placeholder="Nome da meta">
-          <input id="goalTarget" type="number" inputmode="decimal" placeholder="Valor alvo">
-          <input id="goalSaved" type="number" inputmode="decimal" placeholder="Valor guardado">
-          <button id="addGoalBtn" class="primary">Criar meta</button>
-        </div>
-      </section>
-      <section class="panel"><h2>Minhas metas</h2><div id="goalList"></div></section>
-    </section>
-
-    <section id="reports" class="page">
-      <section class="panel premium">
-        <h2>Relatórios Pro</h2>
-        <p>Relatório mensal, qualidade dos dados e exportação.</p>
-      </section>
-      <section class="panel"><h2>Diagnóstico</h2><div id="reportDiagnostics"></div></section>
-      <section class="panel actions">
-        <button id="copyReportBtn" class="primary">Copiar relatório</button>
-        <button id="exportReportBtn">Exportar TXT</button>
-        <button id="backupBtn">Backup JSON</button>
-      </section>
-    </section>
-
-    <section id="aiCenter" class="page">
-      <section class="panel premium">
-        <h2>IA Center</h2>
-        <div class="alert">Camada preparada para IA local e futura IA Cloud. Nenhum script externo é carregado aqui.</div>
-      </section>
-      <section class="panel"><h2>Análise local</h2><div id="aiLocalBox"></div></section>
-      <section class="panel">
-        <h2>Importação futura</h2>
-        <div class="alert">Pronto para receber: PDF, OCR, OpenAI/Gemini via backend, revisão e importação automática.</div>
-      </section>
-    </section>
-
-    <section id="cloudReady" class="page">
-      <section class="panel premium">
-        <h2>Cloud Ready</h2>
-        <div class="alert">Firebase e Login Google ficarão em módulo separado para não quebrar a base local.</div>
-      </section>
-      <section class="panel"><h2>Checklist</h2><div id="cloudChecklist"></div></section>
-    </section>
-
-    <section id="architecture" class="page">
-      <section class="panel premium">
-        <h2>Arquitetura 2.0</h2>
-        <div class="alert">Código modular, navegação isolada, estado centralizado e pontos de extensão para recursos futuros.</div>
-      </section>
-      <section class="panel"><h2>Etapas finalizadas</h2><div id="stageList"></div></section>
-      <section class="panel"><h2>Módulos</h2><div id="moduleList"></div></section>
-    </section>
-
-    <section id="settings" class="page">
-      <section class="panel premium">
-        <h2>Configurações</h2>
-        <button id="resetDemoBtn">Carregar dados de exemplo</button>
-        <button id="clearDataBtn" class="danger">Limpar dados locais</button>
-      </section>
-      <section class="panel"><h2>Estado do sistema</h2><div id="systemStatus"></div></section>
-    </section>
-  </main>
-
-  <nav class="bottom-nav">
-    <button class="tab active" data-page="dashboard">🏠<span>Início</span></button>
-    <button class="tab" data-page="transactions">💸<span>Lançar</span></button>
-    <button class="tab" data-page="reports">📑<span>Relatórios</span></button>
-    <button class="tab" data-page="aiCenter">🧠<span>IA</span></button>
-  </nav>
-
-  <script type="module" src="./js/app.js?v=20foundation"></script>
-</body>
-</html>
+<!doctype html><html lang="pt-BR"><head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="theme-color" content="#07152f"><title>Ramalho Finance Legacy Pro Alpha</title>
+<link rel="manifest" href="./manifest.json?v=legacyproalpha">
+<link rel="stylesheet" href="./style.css?v=legacyproalpha"></head>
+<body><div class="bg"></div>
+<header class="top"><button id="menuBtn" class="icon">☰</button><div class="brand"><b>R💰 Ramalho Finance</b><small>Legacy Pro Alpha</small></div><button id="themeBtn" class="icon">◐</button></header>
+<div id="drawerBackdrop" class="backdrop hidden"></div><aside id="drawer" class="drawer hidden"><div class="drawerHead"><div><b>Menu Pro</b><small>Arquitetura estável</small></div><button id="closeDrawerBtn">Fechar</button></div><nav>
+<button data-page="dashboard">🏠 Dashboard</button><button data-page="transactions">💸 Lançamentos</button><button data-page="wallets">👛 Carteiras</button><button data-page="goals">🎯 Metas</button><button data-page="reports">📊 Relatórios</button><button data-page="ai">🧠 IA Local</button><button data-page="cloud">☁️ Cloud Ready</button><button data-page="architecture">🏗️ Arquitetura</button><button data-page="settings">⚙️ Configurações</button>
+</nav></aside>
+<main class="app">
+<section id="dashboard" class="page active"><section class="hero"><div><span class="chip">Legacy Pro Alpha</span><h1>Controle financeiro profissional</h1><p>Base estável, bonita e preparada para IA, Firebase, PDF/OCR e módulos futuros.</p></div><div class="heroScore"><small>Score financeiro</small><strong id="heroScore">0</strong><span id="heroLabel">Calculando...</span></div></section><section class="cards"><article><small>Receitas</small><b id="incomeCard">R$ 0,00</b></article><article><small>Despesas</small><b id="expenseCard">R$ 0,00</b></article><article><small>Saldo</small><b id="balanceCard">R$ 0,00</b></article><article><small>Patrimônio</small><b id="networthCard">R$ 0,00</b></article></section><section class="panel premium"><h2>Resumo inteligente</h2><div id="smartSummary"></div></section><section class="panel"><h2>Últimos lançamentos</h2><div id="recentTransactions"></div></section></section>
+<section id="transactions" class="page"><section class="panel premium"><h2>Novo lançamento</h2><div class="form"><input id="txDescription" placeholder="Descrição"><input id="txAmount" type="number" placeholder="Valor"><select id="txType"><option value="income">Receita</option><option value="expense">Despesa</option></select><select id="txCategory"></select><input id="txDate" type="date"><button id="addTxBtn" class="primary">Adicionar</button></div></section><section class="panel"><h2>Lançamentos</h2><div class="toolbar"><input id="txSearch" placeholder="Buscar"><select id="txFilter"><option value="all">Todos</option><option value="income">Receitas</option><option value="expense">Despesas</option></select></div><div id="txList"></div></section></section>
+<section id="wallets" class="page"><section class="panel premium"><h2>Carteiras</h2><div class="form mini"><input id="walletName" placeholder="Nome"><input id="walletBalance" type="number" placeholder="Saldo"><button id="addWalletBtn" class="primary">Adicionar</button></div></section><section class="panel"><div id="walletList"></div></section></section>
+<section id="goals" class="page"><section class="panel premium"><h2>Metas</h2><div class="form mini"><input id="goalName" placeholder="Meta"><input id="goalTarget" type="number" placeholder="Valor alvo"><input id="goalSaved" type="number" placeholder="Guardado"><button id="addGoalBtn" class="primary">Criar</button></div></section><section class="panel"><div id="goalList"></div></section></section>
+<section id="reports" class="page"><section class="panel premium"><h2>Relatórios Pro</h2><div class="alert">Relatório mensal, categorias, qualidade dos dados e exportação.</div></section><section class="panel"><h2>Diagnóstico</h2><div id="reportDiagnostic"></div></section><section class="panel"><h2>Categorias</h2><div id="categoryReport"></div></section><section class="panel"><h2>Qualidade dos dados</h2><div id="dataQuality"></div></section><section class="panel actions"><button id="copyReportBtn" class="primary">Copiar relatório</button><button id="exportTxtBtn">Exportar TXT</button><button id="backupJsonBtn">Backup JSON</button></section></section>
+<section id="ai" class="page"><section class="panel premium"><h2>IA Local Pro</h2><div class="alert">Diagnóstico local seguro. A IA Cloud real entra depois via backend.</div></section><section class="panel"><h2>Diagnóstico</h2><div id="aiDiagnosis"></div></section><section class="panel"><h2>Plano de ação</h2><div id="aiActionPlan"></div></section><section class="panel"><h2>Alertas</h2><div id="aiAlerts"></div></section></section>
+<section id="cloud" class="page"><section class="panel premium"><h2>Cloud Ready</h2><div class="alert">Preparado para Firebase, Login Google, Cloud Functions e IA real sem carregar scripts externos.</div></section><section class="panel"><h2>Checklist</h2><div id="cloudChecklist"></div></section></section>
+<section id="architecture" class="page"><section class="panel premium"><h2>Arquitetura Legacy Pro</h2><div class="alert">Módulos, estado centralizado, navegação isolada e documentação.</div></section><section class="panel"><h2>Etapas concluídas</h2><div id="doneStages"></div></section><section class="panel"><h2>Módulos</h2><div id="moduleMap"></div></section></section>
+<section id="settings" class="page"><section class="panel premium"><h2>Configurações</h2><button id="demoBtn" class="primary">Carregar exemplo</button><button id="clearBtn" class="danger">Limpar dados</button></section><section class="panel"><h2>Sistema</h2><div id="systemInfo"></div></section></section>
+</main><nav class="bottom"><button class="tab active" data-page="dashboard">🏠<span>Início</span></button><button class="tab" data-page="transactions">💸<span>Lançar</span></button><button class="tab" data-page="reports">📊<span>Relatórios</span></button><button class="tab" data-page="ai">🧠<span>IA</span></button></nav>
+<script type="module" src="./js/app.js?v=legacyproalpha"></script></body></html>
