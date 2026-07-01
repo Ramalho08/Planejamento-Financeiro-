@@ -1,10 +1,467 @@
-// V21.1 Safe Cloud AI
-window.RF_FIREBASE_CONFIG = {
-  apiKey: "COLE_AQUI",
-  authDomain: "SEU_PROJETO.firebaseapp.com",
-  projectId: "SEU_PROJETO",
-  storageBucket: "SEU_PROJETO.appspot.com",
-  messagingSenderId: "COLE_AQUI",
-  appId: "COLE_AQUI"
-};
-window.RF_FUNCTION_REGION = "us-central1";
+<!doctype html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="theme-color" content="#050816">
+<title>R💰 Ramalho Finance V21.4 Stable Plus</title>
+<link rel="manifest" href="./manifest.json?v=214stableplus">
+<link rel="stylesheet" href="./style.css?v=214stableplus">
+</head>
+<body>
+<div class="bg"></div>
+<header class="top">
+  <div>
+    <strong>R💰 Ramalho Finance</strong>
+    <small>V21.4 Stable Plus — NO CACHE ROOT</small>
+  </div>
+  <button id="themeBtn">Tema</button>
+</header>
+
+<main id="app">
+  <section id="dashboard" class="page active">
+    <article class="hero">
+      <span class="badge">V19 Ultimate AI Import</span>
+      <p id="greeting">Olá</p>
+      <h1 id="netWorth">R$ 0,00</h1>
+      <p id="mainInsight">Stable Plus com melhorias seguras e base preservada.</p>
+      <div class="score-grid">
+        <div><b id="score">0</b><small>Score</small></div>
+        <div><b id="savingRate">0%</b><small>Economia</small></div>
+        <div><b id="riskLevel">Baixo</b><small>Risco</small></div>
+      </div>
+    </article>
+
+    <section class="cards">
+      <article><span>Receitas</span><b id="incomeTotal">R$ 0,00</b></article>
+      <article><span>Despesas</span><b id="expenseTotal">R$ 0,00</b></article>
+      <article><span>Saldo</span><b id="balanceTotal">R$ 0,00</b></article>
+      <article><span>Reserva ideal</span><b id="reserveIdeal">R$ 0,00</b></article>
+      <article><span>Carteiras</span><b id="walletTotal">R$ 0,00</b></article>
+      <article><span>Investimentos</span><b id="investmentTotal">R$ 0,00</b></article>
+      <article><span>Dívidas</span><b id="debtTotal">R$ 0,00</b></article>
+      <article><span>Patrimônio bruto</span><b id="grossWorth">R$ 0,00</b></article>
+    </section>
+
+    <section class="panel premium"><h2>Finance AI Professional</h2><div id="aiPanel"></div></section><section class="panel premium"><h2>AI Professional Insights</h2><div id="aiProfessionalPanel"></div></section><section class="panel"><h2>Previsão inteligente</h2><div id="smartForecast"></div></section><section class="panel premium"><h2>Infinity Stats</h2><div id="infinityStats"></div></section><section class="panel premium"><h2>Centro Premium</h2><div id="premiumCenter"></div></section><section class="panel premium"><h2>Legacy Restore</h2><div id="legacyRestorePanel"></div></section><section class="panel premium"><h2>AI Coach</h2><div id="coachPlan"></div></section><section class="panel"><h2>Pesquisa Global</h2><input id="globalSearch" placeholder="Buscar lançamentos, metas, cartões, investimentos..."><div id="globalResults"></div></section>
+    <section class="panel"><h2>Fluxo financeiro</h2><div id="flowBars"></div></section>
+    <section class="panel"><h2>Gastos por categoria</h2><div id="categoryBars"></div></section>
+    <section class="panel"><h2>Alertas</h2><div id="alerts"></div></section>
+  </section>
+
+  <section id="launch" class="page">
+    <section class="panel">
+      <h2>Novo lançamento</h2>
+      <input id="txDescription" placeholder="Descrição">
+      <input id="txAmount" type="number" placeholder="Valor">
+      <select id="txType"><option value="income">Receita</option><option value="expense">Despesa</option></select>
+      <select id="txCategory"></select>
+      <input id="txDue" type="date">
+      <label class="check"><input id="txRecurring" type="checkbox"> Recorrente</label>
+      <button id="addTxBtn" class="primary">Adicionar lançamento</button>
+    </section>
+
+    <section class="panel">
+      <h2>Histórico</h2>
+      <input id="txSearch" placeholder="Pesquisar">
+      <select id="txFilterType"><option value="all">Tudo</option><option value="income">Receitas</option><option value="expense">Despesas</option></select>
+      <select id="txFilterCategory"><option value="all">Todas categorias</option></select>
+      <button id="txSortBtn">Ordenar por valor</button>
+      <div id="txList"></div>
+    </section>
+  </section>
+
+  <section id="wallets" class="page">
+    <section class="panel">
+      <h2>Carteiras e contas</h2>
+      <input id="walletName" placeholder="Nome da carteira">
+      <input id="walletBalance" type="number" placeholder="Saldo">
+      <button id="addWalletBtn" class="primary">Adicionar carteira</button>
+    </section>
+    <section class="panel">
+      <h2>Transferência</h2>
+      <select id="fromWallet"></select>
+      <select id="toWallet"></select>
+      <input id="transferAmount" type="number" placeholder="Valor">
+      <button id="transferBtn" class="primary">Transferir</button>
+    </section>
+    <section class="panel"><h2>Minhas carteiras</h2><div id="walletList"></div></section>
+  </section>
+
+  <section id="cardsPage" class="page">
+    <section class="panel">
+      <h2>Cartões</h2>
+      <input id="cardName" placeholder="Nome do cartão">
+      <input id="cardLimit" type="number" placeholder="Limite">
+      <input id="cardDue" type="number" placeholder="Dia de vencimento">
+      <button id="addCardBtn" class="primary">Adicionar cartão</button>
+    </section>
+    <section class="panel">
+      <h2>Compra parcelada</h2>
+      <input id="parcelDesc" placeholder="Descrição">
+      <input id="parcelTotal" type="number" placeholder="Valor total">
+      <input id="parcelCount" type="number" placeholder="Parcelas">
+      <select id="parcelCard"></select>
+      <button id="addParcelBtn" class="primary">Lançar parcelas</button>
+    </section>
+    <section class="panel"><h2>Resumo dos cartões</h2><div id="cardList"></div></section>
+  </section>
+
+  <section id="budgets" class="page">
+    <section class="panel">
+      <h2>Orçamentos</h2>
+      <select id="budgetCategory"></select>
+      <input id="budgetLimit" type="number" placeholder="Limite mensal">
+      <button id="addBudgetBtn" class="primary">Salvar orçamento</button>
+    </section>
+    <section class="panel"><h2>Controle de orçamento</h2><div id="budgetList"></div></section>
+  </section>
+
+  <section id="goals" class="page">
+    <section class="panel">
+      <h2>Metas</h2>
+      <input id="goalName" placeholder="Nome da meta">
+      <input id="goalTarget" type="number" placeholder="Valor alvo">
+      <input id="goalSaved" type="number" placeholder="Valor guardado">
+      <input id="goalDeadline" type="date">
+      <button id="addGoalBtn" class="primary">Criar meta</button>
+    </section>
+    <section class="panel"><h2>Minhas metas</h2><div id="goalList"></div></section>
+  </section>
+
+  <section id="investments" class="page">
+    <section class="panel">
+      <h2>Investimentos</h2>
+      <input id="investmentName" placeholder="Nome do investimento">
+      <input id="investmentAmount" type="number" placeholder="Valor atual">
+      <input id="investmentRate" type="number" placeholder="% ao mês estimado">
+      <button id="addInvestmentBtn" class="primary">Adicionar investimento</button>
+    </section>
+    <section class="panel"><h2>Carteira de investimentos</h2><div id="investmentList"></div></section>
+    <section class="panel"><h2>Projeção</h2><div id="investmentProjection"></div></section>
+  </section>
+
+  <section id="planning" class="page">
+    <section class="panel">
+      <h2>Planejamento</h2>
+      <input id="planText" placeholder="Ex: guardar dinheiro, pagar conta...">
+      <select id="planPriority"><option>Alta</option><option>Média</option><option>Baixa</option></select>
+      <button id="addPlanBtn" class="primary">Adicionar plano</button>
+    </section>
+    <section class="panel"><h2>Meu planejamento</h2><div id="planList"></div></section>
+  </section>
+
+  <section id="assets" class="page">
+    <section class="panel">
+      <h2>Bens e dívidas</h2>
+      <input id="assetName" placeholder="Nome do bem">
+      <input id="assetValue" type="number" placeholder="Valor">
+      <button id="addAssetBtn" class="primary">Adicionar bem</button>
+      <hr>
+      <input id="debtName" placeholder="Nome da dívida">
+      <input id="debtTotalInput" type="number" placeholder="Valor total">
+      <input id="debtPaidInput" type="number" placeholder="Valor pago">
+      <button id="addDebtBtn" class="primary">Adicionar dívida</button>
+    </section>
+    <section class="panel"><h2>Patrimônio</h2><div id="assetDebtList"></div></section>
+  </section>
+
+  <section id="reports" class="page">
+    <section class="panel actions">
+      <button id="sampleBtn" class="primary">Inserir dados exemplo</button>
+      <button id="exportCsvBtn">Exportar CSV</button>
+      <button id="backupBtn">Backup JSON</button>
+      <label class="file">Restaurar JSON<input id="restoreInput" type="file" accept="application/json"></label>
+      <button id="printBtn">PDF / Imprimir</button>
+      <button id="clearBtn" class="danger">Limpar tudo</button>
+    </section>
+    <section class="panel"><h2>Resumo mensal</h2><div id="monthlySummary"></div></section>
+  </section>
+
+  
+<section id="subscriptions" class="page">
+  <section class="panel">
+    <h2>Assinaturas</h2>
+    <input id="subName" placeholder="Nome da assinatura">
+    <input id="subValue" type="number" placeholder="Valor mensal">
+    <select id="subCategory"></select>
+    <input id="subDue" type="number" placeholder="Dia de vencimento">
+    <button id="addSubBtn" class="primary">Adicionar assinatura</button>
+  </section>
+  <section class="panel"><h2>Minhas assinaturas</h2><div id="subList"></div></section>
+</section>
+
+<section id="analytics" class="page">
+  <section class="panel premium"><h2>Analytics Premium</h2><div class="alert">Análises avançadas do mês, categorias, médias e projeções.</div></section>
+  <section class="panel"><h2>Resumo inteligente</h2><div id="analyticsSummary"></div></section>
+  <section class="panel"><h2>Ranking de categorias</h2><div id="categoryRanking"></div></section>
+  <section class="panel"><h2>Timeline financeira</h2><div id="timelineList"></div></section>
+</section>
+
+<section id="favorites" class="page">
+  <section class="panel">
+    <h2>Favoritos</h2>
+    <input id="favName" placeholder="Nome do favorito">
+    <input id="favAmount" type="number" placeholder="Valor">
+    <select id="favType"><option value="income">Receita</option><option value="expense">Despesa</option></select>
+    <select id="favCategory"></select>
+    <button id="addFavoriteBtn" class="primary">Criar favorito</button>
+  </section>
+  <section class="panel"><h2>Meus favoritos</h2><div id="favoriteList"></div></section>
+</section>
+
+<section id="quickActions" class="page">
+  <section class="panel premium"><h2>Atalhos rápidos</h2><div class="alert">Registre movimentações comuns com um toque.</div></section>
+  <section class="panel actions">
+    <button id="quickIncomeBtn" class="primary">+ Receita rápida R$100</button>
+    <button id="quickFoodBtn">+ Alimentação R$30</button>
+    <button id="quickTransportBtn">+ Transporte R$15</button>
+    <button id="quickSubBtn">+ Assinatura R$39,90</button>
+  </section>
+  <section class="panel"><h2>Ações recentes</h2><div id="recentActions"></div></section>
+</section>
+
+<section id="safeTools" class="page">
+  <section class="panel premium"><h2>SAFE Tools</h2><div class="alert">Ferramentas leves que não alteram o núcleo do app.</div></section>
+  <section class="panel">
+    <h2>Notas financeiras</h2>
+    <textarea id="safeNoteText" placeholder="Escreva uma nota..." style="min-height:90px"></textarea>
+    <button id="addSafeNoteBtn" class="primary">Salvar nota</button>
+    <div id="safeNoteList"></div>
+  </section>
+  <section class="panel">
+    <h2>Rotina financeira</h2>
+    <input id="routineText" placeholder="Ex: revisar cartão">
+    <button id="addRoutineBtn" class="primary">Adicionar rotina</button>
+    <div id="routineList"></div>
+  </section>
+</section>
+
+<section id="incomeSources" class="page">
+  <section class="panel">
+    <h2>Fontes de renda</h2>
+    <input id="incomeSourceName" placeholder="Fonte de renda">
+    <input id="incomeSourceValue" type="number" placeholder="Valor mensal estimado">
+    <select id="incomeSourceType"><option>Fixa</option><option>Variável</option><option>Extra</option></select>
+    <button id="addIncomeSourceBtn" class="primary">Adicionar fonte</button>
+  </section>
+  <section class="panel"><h2>Minhas fontes</h2><div id="incomeSourceList"></div></section>
+</section>
+
+<section id="taxes" class="page">
+  <section class="panel">
+    <h2>Impostos e taxas</h2>
+    <input id="taxName" placeholder="Nome da taxa/imposto">
+    <input id="taxValue" type="number" placeholder="Valor">
+    <input id="taxDue" type="date">
+    <button id="addTaxBtn" class="primary">Adicionar taxa</button>
+  </section>
+  <section class="panel"><h2>Taxas cadastradas</h2><div id="taxList"></div></section>
+</section>
+
+<section id="futureBills" class="page">
+  <section class="panel premium"><h2>Contas futuras</h2><div class="alert">Vencimentos, assinaturas e compromissos futuros.</div></section>
+  <section class="panel"><h2>Próximos compromissos</h2><div id="futureBillsList"></div></section>
+</section>
+
+<section id="cardElite" class="page">
+  <section class="panel premium"><h2>Cartões Elite</h2><div class="alert">Limite disponível, uso por cartão e risco de fatura.</div></section>
+  <section class="panel"><h2>Resumo por cartão</h2><div id="cardEliteList"></div></section>
+</section>
+
+<section id="goalsPro" class="page">
+  <section class="panel">
+    <h2>Metas Pro</h2>
+    <input id="goalProName" placeholder="Nome da meta Pro">
+    <input id="goalProTarget" type="number" placeholder="Valor alvo">
+    <input id="goalProSaved" type="number" placeholder="Valor guardado">
+    <input id="goalProDeadline" type="date">
+    <button id="addGoalProBtn" class="primary">Criar meta Pro</button>
+  </section>
+  <section class="panel"><h2>Minhas metas Pro</h2><div id="goalProList"></div></section>
+</section>
+
+<section id="safeLife" class="page">
+  <section class="panel premium"><h2>SAFE Life</h2><div class="alert">Metas rápidas, lista de desejos e hábitos financeiros.</div></section>
+  <section class="panel">
+    <h2>Meta rápida</h2>
+    <input id="safeGoalName" placeholder="Nome da meta rápida">
+    <input id="safeGoalValue" type="number" placeholder="Valor alvo">
+    <button id="addSafeGoalBtn" class="primary">Adicionar meta rápida</button>
+  </section>
+  <section class="panel">
+    <h2>Lista de desejos</h2>
+    <input id="wishName" placeholder="Nome do desejo">
+    <input id="wishValue" type="number" placeholder="Valor estimado">
+    <input id="wishSaved" type="number" placeholder="Valor já separado">
+    <button id="addWishBtn" class="primary">Adicionar desejo</button>
+  </section>
+  <section class="panel">
+    <h2>Hábito financeiro</h2>
+    <input id="habitName" placeholder="Ex: evitar compra por impulso">
+    <button id="addHabitBtn" class="primary">Adicionar hábito</button>
+  </section>
+  <section class="panel"><h2>Minhas metas rápidas</h2><div id="safeGoalList"></div></section>
+  <section class="panel"><h2>Meus desejos</h2><div id="wishList"></div></section>
+  <section class="panel"><h2>Meus hábitos</h2><div id="habitList"></div></section>
+</section>
+
+<section id="exportCenter" class="page">
+  <section class="panel premium"><h2>Central de Exportação</h2><div class="alert">Resumo pronto, backup e relatório HTML.</div></section>
+  <section class="panel actions">
+    <button id="exportHtmlBtn" class="primary">Exportar relatório HTML</button>
+    <button id="copySummaryBtn">Copiar resumo financeiro</button>
+  </section>
+  <section class="panel"><h2>Resumo exportável</h2><div id="exportSummary"></div></section>
+</section>
+
+<section id="aiProfessional" class="page">
+  <section class="panel premium"><h2>Finance AI Professional</h2><div class="alert">Análise financeira local com diagnóstico, plano de ação, oportunidades e riscos.</div></section>
+  <section class="panel"><h2>Diagnóstico completo</h2><div id="aiDiagnosis"></div></section>
+  <section class="panel"><h2>Plano de ação inteligente</h2><div id="aiActionPlan"></div></section>
+  <section class="panel"><h2>Oportunidades</h2><div id="aiOpportunities"></div></section>
+</section>
+
+
+
+
+<section id="extractReader" class="page">
+  <section class="panel premium">
+    <h2>V20 Professional AI Engine</h2>
+    <div class="alert">
+      IA de importação refeita: detecta banco, normaliza valores, classifica receita/despesa,
+      categoriza automaticamente, aprende com correções, detecta duplicados e só importa itens aprovados.
+    </div>
+  </section>
+
+  <section class="panel">
+    <h2>1. Importar extrato</h2>
+    <label class="file">Selecionar PDF/CSV/TXT<input id="extractFile" type="file" accept=".pdf,.csv,.txt,application/pdf,text/csv,text/plain"></label>
+    <textarea id="extractPaste" placeholder="Cole aqui o texto do extrato, ou importe PDF/CSV/TXT..." style="min-height:160px"></textarea>
+  </section>
+
+  <section class="panel premium">
+    <h2>2. Configuração da IA</h2>
+    <select id="aiBankProfile">
+      <option value="auto">Detectar banco automaticamente</option>
+      <option value="nubank">Nubank</option>
+      <option value="inter">Banco Inter</option>
+      <option value="itau">Itaú</option>
+      <option value="santander">Santander</option>
+      <option value="bradesco">Bradesco</option>
+      <option value="bb">Banco do Brasil</option>
+      <option value="caixa">Caixa</option>
+      <option value="generic">Genérico avançado</option>
+    </select>
+    <select id="aiValueProfile">
+      <option value="br">Brasil: 1.234,56</option>
+      <option value="us">EUA: 1,234.56</option>
+      <option value="auto">Automático</option>
+    </select>
+    <select id="aiImportStrictness">
+      <option value="safe">Seguro: valores altos exigem revisão</option>
+      <option value="balanced">Equilibrado</option>
+      <option value="fast">Rápido: importa mais itens automaticamente</option>
+    </select>
+    <button id="analyzeExtractBtn" class="primary">Analisar com IA Profissional</button>
+    <button id="clearExtractBtn">Limpar análise</button>
+  </section>
+
+  <section class="panel premium">
+    <h2>3. Diagnóstico da IA</h2>
+    <div id="extractAiSummary"></div>
+  </section>
+
+  <section class="panel">
+    <h2>4. Aprendizado local</h2>
+    <div class="alert">Quando você corrigir uma categoria, a IA aprende neste dispositivo e melhora nas próximas importações.</div>
+    <div id="learningBox"></div>
+  </section>
+
+  <section class="panel">
+    <h2>5. Lançamentos detectados</h2>
+    <div class="alert">
+      Níveis da IA: <b>Seguro</b>, <b>Revisar</b>, <b>Crítico</b> e <b>Duplicado</b>. Apenas aprovados entram no app.
+    </div>
+    <div class="actions">
+      <button id="approveAllSafeBtn">Aprovar seguros</button>
+      <button id="approveReviewedBtn">Aprovar revisados</button>
+      <button id="ignoreAllExtractBtn">Ignorar todos</button>
+    </div>
+    <div id="extractPreview"></div>
+    <button id="importExtractBtn" class="primary">Importar lançamentos aprovados</button>
+  </section>
+</section>
+
+
+<section id="stablePlus" class="page">
+  <section class="panel premium">
+    <h2>Stable Plus</h2>
+    <div class="alert">Painel de estabilidade, manutenção e próximos passos do projeto.</div>
+  </section>
+  <section class="panel">
+    <h2>Status do sistema</h2>
+    <div id="stableSystemStatus"></div>
+  </section>
+  <section class="panel">
+    <h2>Manutenção</h2>
+    <button id="stableCleanCacheBtn" class="primary">Limpar cache/local e recarregar versão</button>
+    <button id="stableBackupBtn">Backup rápido JSON</button>
+  </section>
+  <section class="panel premium">
+    <h2>Próximo passo recomendado</h2>
+    <div id="nextStepBox"></div>
+  </section>
+</section>
+
+<section id="cloud" class="page">
+  <section class="panel premium">
+    <h2>V21.1 Safe Cloud AI</h2>
+    <div class="alert">Área Cloud isolada. O app continua funcionando offline e as abas não dependem do Firebase.</div>
+    <div id="cloudStatus"></div>
+  </section>
+  <section class="panel">
+    <h2>Status Firebase</h2>
+    <div id="firebaseSafeStatus"></div>
+    <button id="safeFirebaseCheckBtn" class="primary">Verificar configuração Firebase</button>
+  </section>
+  <section class="panel">
+    <h2>Login Google</h2>
+    <button id="googleLoginBtn" class="primary">Entrar com Google</button>
+    <button id="googleLogoutBtn">Sair</button>
+    <div id="userBox"></div>
+  </section>
+  <section class="panel premium">
+    <h2>Cloud AI para PDF</h2>
+    <label class="file">Selecionar PDF do extrato<input id="cloudPdfInput" type="file" accept=".pdf,application/pdf"></label>
+    <button id="sendCloudAiBtn" class="primary">Enviar para Cloud AI</button>
+    <div id="cloudAiResult"></div>
+  </section>
+</section>
+
+</main>
+
+<nav class="bottom">
+  <button class="tab active" data-page="dashboard">🏠<span>Início</span></button>
+  <button class="tab" data-page="launch">➕<span>Lançar</span></button>
+  <button class="tab" data-page="wallets">💼<span>Contas</span></button>
+  <button class="tab" data-page="cardsPage">💳<span>Cartões</span></button>
+  <button class="tab" data-page="goals">🎯<span>Metas</span></button>
+  <button class="tab" data-page="reports">📄<span>Mais</span></button>
+</nav>
+
+<button id="menuBtn" class="fab">☰</button>
+<div id="sheetBackdrop" class="sheet-backdrop hidden"></div>
+<section id="sheet" class="sheet hidden">
+  <div class="sheet-header"><strong>Menu</strong><button id="closeSheetBtn" type="button">Fechar</button></div>
+  <button class="sheet-link" data-page="budgets">📊 Orçamentos</button><button class="sheet-link" data-page="subscriptions">🔁 Assinaturas</button><button class="sheet-link" data-page="analytics">📈 Analytics</button><button class="sheet-link" data-page="aiProfessional">🧠 AI Pro</button><button class="sheet-link" data-page="extractReader">🏦 Extratos IA</button><button class="sheet-link" data-page="quickActions">⚡ Atalhos</button><button class="sheet-link" data-page="favorites">⭐ Favoritos</button><button class="sheet-link" data-page="safeTools">🛡️ SAFE</button><button class="sheet-link" data-page="incomeSources">💵 Rendas</button><button class="sheet-link" data-page="taxes">🧾 Taxas</button><button class="sheet-link" data-page="futureBills">📌 Futuras</button><button class="sheet-link" data-page="cardElite">💳 Cartões Elite</button><button class="sheet-link" data-page="goalsPro">🏁 Metas Pro</button><button class="sheet-link" data-page="safeLife">🌱 SAFE Life</button><button class="sheet-link" data-page="exportCenter">📤 Exportar</button>
+  <button class="sheet-link" data-page="investments">📈 Investimentos</button>
+  <button class="sheet-link" data-page="planning">🧭 Planejamento</button>
+  <button class="sheet-link" data-page="assets">💎 Patrimônio</button>
+  <button class="sheet-link" data-page="cloud">☁️ Cloud Prep</button><button class="sheet-link" data-page="stablePlus">🧩 Stable Plus</button>
+</section>
+
+<script src="./firebase-config.js?v=214stableplus"></script>
+<script src="./app-v21-4-stable-plus.js?v=214stableplus"></script>
+</body>
+</html>
