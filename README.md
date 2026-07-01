@@ -1,30 +1,13 @@
-# R💰 Ramalho Finance V21 Cloud AI Starter
+# R💰 Ramalho Finance V21.1 Safe Cloud AI
 
-Esta versão inicia a fase Firebase + IA real.
+Correção da V21 que causou bug nas páginas.
 
-## Frontend
-- index.html
-- style.css
-- app-v21-cloud-ai.js
-- firebase-config.js
-- cloud-ai-client.js
-
-## Backend
-- functions/index.js
-- functions/package.json
-- functions/.env.example
-
-## Config
-- firebase.json
-- .firebaserc.example
-- GUIA_V21_CLOUD_AI.md
+## O que mudou
+- Base voltou para V20 estável.
+- Cloud AI ficou isolado.
+- Firebase não é carregado como módulo obrigatório.
+- Navegação/abas continuam independentes do Cloud.
+- Preparado para próxima etapa sem quebrar o app.
 
 ## Abra com
-
-?v=21cloudai
-
-## Necessário configurar
-1. Firebase Authentication com Google.
-2. firebase-config.js.
-3. Cloud Functions.
-4. OPENAI_API_KEY no backend.
+?v=211safecloud

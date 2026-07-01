@@ -1,7 +1,7 @@
 {
-  "name": "Ramalho Finance V21 Cloud AI Starter",
+  "name": "Ramalho Finance V21.1 Safe Cloud AI",
   "short_name": "R💰 Finance",
-  "start_url": "./index.html?v=21cloudai",
+  "start_url": "./index.html?v=211safecloud",
   "display": "standalone",
   "background_color": "#050816",
   "theme_color": "#050816",

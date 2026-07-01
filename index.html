@@ -4,16 +4,16 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1">
 <meta name="theme-color" content="#050816">
-<title>R💰 Ramalho Finance V21 Cloud AI Starter</title>
-<link rel="manifest" href="./manifest.json?v=21cloudai">
-<link rel="stylesheet" href="./style.css?v=21cloudai">
+<title>R💰 Ramalho Finance V21.1 Safe Cloud AI</title>
+<link rel="manifest" href="./manifest.json?v=211safecloud">
+<link rel="stylesheet" href="./style.css?v=211safecloud">
 </head>
 <body>
 <div class="bg"></div>
 <header class="top">
   <div>
     <strong>R💰 Ramalho Finance</strong>
-    <small>V21 Cloud AI Starter — NO CACHE ROOT</small>
+    <small>V21.1 Safe Cloud AI — NO CACHE ROOT</small>
   </div>
   <button id="themeBtn">Tema</button>
 </header>
@@ -24,7 +24,7 @@
       <span class="badge">V19 Ultimate AI Import</span>
       <p id="greeting">Olá</p>
       <h1 id="netWorth">R$ 0,00</h1>
-      <p id="mainInsight">Cloud AI Starter com Firebase, login Google e backend para IA real.</p>
+      <p id="mainInsight">Safe Cloud AI com Firebase isolado sem quebrar páginas.</p>
       <div class="score-grid">
         <div><b id="score">0</b><small>Score</small></div>
         <div><b id="savingRate">0%</b><small>Economia</small></div>
@@ -395,9 +395,14 @@
 
 <section id="cloud" class="page">
   <section class="panel premium">
-    <h2>V21 Cloud AI</h2>
-    <div class="alert">Área preparada para Firebase + Login Google + Cloud Function + OpenAI. Enquanto você não configurar, o app continua funcionando offline.</div>
+    <h2>V21.1 Safe Cloud AI</h2>
+    <div class="alert">Área Cloud isolada. O app continua funcionando offline e as abas não dependem do Firebase.</div>
     <div id="cloudStatus"></div>
+  </section>
+  <section class="panel">
+    <h2>Status Firebase</h2>
+    <div id="firebaseSafeStatus"></div>
+    <button id="safeFirebaseCheckBtn" class="primary">Verificar configuração Firebase</button>
   </section>
   <section class="panel">
     <h2>Login Google</h2>
@@ -406,16 +411,13 @@
     <div id="userBox"></div>
   </section>
   <section class="panel premium">
-    <h2>Análise real por IA</h2>
+    <h2>Cloud AI para PDF</h2>
     <label class="file">Selecionar PDF do extrato<input id="cloudPdfInput" type="file" accept=".pdf,application/pdf"></label>
     <button id="sendCloudAiBtn" class="primary">Enviar para Cloud AI</button>
     <div id="cloudAiResult"></div>
   </section>
-  <section class="panel">
-    <h2>Configuração Firebase</h2>
-    <div class="alert">Edite o arquivo <b>firebase-config.js</b> com as chaves do seu projeto Firebase antes de publicar.</div>
-  </section>
 </section>
+
 </main>
 
 <nav class="bottom">
@@ -436,6 +438,7 @@
   <button class="sheet-link" data-page="cloud">☁️ Cloud Prep</button>
 </section>
 
-<script src="./app-v21-cloud-ai.js?v=21cloudai"></script>
+<script src="./firebase-config.js?v=211safecloud"></script>
+<script src="./app-v21-1-safe-cloud.js?v=211safecloud"></script>
 </body>
 </html>

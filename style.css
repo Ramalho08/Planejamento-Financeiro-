@@ -219,8 +219,10 @@ body.light .learning-pill{background:rgba(248,251,255,.78)}
 body.light .ai20-tag{background:rgba(248,251,255,.78)}
 @media(min-width:900px){.ai20-grid{grid-template-columns:1fr 2.1fr .8fr .8fr 1fr auto}}
 
-/* V21 Cloud AI */
+/* V21.1 Safe Cloud */
 .cloud-user{display:flex;gap:10px;align-items:center;border:1px solid var(--border);border-radius:16px;padding:10px;background:rgba(15,23,42,.45);margin-top:10px}
 .cloud-user img{width:42px;height:42px;border-radius:50%}
 .cloud-result pre{white-space:pre-wrap;word-break:break-word}
+.safe-cloud-ok{border-color:rgba(34,197,94,.42)!important;background:rgba(34,197,94,.08)!important}
+.safe-cloud-warn{border-color:rgba(250,204,21,.45)!important;background:rgba(250,204,21,.08)!important}
 body.light .cloud-user{background:rgba(248,251,255,.78)}
