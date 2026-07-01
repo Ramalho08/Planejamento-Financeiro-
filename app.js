@@ -32,6 +32,10 @@ function initTheme(){
     store.emit();
   });
 }
+window.RF_SAFE_BOOT = true;
+window.addEventListener("error", (ev) => {
+  console.warn("[RF Safe Error]", ev.message);
+});
 function init(){
   initNavigation();
   initTheme();

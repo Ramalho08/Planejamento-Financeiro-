@@ -1,7 +1,7 @@
 {
-  "name": "Ramalho Finance Legacy Pro Alpha",
+  "name": "Ramalho Finance Legacy Pro Alpha Navigation Pro FIX",
   "short_name": "Ramalho Finance",
-  "start_url": "./index.html?v=legacyproalpha",
+  "start_url": "./index.html?v=navprofix",
   "display": "standalone",
   "background_color": "#030817",
   "theme_color": "#07152f",
