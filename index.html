@@ -4,17 +4,17 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1">
 <meta name="theme-color" content="#050816">
-<title>R💰 Ramalho Finance V21.1.3 Menu Real Scroll FIX</title>
-<link rel="manifest" href="./manifest.json?v=2113scrollfix">
-<link rel="stylesheet" href="./style.css?v=2113scrollfix">
+<title>R💰 Ramalho Finance V21.2 Pro Menu + AI Local</title>
+<link rel="manifest" href="./manifest.json?v=212promenuai">
+<link rel="stylesheet" href="./style.css?v=212promenuai">
 </head>
 <body>
 <div class="bg"></div>
-<div class="update-banner">V21.1.3 Menu Real Scroll FIX ativo <button id="forceRefreshBtn">Forçar atualização</button></div>
+<div class="update-banner">V21.2 Pro Menu + AI Local ativo <button id="forceRefreshBtn">Forçar atualização</button></div>
 <header class="top">
   <div>
     <strong>R💰 Ramalho Finance</strong>
-    <small>V21.1.3 Menu Real Scroll FIX — NO CACHE ROOT</small>
+    <small>V21.2 Pro Menu + AI Local — NO CACHE ROOT</small>
   </div>
   <button id="themeBtn">Tema</button>
 </header>
@@ -25,7 +25,7 @@
       <span class="badge">V19 Ultimate AI Import</span>
       <p id="greeting">Olá</p>
       <h1 id="netWorth">R$ 0,00</h1>
-      <p id="mainInsight">Menu Real Scroll FIX com rolagem real na aba dos 3 pontos.</p>
+      <p id="mainInsight">Pro Menu com rolagem lateral e AI Local aprimorada.</p>
       <div class="score-grid">
         <div><b id="score">0</b><small>Score</small></div>
         <div><b id="savingRate">0%</b><small>Economia</small></div>
@@ -430,8 +430,10 @@
   <button class="tab" data-page="reports">📄<span>Mais</span></button>
 </nav>
 
-<button id="menuBtn" class="fab">☰</button>
-<section id="sheet" class="sheet hidden">
+<button id="menuBtn" class="fab" aria-label="Abrir menu">☰</button>
+<div id="sheetOverlay" class="sheet-overlay hidden"></div>
+<section id="sheet" class="sheet hidden" aria-label="Menu avançado">
+  <div class="menu-sheet-title"><strong>Menu avançado</strong><button id="closeSheetBtn">Fechar</button></div>
   <button class="sheet-link" data-page="budgets">📊 Orçamentos</button><button class="sheet-link" data-page="subscriptions">🔁 Assinaturas</button><button class="sheet-link" data-page="analytics">📈 Analytics</button><button class="sheet-link" data-page="aiProfessional">🧠 AI Pro</button><button class="sheet-link" data-page="extractReader">🏦 Extratos IA</button><button class="sheet-link" data-page="quickActions">⚡ Atalhos</button><button class="sheet-link" data-page="favorites">⭐ Favoritos</button><button class="sheet-link" data-page="safeTools">🛡️ SAFE</button><button class="sheet-link" data-page="incomeSources">💵 Rendas</button><button class="sheet-link" data-page="taxes">🧾 Taxas</button><button class="sheet-link" data-page="futureBills">📌 Futuras</button><button class="sheet-link" data-page="cardElite">💳 Cartões Elite</button><button class="sheet-link" data-page="goalsPro">🏁 Metas Pro</button><button class="sheet-link" data-page="safeLife">🌱 SAFE Life</button><button class="sheet-link" data-page="exportCenter">📤 Exportar</button>
   <button class="sheet-link" data-page="investments">📈 Investimentos</button>
   <button class="sheet-link" data-page="planning">🧭 Planejamento</button>
@@ -439,7 +441,7 @@
   <button class="sheet-link" data-page="cloud">☁️ Cloud Prep</button>
 </section>
 
-<script src="./firebase-config.js?v=2113scrollfix"></script>
-<script src="./app-v21-1-3-menu-real-scroll.js?v=2113scrollfix"></script>
+<script src="./firebase-config.js?v=212promenuai"></script>
+<script src="./app-v21-2-pro-menu-ai-local.js?v=212promenuai"></script>
 </body>
 </html>

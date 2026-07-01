@@ -1,7 +1,7 @@
 {
-  "name": "Ramalho Finance V21.1.3 Menu Real Scroll FIX",
+  "name": "Ramalho Finance V21.2 Pro Menu + AI Local",
   "short_name": "R💰 Finance",
-  "start_url": "./index.html?v=2113scrollfix",
+  "start_url": "./index.html?v=212promenuai",
   "display": "standalone",
   "background_color": "#050816",
   "theme_color": "#050816",
