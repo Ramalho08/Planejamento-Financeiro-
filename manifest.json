@@ -1,7 +1,7 @@
 {
-  "name": "Ramalho Finance Legacy Pro Alpha Bundle Pro FIX",
+  "name": "Ramalho Finance Legacy Pro Alpha Dashboard Pro Analytics",
   "short_name": "Ramalho Finance",
-  "start_url": "./index.html?v=bundleprofix",
+  "start_url": "./index.html?v=dashproanalytics",
   "display": "standalone",
   "background_color": "#030817",
   "theme_color": "#07152f",

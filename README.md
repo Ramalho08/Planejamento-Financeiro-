@@ -1,13 +1,16 @@
-# R💰 Ramalho Finance Legacy Pro Alpha Bundle Pro FIX
+# R💰 Ramalho Finance Legacy Pro Alpha Dashboard Pro Analytics
 
-Correção profissional para estabilidade no GitHub Pages e celular.
+Atualização segura baseada no Bundle Pro FIX funcional.
 
-## Mudança principal
-
-A arquitetura visual/profissional foi mantida, mas o JavaScript agora está em **um bundle único `app.js`**, organizado internamente por módulos.
-
-Isso evita falhas de carregamento com `type="module"` e melhora a estabilidade dos botões/abas.
+## Novidades
+- Dashboard Pro Analytics
+- Score financeiro visual
+- Gasto diário médio
+- Projeção de despesas para 30 dias
+- Economia percentual
+- Pressão de gastos sobre a renda
+- Categorias do mês com barras
+- Maiores despesas do mês
 
 ## Abra com
-
-?v=bundleprofix
+?v=dashproanalytics

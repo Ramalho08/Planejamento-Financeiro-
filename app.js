@@ -2,7 +2,7 @@
 "use strict";
 
 const RF = {};
-const KEY = "rf_bundle_pro_fix_state";
+const KEY = "rf_dashboard_pro_analytics_state";
 const routes = ["dashboard","transactions","wallets","goals","reports","ai","cloud","architecture","settings"];
 const categories = ["Salário","Alimentação","Transporte","Moradia","Saúde","Educação","Lazer","Cartão","Investimentos","Assinaturas","Pix","Outros"];
 
@@ -119,6 +119,69 @@ function initNavigation(){
   setPage(start);
 }
 
+
+function categoryTotals(){
+  const cat = {};
+  txMonth().filter(x=>x.type==="expense").forEach(x=>{
+    const k = x.category || "Outros";
+    cat[k] = (cat[k] || 0) + Number(x.amount || 0);
+  });
+  return Object.keys(cat).sort((a,b)=>cat[b]-cat[a]).map(k=>({category:k,total:cat[k]}));
+}
+function projectedMonthExpense(t){
+  const day = Math.max(1, new Date().getDate());
+  return (t.expense / day) * 30;
+}
+function renderDashboardAnalytics(){
+  const box = RF.$("proAnalytics");
+  const catsBox = RF.$("dashboardCategories");
+  const topBox = RF.$("dashboardTopExpenses");
+  if(!box && !catsBox && !topBox) return;
+
+  const t = totals();
+  const sc = score(t);
+  const projected = projectedMonthExpense(t);
+  const saving = t.income ? Math.round((t.balance / t.income) * 100) : 0;
+  const daily = t.expense / Math.max(1, new Date().getDate());
+  const level = sc >= 70 ? "Saudável" : sc >= 45 ? "Atenção" : "Crítico";
+  const pressure = t.income ? Math.round((t.expense / t.income) * 100) : 0;
+
+  if(box){
+    box.innerHTML = `<div class="analytics-mini">
+      <div class="analytics-card"><small>Score</small><div class="analytics-score">${sc}</div><b>${level}</b></div>
+      <div class="analytics-card"><small>Gasto diário</small><h3>${RF.money(daily)}</h3></div>
+      <div class="analytics-card"><small>Projeção 30 dias</small><h3>${RF.money(projected)}</h3></div>
+      <div class="analytics-card"><small>Economia</small><h3>${saving}%</h3></div>
+    </div>
+    <div class="analytics-card">
+      <div class="analytics-title"><b>Pressão de gastos</b><small>${pressure}% da renda</small></div>
+      <div class="analytics-bar"><span style="width:${Math.min(100,pressure)}%"></span></div>
+    </div>`;
+  }
+
+  const cats = categoryTotals();
+  if(catsBox){
+    catsBox.innerHTML = cats.map(x=>{
+      const pct = t.expense ? Math.round((x.total/t.expense)*100) : 0;
+      return `<div class="analytics-card">
+        <div class="analytics-title"><b>${x.category}</b><small>${pct}%</small></div>
+        <p>${RF.money(x.total)}</p>
+        <div class="analytics-bar"><span style="width:${Math.min(100,pct)}%"></span></div>
+      </div>`;
+    }).join("") || `<div class="alert">Sem despesas por categoria neste mês.</div>`;
+  }
+
+  const top = txMonth().filter(x=>x.type==="expense").sort((a,b)=>b.amount-a.amount).slice(0,6);
+  if(topBox){
+    topBox.innerHTML = top.map((x,i)=>`
+      <div class="row">
+        <div><b>${i+1}. ${x.description}</b><small>${x.category} • ${x.date}</small></div>
+        <span>${RF.money(x.amount)}</span>
+      </div>
+    `).join("") || `<div class="alert">Nenhuma despesa registrada neste mês.</div>`;
+  }
+}
+
 function renderDashboard(){
   const t = totals(), sc = score(t);
   RF.$("incomeCard").textContent = RF.money(t.income);
@@ -133,6 +196,7 @@ function renderDashboard(){
     <div class="alert"><b>Carteiras</b><p>${RF.money(t.wallets)}</p></div>
     <div class="alert"><b>Lançamentos</b><p>${txMonth().length}</p></div>
   </div>`;
+  renderDashboardAnalytics();
   RF.$("recentTransactions").innerHTML = txMonth().slice(0,6).map(x=>`
     <div class="row"><div><b>${x.description}</b><small>${x.category} • ${x.date}</small></div><span>${x.type==="income"?"+":"-"} ${RF.money(x.amount)}</span></div>
   `).join("") || `<div class="alert">Nenhum lançamento neste mês.</div>`;
@@ -279,7 +343,7 @@ function initSettings(){
   });
 }
 function renderSettings(){
-  RF.$("systemInfo").innerHTML = `<div class="alert"><b>Versão:</b> Bundle Pro FIX</div><div class="alert"><b>Armazenamento:</b> localStorage</div><div class="alert"><b>Pronto para:</b> Firebase, IA Cloud e PDF/OCR</div>`;
+  RF.$("systemInfo").innerHTML = `<div class="alert"><b>Versão:</b> Dashboard Pro Analytics</div><div class="alert"><b>Armazenamento:</b> localStorage</div><div class="alert"><b>Pronto para:</b> Firebase, IA Cloud e PDF/OCR</div>`;
 }
 
 function applyTheme(){
@@ -314,7 +378,7 @@ function init(){
     initSettings();
     renderAll();
     window.RF = RF;
-    console.log("Ramalho Finance Bundle Pro FIX iniciado.");
+    console.log("Ramalho Finance Dashboard Pro Analytics iniciado.");
   }catch(err){
     console.error(err);
     showError("Erro ao iniciar: "+err.message);
