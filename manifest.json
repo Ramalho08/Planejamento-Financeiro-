@@ -1,7 +1,7 @@
 {
-  "name": "Ramalho Finance Legacy Pro Alpha Finance Intelligence",
+  "name": "Ramalho Finance Legacy Pro Alpha Goals & Forecast Pro",
   "short_name": "Ramalho Finance",
-  "start_url": "./index.html?v=financeintelligence",
+  "start_url": "./index.html?v=goalsforecastpro",
   "display": "standalone",
   "background_color": "#030817",
   "theme_color": "#07152f",

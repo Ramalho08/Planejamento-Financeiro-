@@ -2,7 +2,7 @@
 "use strict";
 
 const RF = {};
-const KEY = "rf_finance_intelligence_state";
+const KEY = "rf_goals_forecast_pro_state";
 const routes = ["dashboard","transactions","wallets","goals","reports","ai","cloud","architecture","settings"];
 const categories = ["Salário","Alimentação","Transporte","Moradia","Saúde","Educação","Lazer","Cartão","Investimentos","Assinaturas","Pix","Outros"];
 
@@ -431,6 +431,107 @@ function renderFinanceIntelligence(){
   }
 }
 
+
+function forecastData(){
+  const t = totals();
+  const tx = txMonth();
+  const day = Math.max(1, new Date().getDate());
+  const dailyExpense = t.expense / day;
+  const projectedExpense = dailyExpense * 30;
+  const projectedBalance = t.income - projectedExpense;
+  const savingRate = t.income ? (projectedBalance / t.income) * 100 : 0;
+  const walletMonths = projectedExpense ? t.wallets / projectedExpense : 0;
+  return {t,tx,day,dailyExpense,projectedExpense,projectedBalance,savingRate,walletMonths};
+}
+function forecastClass(value){
+  return value >= 0 ? "forecast-good" : "forecast-bad";
+}
+function renderForecastSummary(){
+  const box = RF.$("forecastSummary");
+  if(!box) return;
+  const d = forecastData();
+  box.innerHTML = `<div class="forecast-grid">
+    <div class="forecast-card"><small>Gasto diário</small><h3>${RF.money(d.dailyExpense)}</h3></div>
+    <div class="forecast-card"><small>Despesa projetada</small><h3>${RF.money(d.projectedExpense)}</h3></div>
+    <div class="forecast-card ${forecastClass(d.projectedBalance)}"><small>Saldo projetado</small><div class="forecast-main">${RF.money(d.projectedBalance)}</div></div>
+    <div class="forecast-card"><small>Reserva cobre</small><h3>${d.walletMonths.toFixed(1)} mês(es)</h3></div>
+  </div>`;
+}
+function runForecastSimulation(){
+  const save = Number(RF.$("forecastSaveInput")?.value || 0);
+  const months = Math.max(1, Number(RF.$("forecastMonthsInput")?.value || 6));
+  const box = RF.$("forecastSimulation");
+  if(!box) return;
+  if(save <= 0){
+    box.innerHTML = `<div class="alert forecast-warn">Informe um valor mensal para simular.</div>`;
+    return;
+  }
+  const total = save * months;
+  box.innerHTML = `<div class="alert forecast-good">
+    <b>Resultado da simulação</b>
+    <p>Guardando ${RF.money(save)} por mês durante ${months} mês(es), você acumulará aproximadamente ${RF.money(total)}.</p>
+  </div>`;
+}
+function renderForecastGoals(){
+  const box = RF.$("forecastGoals");
+  if(!box) return;
+  if(!RF.state.goals.length){
+    box.innerHTML = `<div class="alert forecast-warn">Nenhuma meta criada. Crie metas para gerar previsão automática.</div>`;
+    return;
+  }
+  box.innerHTML = RF.state.goals.map(g=>{
+    const target = Number(g.target||0);
+    const saved = Number(g.saved||0);
+    const missing = Math.max(0, target-saved);
+    const monthly3 = missing/3;
+    const monthly6 = missing/6;
+    const monthly12 = missing/12;
+    const pct = target ? Math.min(100, Math.round(saved/target*100)) : 0;
+    return `<div class="forecast-card">
+      <b>${g.name}</b>
+      <p>${pct}% concluída • falta ${RF.money(missing)}</p>
+      <div class="progress"><span style="width:${pct}%"></span></div>
+      <div class="alert"><b>Plano 3 meses:</b> ${RF.money(monthly3)}/mês</div>
+      <div class="alert"><b>Plano 6 meses:</b> ${RF.money(monthly6)}/mês</div>
+      <div class="alert"><b>Plano 12 meses:</b> ${RF.money(monthly12)}/mês</div>
+    </div>`;
+  }).join("");
+}
+function renderForecastPlan(){
+  const box = RF.$("forecastPlan");
+  if(!box) return;
+  const d = forecastData();
+  const plan = [];
+  if(d.projectedBalance < 0){
+    plan.push(["Prioridade 1","Reduzir despesas para evitar saldo negativo no fim do mês.","forecast-bad"]);
+  }else{
+    plan.push(["Prioridade 1",`Reservar pelo menos ${RF.money(d.projectedBalance*0.3)} do saldo projetado.`,"forecast-good"]);
+  }
+  if(d.walletMonths < 3){
+    plan.push(["Reserva","Construir reserva para cobrir pelo menos 3 meses de despesas.","forecast-warn"]);
+  }else{
+    plan.push(["Reserva","Sua reserva está em um nível melhor. Continue protegendo esse saldo.","forecast-good"]);
+  }
+  if(RF.state.goals.length){
+    plan.push(["Metas",`Você possui ${RF.state.goals.length} meta(s). Priorize a mais importante e automatize aportes mensais.`,"forecast-warn"]);
+  }else{
+    plan.push(["Metas","Crie pelo menos uma meta financeira para a IA acompanhar seu progresso.","forecast-warn"]);
+  }
+  box.innerHTML = plan.map(x=>`<div class="alert ${x[2]}"><b>${x[0]}</b><p>${x[1]}</p></div>`).join("");
+}
+function renderForecastPro(){
+  renderForecastSummary();
+  renderForecastGoals();
+  renderForecastPlan();
+}
+function initForecastPro(){
+  const btn = RF.$("forecastSimBtn");
+  if(btn && !btn.dataset.ready){
+    btn.dataset.ready = "1";
+    btn.addEventListener("click", runForecastSimulation);
+  }
+}
+
 function renderCloud(){
   RF.$("cloudChecklist").innerHTML = `<div class="alert"><b>1.</b> Criar projeto Firebase.</div><div class="alert"><b>2.</b> Ativar Login Google.</div><div class="alert"><b>3.</b> Criar Cloud Function.</div><div class="alert"><b>4.</b> Conectar OpenAI/Gemini no backend.</div><div class="alert"><b>5.</b> Testar upload de PDF isolado.</div>`;
 }
@@ -460,7 +561,7 @@ function initSettings(){
   });
 }
 function renderSettings(){
-  RF.$("systemInfo").innerHTML = `<div class="alert"><b>Versão:</b> Finance Intelligence</div><div class="alert"><b>Armazenamento:</b> localStorage</div><div class="alert"><b>Pronto para:</b> Firebase, IA Cloud e PDF/OCR</div>`;
+  RF.$("systemInfo").innerHTML = `<div class="alert"><b>Versão:</b> Goals & Forecast Pro</div><div class="alert"><b>Armazenamento:</b> localStorage</div><div class="alert"><b>Pronto para:</b> Firebase, IA Cloud e PDF/OCR</div>`;
 }
 
 function applyTheme(){
@@ -475,6 +576,7 @@ function renderAll(){
   renderReports();
   renderAI();
   renderFinanceIntelligence();
+  renderForecastPro();
   renderCloud();
   renderArchitecture();
   renderSettings();
@@ -494,9 +596,10 @@ function init(){
     initGoals();
     initReports();
     initSettings();
+    initForecastPro();
     renderAll();
     window.RF = RF;
-    console.log("Ramalho Finance Finance Intelligence iniciado.");
+    console.log("Ramalho Finance Goals & Forecast Pro iniciado.");
   }catch(err){
     console.error(err);
     showError("Erro ao iniciar: "+err.message);

@@ -1,21 +1,15 @@
-# R💰 Ramalho Finance Legacy Pro Alpha Finance Intelligence
+# R💰 Ramalho Finance Legacy Pro Alpha Goals & Forecast Pro
 
-Atualização segura baseada no Dashboard Pro Analytics funcional.
+Atualização segura baseada na Finance Intelligence funcional.
 
 ## Novidades
-- Central Finance Intelligence
-- Índice de saúde financeira
-- Índice de liquidez
-- Índice de estabilidade
-- Índice de capacidade de investimento
-- Índice de qualidade dos dados
-- Diagnóstico inteligente
-- Riscos detectados
-- Recomendações automáticas
-- Metas inteligentes
-
-## Estabilidade
-A navegação e os botões da base Bundle Pro/Dashboard Pro foram preservados.
+- Previsão de saldo mensal
+- Gasto diário médio
+- Despesa projetada para 30 dias
+- Reserva em meses
+- Simulador de economia
+- Metas inteligentes com planos de 3, 6 e 12 meses
+- Plano mensal automático
 
 ## Abra com
-?v=financeintelligence
+?v=goalsforecastpro

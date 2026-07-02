@@ -4,16 +4,16 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
   <meta name="theme-color" content="#07152f">
-  <title>Ramalho Finance Legacy Pro Alpha Finance Intelligence</title>
-  <link rel="manifest" href="./manifest.json?v=financeintelligence">
-  <link rel="stylesheet" href="./style.css?v=financeintelligence">
+  <title>Ramalho Finance Legacy Pro Alpha Goals & Forecast Pro</title>
+  <link rel="manifest" href="./manifest.json?v=goalsforecastpro">
+  <link rel="stylesheet" href="./style.css?v=goalsforecastpro">
 </head>
 <body>
   <div class="bg"></div>
 
   <header class="top">
     <button id="menuBtn" class="icon" type="button">☰</button>
-    <div class="brand"><b>R💰 Ramalho Finance</b><small>Finance Intelligence</small></div>
+    <div class="brand"><b>R💰 Ramalho Finance</b><small>Goals & Forecast Pro</small></div>
     <button id="themeBtn" class="icon" type="button">◐</button>
   </header>
 
@@ -29,7 +29,7 @@
       <button data-page="wallets" type="button">👛 Carteiras</button>
       <button data-page="goals" type="button">🎯 Metas</button>
       <button data-page="reports" type="button">📊 Relatórios</button>
-      <button data-page="ai" type="button">🧠 IA Local</button><button data-page="financeIntelligence" type="button">🧩 Finance Intelligence</button>
+      <button data-page="ai" type="button">🧠 IA Local</button><button data-page="financeIntelligence" type="button">🧩 Finance Intelligence</button><button data-page="forecastPro" type="button">🔮 Forecast Pro</button>
       <button data-page="cloud" type="button">☁️ Cloud Ready</button>
       <button data-page="architecture" type="button">🏗️ Arquitetura</button>
       <button data-page="settings" type="button">⚙️ Configurações</button>
@@ -39,7 +39,7 @@
   <main class="app">
     <section id="dashboard" class="page active">
       <section class="hero">
-        <div><span class="chip">Finance Intelligence</span><h1>Controle financeiro profissional</h1><p>Central de inteligência financeira local com indicadores, riscos, padrões e recomendações.</p></div>
+        <div><span class="chip">Goals & Forecast Pro</span><h1>Controle financeiro profissional</h1><p>Planejamento financeiro com metas inteligentes, previsão de saldo e simulação mensal.</p></div>
         <div class="heroScore"><small>Score financeiro</small><strong id="heroScore">0</strong><span id="heroLabel">Calculando...</span></div>
       </section>
       <section class="cards">
@@ -152,6 +152,41 @@
       </section>
     </section>
 
+    
+    <section id="forecastPro" class="page">
+      <section class="panel premium">
+        <h2>Goals & Forecast Pro</h2>
+        <div class="alert">
+          Planejamento profissional com previsão de saldo, metas inteligentes, simulações de economia e plano mensal automático.
+        </div>
+      </section>
+
+      <section class="panel">
+        <h2>Previsão financeira</h2>
+        <div id="forecastSummary"></div>
+      </section>
+
+      <section class="panel">
+        <h2>Simulador de economia</h2>
+        <div class="form mini">
+          <input id="forecastSaveInput" type="number" inputmode="decimal" placeholder="Quanto quer economizar por mês?">
+          <input id="forecastMonthsInput" type="number" inputmode="numeric" placeholder="Meses" value="6">
+          <button id="forecastSimBtn" class="primary" type="button">Simular</button>
+        </div>
+        <div id="forecastSimulation"></div>
+      </section>
+
+      <section class="panel">
+        <h2>Metas inteligentes</h2>
+        <div id="forecastGoals"></div>
+      </section>
+
+      <section class="panel">
+        <h2>Plano mensal automático</h2>
+        <div id="forecastPlan"></div>
+      </section>
+    </section>
+
     <section id="cloud" class="page">
       <section class="panel premium"><h2>Cloud Ready</h2><div class="alert">Preparado para Firebase, Login Google, Cloud Functions e IA real sem carregar scripts externos.</div></section>
       <section class="panel"><h2>Checklist</h2><div id="cloudChecklist"></div></section>
@@ -179,6 +214,6 @@
     <button class="tab" data-page="ai" type="button">🧠<span>IA</span></button>
   </nav>
 
-  <script src="./app.js?v=financeintelligence"></script>
+  <script src="./app.js?v=goalsforecastpro"></script>
 </body>
 </html>
